@@ -1,11 +1,11 @@
 {
   "name": "tangled-in-stitches",
-  "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "prettier": "prettier --write \"**/*.+(js|jsx)\""
   },
   "dependencies": {
     "@fullhuman/postcss-purgecss": "^2.1.2",
