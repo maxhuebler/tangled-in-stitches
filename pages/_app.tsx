@@ -1,8 +1,9 @@
-import '../styles/index.css'
 import React from 'react'
 import Head from 'next/head'
+import { AppProps } from 'next/app'
+import '../styles/index.css'
 
-export default function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
