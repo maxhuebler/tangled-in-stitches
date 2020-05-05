@@ -17,19 +17,19 @@ export default function Index() {
         </div>
       </div>
       <div className="container justify-center flex mx-auto py-4">
-        <button className="mt-10 bg-gray-200 mr-6 uppercase text-black text-lg font-bold py-6 px-16 rounded-lg hover:bg-blue-200 hover:text-white">
+        <button className="mt-10 bg-gray-200 mr-6 uppercase text-black text-lg font-bold py-6 px-16 rounded-lg hover:bg-blue-300 hover:text-white">
           <a href="">home</a>
         </button>
-        <button className="mt-10 bg-gray-200 mx-6 uppercase text-black text-lg font-bold py-6 px-16 rounded-lg hover:bg-blue-200 hover:text-white">
+        <button className="mt-10 bg-gray-200 mx-6 uppercase text-black text-lg font-bold py-6 px-16 rounded-lg hover:bg-blue-300 hover:text-white">
           <a href="">new in</a>
         </button>
-        <button className="mt-10 bg-gray-200 mx-6 uppercase text-black text-lg font-bold py-6 px-16 rounded-lg hover:bg-blue-200 hover:text-white">
+        <button className="mt-10 bg-gray-200 mx-6 uppercase text-black text-lg font-bold py-6 px-16 rounded-lg hover:bg-blue-300 hover:text-white">
           <a href="">shirts</a>
         </button>
-        <button className="mt-10 bg-gray-200 mx-6 uppercase text-black text-lg font-bold py-6 px-16 rounded-lg hover:bg-blue-200 hover:text-white">
+        <button className="mt-10 bg-gray-200 mx-6 uppercase text-black text-lg font-bold py-6 px-16 rounded-lg hover:bg-blue-300 hover:text-white">
           <a href="">sweaters</a>
         </button>
-        <button className="mt-10 bg-gray-200 ml-6 uppercase text-black text-lg font-bold py-6 px-16 rounded-lg hover:bg-blue-200 hover:text-white">
+        <button className="mt-10 bg-gray-200 ml-6 uppercase text-black text-lg font-bold py-6 px-16 rounded-lg hover:bg-blue-300 hover:text-white">
           <a href="">jackets</a>
         </button>
       </div>

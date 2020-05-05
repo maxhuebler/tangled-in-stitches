@@ -17,24 +17,25 @@ export default ({ children }) => {
         <nav className="container items-center flex sm:justify-between mx-auto py-16">
           <div className="text-white">
             <Link href="/">
-              <a className="font-display font-semibold text-4xl text-gray-800 leading-none">
+              <a className="font-display font-semibold text-4xl text-black leading-none">
                 Tangled in Stitches
               </a>
             </Link>
           </div>
           <div className="flex justify-end items-center">
             <div className="text-md sm:ml-4 sm:ml-0">
-              <Link href="/">
-                <a className="hidden sm:inline text-md">Home</a>
-              </Link>
               <Link href="shop">
-                <a className="hidden sm:inline text-md ml-4">Shop</a>
+                <a className="hidden sm:inline text-md hover:underline">Shop</a>
               </Link>
               <Link href="about">
-                <a className="hidden sm:inline text-md ml-4">About us</a>
+                <a className="hidden sm:inline text-md ml-4 hover:underline">
+                  About us
+                </a>
               </Link>
               <Link href="contact">
-                <a className="hidden sm:inline text-md ml-4">Contact Us</a>
+                <a className="hidden sm:inline text-md ml-4 hover:underline">
+                  Contact Us
+                </a>
               </Link>
               <Link href="cart">
                 <button className="ml-4 text-center text-white bg-black justify-center h-8 w-8 rounded-full">
