@@ -1,11 +1,12 @@
 import React from 'react'
 import Head from 'next/head'
+import Navigation from '../components/Navigation'
 import { AppProps } from 'next/app'
 import '../styles/index.css'
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <Navigation>
       <Head>
         <title>Tangled in Stitches</title>
         <link rel="icon" href="/favicon.ico" />
@@ -16,6 +17,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
         />
       </Head>
       <Component {...pageProps} />
-    </>
+    </Navigation>
   )
 }
