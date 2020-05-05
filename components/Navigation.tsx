@@ -22,9 +22,9 @@ export default ({ children }) => {
               </a>
             </Link>
           </div>
-          <div className="flex justify-end items-center sm:pr-8">
+          <div className="flex justify-end items-center">
             <div className="text-md sm:ml-4 sm:ml-0">
-              <Link href="home">
+              <Link href="/">
                 <a className="hidden sm:inline text-md">Home</a>
               </Link>
               <Link href="shop">
