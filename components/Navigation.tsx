@@ -1,20 +1,10 @@
-import Head from 'next/head'
 import Link from 'next/link'
 
 export default ({ children }) => {
   return (
     <>
-      <Head>
-        <title>Tangled in Stitches</title>
-        <meta
-          key="viewport"
-          name="viewport"
-          content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
-      </Head>
-
       <header>
-        <nav className="container items-center flex sm:justify-between mx-auto py-16">
+        <nav className="container items-center flex sm:justify-between mx-auto py-16 sm:px-6">
           <div className="text-white">
             <Link href="/">
               <a className="font-display font-semibold text-4xl text-black leading-none">
@@ -24,9 +14,6 @@ export default ({ children }) => {
           </div>
           <div className="flex justify-end items-center">
             <div className="text-md sm:ml-4 sm:ml-0">
-              <Link href="shop">
-                <a className="hidden sm:inline text-md hover:underline">Shop</a>
-              </Link>
               <Link href="about">
                 <a className="hidden sm:inline text-md ml-4 hover:underline">
                   About us
