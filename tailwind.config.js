@@ -1,4 +1,5 @@
 module.exports = {
+  purge: [],
   theme: {
     fontFamily: {
       display: ['Pacifico', 'sans-serif'],
@@ -9,4 +10,6 @@ module.exports = {
       },
     },
   },
+  variants: {},
+  plugins: [],
 }

@@ -1,7 +1,9 @@
-export default function Index() {
+import React from 'react'
+
+export default function Hero() {
   return (
     <>
-      <div className="container flex flex-col mx-auto bg-purple-200 py-24 rounded-xl">
+      <div className="flex flex-col mx-auto bg-purple-200 py-24 rounded-xl">
         <div className="text-center">
           <h1 className="text-lg md:text-4xl uppercase font-black leading-tight">
             $20 off $100 plus,

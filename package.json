@@ -1,24 +1,40 @@
 {
   "name": "tangled-in-stitches",
   "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "prettier": "prettier --write \"**/*.+(js|jsx|ts|tsx)\""
-  },
+  "author": "Max Huebler <max@huebler.us>",
   "dependencies": {
-    "next": "9.3.6",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "shopify-buy": "^2.10.0",
-    "tailwindcss": "^1.4.4"
+    "gatsby": "^2.17.4",
+    "gatsby-image": "^2.2.29",
+    "gatsby-plugin-google-analytics": "^2.0.13",
+    "gatsby-plugin-layout": "^1.0.11",
+    "gatsby-plugin-manifest": "^2.2.23",
+    "gatsby-plugin-react-helmet": "^3.1.13",
+    "gatsby-plugin-root-import": "^2.0.5",
+    "gatsby-plugin-sharp": "^2.2.32",
+    "gatsby-source-filesystem": "^2.1.33",
+    "gatsby-source-shopify": "^3.0.24",
+    "gatsby-transformer-sharp": "^2.3.0",
+    "lodash": "^4.17.15",
+    "prop-types": "^15.7.2",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-helmet": "^5.2.1",
+    "shopify-buy": "^2.8.0",
+    "tailwindcss": "^1.4.6"
+  },
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "start": "yarn develop",
+    "format": "prettier --write \"src/**/*.js\""
   },
   "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^2.1.2",
-    "@types/node": "^13.13.4",
-    "@types/react": "^16.9.34",
-    "postcss-preset-env": "^6.7.0",
-    "prettier": "^2.0.5",
-    "typescript": "^3.8.3"
+    "gatsby-plugin-postcss": "^2.3.1",
+    "gatsby-plugin-purgecss": "^5.0.0",
+    "prettier": "^1.15.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/maxhuebler/tangled-in-stitches"
   }
 }
