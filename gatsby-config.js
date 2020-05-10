@@ -1,7 +1,5 @@
 const path = require('path')
 
-require('dotenv').config()
-
 module.exports = {
   siteMetadata: {
     title: `Tangled in Stitches`,
@@ -35,8 +33,8 @@ module.exports = {
     {
       resolve: `gatsby-source-shopify`,
       options: {
-        shopName: process.env.SHOP_NAME,
-        accessToken: process.env.SHOPIFY_ACCESS_TOKEN,
+        shopName: 'graphql',
+        accessToken: 'dd4d4dc146542ba7763305d71d1b3d38',
         verbose: true,
       },
     },

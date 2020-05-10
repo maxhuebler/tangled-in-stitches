@@ -22,17 +22,23 @@ const Navigation = ({ siteTitle }) => {
       <nav className="container items-center flex sm:justify-between mx-auto py-16 sm:px-6">
         <div className="text-white">
           <Link to="/">
-            <a className="font-display font-semibold text-4xl text-black leading-none">
+            <span className="font-display font-semibold text-4xl text-black leading-none">
               {siteTitle}
-            </a>
+            </span>
           </Link>
         </div>
         <div className="flex justify-end items-center">
           <div className="text-md sm:ml-4 sm:ml-0">
-            <a className="hidden sm:inline text-md ml-4 hover:underline">
+            <a
+              href="/"
+              className="hidden sm:inline text-md ml-4 hover:underline"
+            >
               About us
             </a>
-            <a className="hidden sm:inline text-md ml-4 hover:underline">
+            <a
+              href="/"
+              className="hidden sm:inline text-md ml-4 hover:underline"
+            >
               Contact Us
             </a>
             <Link to="/cart">
