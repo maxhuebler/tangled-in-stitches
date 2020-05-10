@@ -12,25 +12,25 @@ export default function Hero() {
             get free next-day delivery
           </h1>
           <button className="mt-10 bg-black text-white text-lg font-bold py-4 px-10 rounded-full hover:bg-gray-800">
-            <a href="">Search All Today's Deals</a>
+            <a href="/">Search All Today's Deals</a>
           </button>
         </div>
       </div>
       <div className="container justify-center flex flex-row mx-auto py-4">
         <button className="mt-10 focused bg-gray-200 mr-6 uppercase text-black text-lg font-bold py-6 px-16 rounded-lg hover:bg-purple-300 hover:text-white">
-          <a href="">home</a>
+          <a href="/">home</a>
         </button>
         <button className="mt-10 bg-gray-200 mx-6 uppercase text-black text-lg font-bold py-6 px-16 rounded-lg hover:bg-purple-300 hover:text-white">
-          <a href="">new in</a>
+          <a href="/">new in</a>
         </button>
         <button className="mt-10 bg-gray-200 mx-6 uppercase text-black text-lg font-bold py-6 px-16 rounded-lg hover:bg-purple-300 hover:text-white">
-          <a href="">shirts</a>
+          <a href="/">shirts</a>
         </button>
         <button className="mt-10 bg-gray-200 mx-6 uppercase text-black text-lg font-bold py-6 px-16 rounded-lg hover:bg-purple-300 hover:text-white">
-          <a href="">sweaters</a>
+          <a href="/">sweaters</a>
         </button>
         <button className="mt-10 bg-gray-200 ml-6 uppercase text-black text-lg font-bold py-6 px-16 rounded-lg hover:bg-purple-300 hover:text-white">
-          <a href="">jackets</a>
+          <a href="/">jackets</a>
         </button>
       </div>
     </>
