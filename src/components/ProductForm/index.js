@@ -12,6 +12,7 @@ const ProductForm = ({ product }) => {
     variants: [initialVariant],
     priceRange: { minVariantPrice },
   } = product
+  const [added, setAdded] = useState(false)
   const [variant, setVariant] = useState({ ...initialVariant })
   const [quantity, setQuantity] = useState(1)
   const {
@@ -64,6 +65,7 @@ const ProductForm = ({ product }) => {
 
   const handleAddToCart = () => {
     addVariantToCart(productVariant.shopifyId, quantity)
+    setAdded(true)
   }
 
   /* 
@@ -126,7 +128,7 @@ const ProductForm = ({ product }) => {
         Quantity{' '}
       </label>
       <input
-        className="bg-white focus:outline-none focus:shadow-outline block border rounded-lg py-2 px-4"
+        className="bg-white focus:outline-none focus:shadow-outline block border rounded-lg py-2 px-4 w-20"
         type="number"
         id="quantity"
         name="quantity"
@@ -144,12 +146,14 @@ const ProductForm = ({ product }) => {
       >
         Add to Cart
       </button>
-      <p className="mt-3 text-md">
-        <span role="img" aria-label="added">
-          ✔️
-        </span>{' '}
-        Added {product.title} to your cart.
-      </p>
+      {added ? (
+        <p className="mt-4 text-md">
+          <span role="img" aria-label="added">
+            ✔️
+          </span>{' '}
+          {product.title} added to your cart.
+        </p>
+      ) : null}
       {!available && <p>This Product is out of Stock!</p>}
     </>
   )
