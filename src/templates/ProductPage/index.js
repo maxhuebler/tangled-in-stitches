@@ -15,16 +15,19 @@ const ProductPage = ({ data }) => {
           <div>
             {product.images.map(image => (
               <Image
-                className="max-w-full mb-6"
+                className="max-w-full mb-6 rounded-xl"
                 fluid={image.localFile.childImageSharp.fluid}
                 key={image.id}
                 alt={product.title}
               />
             ))}
           </div>
-          <div>
-            <h1 className="text-4xl">{product.title}</h1>
-            <h2 dangerouslySetInnerHTML={{ __html: product.descriptionHtml }} />
+          <div className="px-12">
+            <h1 className="text-4xl font-bold">{product.title}</h1>
+            <h2
+              className="mb-4"
+              dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
+            />
             <ProductForm product={product} />
           </div>
         </div>

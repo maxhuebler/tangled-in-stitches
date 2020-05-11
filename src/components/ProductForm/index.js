@@ -97,11 +97,14 @@ const ProductForm = ({ product }) => {
 
   return (
     <>
-      <h3>{price}</h3>
+      <h3 className="text-2xl font-bold mb-4">{price}</h3>
       {options.map(({ id, name, values }, index) => (
         <React.Fragment key={id}>
-          <label htmlFor={name}>{name} </label>
+          <label className="font-bold" htmlFor={name}>
+            {name}{' '}
+          </label>
           <select
+            className="bg-white focus:outline-none focus:shadow-outline block border rounded-lg py-2 px-4"
             name={name}
             key={id}
             onChange={event => handleOptionChange(index, event)}
@@ -119,8 +122,11 @@ const ProductForm = ({ product }) => {
           <br />
         </React.Fragment>
       ))}
-      <label htmlFor="quantity">Quantity </label>
+      <label className="font-bold" htmlFor="quantity">
+        Quantity{' '}
+      </label>
       <input
+        className="bg-white focus:outline-none focus:shadow-outline block border rounded-lg py-2 px-4"
         type="number"
         id="quantity"
         name="quantity"
@@ -131,6 +137,7 @@ const ProductForm = ({ product }) => {
       />
       <br />
       <button
+        className="bg-purple-300 text-white py-2 px-4 hover:bg-purple-400"
         type="submit"
         disabled={!available || adding}
         onClick={handleAddToCart}

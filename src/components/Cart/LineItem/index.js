@@ -11,9 +11,9 @@ const LineItem = props => {
 
   const variantImage = line_item.variant.image ? (
     <img
+      className="h-32"
       src={line_item.variant.image.src}
       alt={`${line_item.title} product shot`}
-      height="60px"
     />
   ) : null
 
@@ -28,18 +28,22 @@ const LineItem = props => {
   }
 
   return (
-    <div className="flex flex-wrap justify-between">
+    <div className="flex justify-between items-center border-solid border-2 py-4 px-6 mb-4">
       {variantImage}
-      <p>
+      <p className="text-lg font-bold">
         {line_item.title}
-        {`  `}
         {line_item.variant.title === !'Default Title'
           ? line_item.variant.title
           : ''}
       </p>
-      {selectedOptions}
-      {line_item.quantity}
-      <button onClick={handleRemove}>Remove</button>
+      <p className="font-bold">{selectedOptions}</p>
+      <p>{line_item.quantity}</p>
+      <button
+        className="bg-purple-300 text-white py-2 px-4 hover:bg-purple-400"
+        onClick={handleRemove}
+      >
+        Remove
+      </button>
     </div>
   )
 }

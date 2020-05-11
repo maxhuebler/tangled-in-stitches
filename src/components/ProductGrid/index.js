@@ -47,7 +47,7 @@ const ProductGrid = () => {
     }).format(parseFloat(price ? price : 0))
 
   return (
-    <div className="grid grid-cols-4 gap-4 mt-4">
+    <div className="grid grid-cols-4 gap-4 mt-4 mx-4">
       {allShopifyProduct.edges ? (
         allShopifyProduct.edges.map(
           ({
