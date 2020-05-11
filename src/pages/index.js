@@ -6,7 +6,10 @@ import Hero from '~/components/Hero'
 
 const IndexPage = () => (
   <>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <SEO
+      title="Home"
+      keywords={[`tangled in stitches`, `home`, `shop`, `clothing`, `disney`]}
+    />
     <Hero />
     <ProductGrid />
   </>
