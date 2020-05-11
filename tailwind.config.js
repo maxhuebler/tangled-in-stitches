@@ -4,7 +4,7 @@ module.exports = {
   },
   theme: {
     fontFamily: {
-      display: ['Pacifico', 'sans-serif'],
+      display: ['"Children of the Starlight"', 'sans-serif'],
     },
     extend: {
       borderRadius: {

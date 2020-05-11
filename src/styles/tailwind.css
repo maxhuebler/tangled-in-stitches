@@ -5,4 +5,7 @@
 
 @tailwind utilities;
 
-@import 'https://fonts.googleapis.com/css2?family=Pacifico';
+@font-face {
+  font-family: 'Children of the Starlight';
+  src: url(font.ttf);
+}
