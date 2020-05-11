@@ -25,7 +25,7 @@ const Layout = ({ children }) => {
             <div className="mx-auto max-w-7xl">
               {children}
               <footer>
-                <h2 className="text-center mt-12 mb-4">
+                <h2 className="text-center my-10">
                   Tangled in Stitches © {new Date().getFullYear()}
                 </h2>
               </footer>

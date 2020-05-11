@@ -11,7 +11,7 @@ const LineItem = props => {
 
   const variantImage = line_item.variant.image ? (
     <img
-      className="h-32"
+      className="h-20 sm:h-32"
       src={line_item.variant.image.src}
       alt={`${line_item.title} product shot`}
     />
@@ -28,10 +28,10 @@ const LineItem = props => {
   }
 
   return (
-    <div className="flex justify-between border-solid border rounded-lg py-4 px-6 mb-6">
+    <div className="flex justify-between border-solid border rounded-lg py-4 px-6 mb-6 mx-4">
       <div className="flex items-center leading-none">
         {variantImage}
-        <div className="text-lg px-8">
+        <div className="sm:text-lg px-8">
           <p className="">{line_item.title}</p>
           {line_item.variant.title === !'Default Title'
             ? line_item.variant.title
@@ -41,11 +41,11 @@ const LineItem = props => {
         </div>
       </div>
       <div className="flex items-center">
-        <button className="bg-purple-200 px-4 py-2 rounded-lg mr-8">
+        <button className="bg-purple-200 px-3 py-1 sm:px-4 sm:py-2 rounded-lg mr-2 sm:mr-8 cursor-default">
           {line_item.quantity}
         </button>
         <button
-          className="bg-purple-500 text-white py-2 px-4 hover:bg-purple-600"
+          className="bg-purple-500 text-white px-3 py-1 sm:px-4 sm:py-2 hover:bg-purple-600"
           onClick={handleRemove}
         >
           Remove

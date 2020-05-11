@@ -99,7 +99,7 @@ const ProductForm = ({ product }) => {
 
   return (
     <>
-      <h3 className="text-2xl font-bold mb-4">{price}</h3>
+      <h3 className="text-xl sm:text-2xl font-bold mb-4">{price}</h3>
       {options.map(({ id, name, values }, index) => (
         <React.Fragment key={id}>
           <label className="font-bold" htmlFor={name}>

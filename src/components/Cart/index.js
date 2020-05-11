@@ -19,7 +19,7 @@ const Cart = () => {
   return (
     <>
       {line_items}
-      <div className="flex flex-col items-end pr-6">
+      <div className="flex flex-col items-end pr-10">
         <h2 className="text-lg font-bold">Subtotal</h2>
         <p>$ {checkout.subtotalPrice}</p>
         <p className="mb-4">Taxes and shipping calculated at checkout</p>

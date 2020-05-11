@@ -48,7 +48,7 @@ const ProductGrid = () => {
 
   return (
     <div>
-      <div className="justify-between flex px-12 mb-16">
+      <div className="hidden md:flex justify-between px-12 mb-16">
         <button className="mt-10 bg-indigo-100 uppercase text-black text-lg font-black py-6 px-16 rounded-lg hover:bg-purple-400 hover:text-white">
           <a href="/">home</a>
         </button>
@@ -65,7 +65,7 @@ const ProductGrid = () => {
           <a href="/">funny</a>
         </button>
       </div>
-      <div className="grid grid-cols-5 gap-6 mt-4 mx-12">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 mt-6 mx-12">
         {allShopifyProduct.edges ? (
           allShopifyProduct.edges.map(
             ({
