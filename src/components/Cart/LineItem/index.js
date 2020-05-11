@@ -28,7 +28,7 @@ const LineItem = props => {
   }
 
   return (
-    <div className="flex justify-between items-center border-solid border-2 py-4 px-6 mb-4">
+    <div className="flex justify-between items-center border-solid border rounded-lg py-4 px-6 mb-4">
       {variantImage}
       <p className="text-lg font-bold">
         {line_item.title}

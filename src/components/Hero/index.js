@@ -21,16 +21,16 @@ export default function Hero() {
           <a href="/">home</a>
         </button>
         <button className="mt-10 bg-gray-200 mx-6 uppercase text-black text-lg font-bold py-6 px-16 rounded-lg hover:bg-purple-300 hover:text-white">
-          <a href="/">new in</a>
+          <a href="/">new</a>
         </button>
         <button className="mt-10 bg-gray-200 mx-6 uppercase text-black text-lg font-bold py-6 px-16 rounded-lg hover:bg-purple-300 hover:text-white">
-          <a href="/">shirts</a>
+          <a href="/">disney</a>
         </button>
         <button className="mt-10 bg-gray-200 mx-6 uppercase text-black text-lg font-bold py-6 px-16 rounded-lg hover:bg-purple-300 hover:text-white">
-          <a href="/">sweaters</a>
+          <a href="/">villians</a>
         </button>
         <button className="mt-10 bg-gray-200 ml-6 uppercase text-black text-lg font-bold py-6 px-16 rounded-lg hover:bg-purple-300 hover:text-white">
-          <a href="/">jackets</a>
+          <a href="/">funny</a>
         </button>
       </div>
     </>

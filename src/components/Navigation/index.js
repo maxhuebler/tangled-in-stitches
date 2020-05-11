@@ -19,10 +19,10 @@ const Navigation = ({ siteTitle }) => {
 
   return (
     <header>
-      <nav className="container items-center flex sm:justify-between mx-auto py-16 sm:px-6">
+      <nav className="container items-center flex sm:justify-between mx-auto py-16">
         <div className="text-white">
           <Link to="/">
-            <span className="font-display font-semibold text-4xl text-black leading-none">
+            <span className="font-display text-6xl text-black leading-none">
               {siteTitle}
             </span>
           </Link>

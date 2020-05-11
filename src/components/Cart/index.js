@@ -17,19 +17,21 @@ const Cart = () => {
   })
 
   return (
-    <div>
+    <>
       {line_items}
-      <h2 className="text-lg font-bold justify-right">Subtotal</h2>
-      <p className="">$ {checkout.subtotalPrice}</p>
-      <p className="mb-4">Taxes and shipping calculated at checkout</p>
-      <button
-        className="bg-purple-300 text-white py-2 px-4 hover:bg-purple-400"
-        onClick={handleCheckout}
-        disabled={checkout.lineItems.length === 0}
-      >
-        Check out
-      </button>
-    </div>
+      <div className="flex flex-col items-end pr-6">
+        <h2 className="text-lg font-bold">Subtotal</h2>
+        <p>$ {checkout.subtotalPrice}</p>
+        <p className="mb-4">Taxes and shipping calculated at checkout</p>
+        <button
+          className="bg-purple-300 text-white py-2 px-4 hover:bg-purple-400"
+          onClick={handleCheckout}
+          disabled={checkout.lineItems.length === 0}
+        >
+          Check out
+        </button>
+      </div>
+    </>
   )
 }
 
