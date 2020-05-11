@@ -35,7 +35,7 @@ const ProductForm = ({ product }) => {
         }
       })
     },
-    [client.product, productVariant.shopifyId, variants]
+    [client.product, productVariant.shopifyId]
   )
 
   useEffect(() => {
@@ -145,9 +145,12 @@ const ProductForm = ({ product }) => {
         Add to Cart
       </button>
       <p className="mt-3 text-md">
-        <span role="img">✔️</span> Added {product.title} to your cart.
+        <span role="img" aria-label="added">
+          ✔️
+        </span>{' '}
+        Added {product.title} to your cart.
       </p>
-      ;{!available && <p>This Product is out of Stock!</p>}
+      {!available && <p>This Product is out of Stock!</p>}
     </>
   )
 }

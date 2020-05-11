@@ -11,11 +11,11 @@ const useQuantity = () => {
   } = useContext(StoreContext)
   const items = checkout ? checkout.lineItems : []
   const total = reduce(items, (acc, item) => acc + item.quantity, 0)
-  return [total !== 0, total]
+  return [total]
 }
 
 const Navigation = ({ siteTitle }) => {
-  const [hasItems, quantity] = useQuantity()
+  const [quantity] = useQuantity()
 
   return (
     <header>
