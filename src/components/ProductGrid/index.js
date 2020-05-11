@@ -47,25 +47,25 @@ const ProductGrid = () => {
     }).format(parseFloat(price ? price : 0))
 
   return (
-    <div className="flex justify-between">
-      <div>
-        <div className="flex justify-start px-32 py-4 bg-purple-100 mb-6 rounded-lg hover:bg-purple-400 hover:text-white cursor-pointer">
-          <a className="text-lg font-black uppercase italic">home</a>
-        </div>
-        <div className="px-32 py-8 bg-purple-100 mb-6 text-lg font-black uppercase italic rounded-lg hover:bg-purple-400 hover:text-white cursor-pointer">
-          new
-        </div>
-        <div className="px-32 py-8 bg-purple-100 mb-6 text-lg font-black uppercase italic rounded-lg hover:bg-purple-400 hover:text-white cursor-pointer">
-          disney
-        </div>
-        <div className="px-32 py-8 bg-purple-100 mb-6 text-lg font-black uppercase italic rounded-lg hover:bg-purple-400 hover:text-white cursor-pointer">
-          pocket tees
-        </div>
-        <div className="px-32 py-8 bg-purple-100 mb-6 text-lg font-black uppercase italic rounded-lg hover:bg-purple-400 hover:text-white cursor-pointer">
-          villians
-        </div>
+    <div>
+      <div className="justify-between flex px-12 mb-16">
+        <button className="mt-10 bg-indigo-100 uppercase text-black text-lg font-black py-6 px-16 rounded-lg hover:bg-purple-400 hover:text-white">
+          <a href="/">home</a>
+        </button>
+        <button className="mt-10 bg-indigo-100 uppercase text-black text-lg font-black py-6 px-16 rounded-lg hover:bg-purple-400 hover:text-white">
+          <a href="/">new</a>
+        </button>
+        <button className="mt-10 bg-indigo-100 uppercase text-black text-lg font-black py-6 px-16 rounded-lg hover:bg-purple-400 hover:text-white">
+          <a href="/">disney</a>
+        </button>
+        <button className="mt-10 bg-indigo-100 uppercase text-black text-lg font-black py-6 px-16 rounded-lg hover:bg-purple-400 hover:text-white">
+          <a href="/">villians</a>
+        </button>
+        <button className="mt-10 bg-indigo-100 uppercase text-black text-lg font-black py-6 px-16 rounded-lg hover:bg-purple-400 hover:text-white">
+          <a href="/">funny</a>
+        </button>
       </div>
-      <div className="grid grid-cols-3 gap-6 mt-4 mx-12">
+      <div className="grid grid-cols-5 gap-6 mt-4 mx-12">
         {allShopifyProduct.edges ? (
           allShopifyProduct.edges.map(
             ({
@@ -87,8 +87,10 @@ const ProductGrid = () => {
                     />
                   )}
                 </Link>
+                <h2 className="text-center font-bold">
+                  {getPrice(firstVariant.price)}
+                </h2>
                 <h1 className="text-lg text-center">{title}</h1>
-                <h2 className="text-center">{getPrice(firstVariant.price)}</h2>
               </div>
             )
           )
