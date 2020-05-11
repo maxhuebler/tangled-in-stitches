@@ -8,7 +8,7 @@ module.exports = {
     },
     extend: {
       borderRadius: {
-        xl: '2.0rem',
+        xl: '3.0rem',
       },
       maxWidth: {
         '7xl': '1400px',
