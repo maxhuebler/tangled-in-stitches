@@ -3,10 +3,18 @@ const path = require('path')
 module.exports = {
   siteMetadata: {
     title: `Tangled in Stitches`,
-    description: `Kick off your next, ecommerce experience with this Gatsby starter. This starter ships with credentials to a shopify demo store so you can try it out immediately.`,
+    description: `Tangled in Stitches Clothing Company, Disney Insipired Clothing`,
     author: `max@huebler.us`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: 'UA-52251554-5',
+        anonymize: true,
+        respectDNT: true,
+      },
+    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -27,7 +35,7 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/favicon.png`, // This path is relative to the root of the site.
+        icon: `src/images/favicon.png`,
       },
     },
     {
@@ -42,14 +50,6 @@ module.exports = {
       resolve: 'gatsby-plugin-root-import',
       options: {
         '~': path.join(__dirname, 'src/'),
-      },
-    },
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: 'UA-134421805-1',
-        anonymize: true,
-        respectDNT: true,
       },
     },
     {
