@@ -19,7 +19,7 @@ const Navigation = ({ siteTitle }) => {
 
   return (
     <header>
-      <nav className="container items-center flex sm:justify-between mx-auto py-16">
+      <nav className="items-center flex sm:justify-between mx-auto py-16 max-w-7xl">
         <div className="text-white">
           <Link to="/">
             <span className="font-display text-6xl text-black leading-none">

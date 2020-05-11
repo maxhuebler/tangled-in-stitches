@@ -22,7 +22,7 @@ const Layout = ({ children }) => {
         render={data => (
           <>
             <Navigation siteTitle={data.site.siteMetadata.title} />
-            <div className="mx-auto max-w-screen-xl">
+            <div className="mx-auto max-w-7xl">
               {children}
               <footer>
                 <h2 className="text-center mt-12 mb-4">
