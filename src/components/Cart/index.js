@@ -24,7 +24,7 @@ const Cart = () => {
         <p>$ {checkout.subtotalPrice}</p>
         <p className="mb-4">Taxes and shipping calculated at checkout</p>
         <button
-          className="bg-purple-300 text-white py-2 px-4 hover:bg-purple-400"
+          className="bg-purple-500 text-white py-2 px-4 hover:bg-purple-600"
           onClick={handleCheckout}
           disabled={checkout.lineItems.length === 0}
         >

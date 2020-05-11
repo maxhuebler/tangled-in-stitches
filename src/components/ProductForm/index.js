@@ -107,7 +107,7 @@ const ProductForm = ({ product }) => {
             className="bg-white focus:outline-none focus:shadow-outline block border rounded-lg py-2 px-4"
             name={name}
             key={id}
-            onChange={event => handleOptionChange(index, event)}
+            onBlur={event => handleOptionChange(index, event)}
           >
             {values.map(value => (
               <option
@@ -137,14 +137,17 @@ const ProductForm = ({ product }) => {
       />
       <br />
       <button
-        className="bg-purple-300 text-white py-2 px-4 hover:bg-purple-400"
+        className="bg-purple-500 text-white py-2 px-4 hover:bg-purple-600"
         type="submit"
         disabled={!available || adding}
         onClick={handleAddToCart}
       >
         Add to Cart
       </button>
-      {!available && <p>This Product is out of Stock!</p>}
+      <p className="mt-3 text-md">
+        <span role="img">✔️</span> Added {product.title} to your cart.
+      </p>
+      ;{!available && <p>This Product is out of Stock!</p>}
     </>
   )
 }

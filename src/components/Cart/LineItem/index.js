@@ -39,7 +39,7 @@ const LineItem = props => {
       <p className="font-bold">{selectedOptions}</p>
       <p>{line_item.quantity}</p>
       <button
-        className="bg-purple-300 text-white py-2 px-4 hover:bg-purple-400"
+        className="bg-purple-500 text-white py-2 px-4 hover:bg-purple-600"
         onClick={handleRemove}
       >
         Remove
