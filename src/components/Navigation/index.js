@@ -22,7 +22,7 @@ const Navigation = ({ siteTitle }) => {
       <nav className="items-center flex sm:justify-between mx-auto py-16 max-w-7xl">
         <div className="text-white">
           <Link to="/">
-            <span className="font-display text-6xl text-black leading-none">
+            <span className="font-display text-7xl text-black leading-none">
               {siteTitle}
             </span>
           </Link>
