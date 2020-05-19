@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import { Link } from 'gatsby'
 
 import StoreContext from '~/context/StoreContext'
 
@@ -18,9 +19,14 @@ const LineItem = props => {
   ) : null
 
   const selectedOptions = line_item.variant.selectedOptions
-    ? line_item.variant.selectedOptions.map(
-        option => `${option.name}: ${option.value} `
-      )
+    ? line_item.variant.selectedOptions.map(option => (
+        <div className="grid grid-rows-1 mt-2">
+          <div>
+            <h3 className="mt-2 font-bold">{option.name}</h3>
+            <h3>{option.value}</h3>
+          </div>
+        </div>
+      ))
     : null
 
   const handleRemove = () => {
@@ -30,14 +36,13 @@ const LineItem = props => {
   return (
     <div className="flex justify-between border-solid border rounded-lg py-4 px-6 mb-6 mx-4">
       <div className="flex items-center leading-none">
-        {variantImage}
+        <Link to={`/product/${line_item.id}/`}>{variantImage}</Link>
         <div className="sm:text-lg px-8">
           <p className="">{line_item.title}</p>
           {line_item.variant.title === !'Default Title'
             ? line_item.variant.title
             : ''}
-          <br></br>
-          <p className="font-bold">{selectedOptions}</p>
+          {selectedOptions}
         </div>
       </div>
       <div className="flex items-center">
