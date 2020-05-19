@@ -19,7 +19,7 @@ const Navigation = ({ siteTitle }) => {
 
   return (
     <header>
-      <nav className="items-center flex justify-center sm:justify-between py-16 max-w-7xl mx-4 sm:mx-auto sm:px-6">
+      <nav className="items-center flex justify-between py-8 sm:py-12 max-w-7xl mx-6 sm:mx-auto px-8">
         <div className="text-white">
           <Link to="/">
             <span className="font-display text-5xl sm:text-7xl text-black leading-none">
@@ -34,12 +34,6 @@ const Navigation = ({ siteTitle }) => {
               className="hidden sm:inline text-md ml-4 hover:underline"
             >
               About us
-            </a>
-            <a
-              href="/"
-              className="hidden sm:inline text-md ml-4 hover:underline"
-            >
-              Contact Us
             </a>
             <Link to="/cart">
               <button className="ml-4 text-center text-white bg-black justify-center h-8 w-8 rounded-full">

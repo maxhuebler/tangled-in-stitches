@@ -14,7 +14,7 @@ const ProductForm = ({ product }) => {
   } = product
   const [added, setAdded] = useState(false)
   const [variant, setVariant] = useState({ ...initialVariant })
-  const [quantity, setQuantity] = useState(1)
+  // const [quantity, setQuantity] = useState(1)
   const {
     addVariantToCart,
     store: { client, adding },
@@ -43,9 +43,9 @@ const ProductForm = ({ product }) => {
     checkAvailability(product.shopifyId)
   }, [productVariant, checkAvailability, product.shopifyId])
 
-  const handleQuantityChange = ({ target }) => {
-    setQuantity(target.value)
-  }
+  // const handleQuantityChange = ({ target }) => {
+  //   setQuantity(target.value)
+  // }
 
   const handleOptionChange = (optionIndex, { target }) => {
     const { value } = target
@@ -64,7 +64,7 @@ const ProductForm = ({ product }) => {
   }
 
   const handleAddToCart = () => {
-    addVariantToCart(productVariant.shopifyId, quantity)
+    addVariantToCart(productVariant.shopifyId, 1)
     setAdded(true)
   }
 
@@ -99,32 +99,33 @@ const ProductForm = ({ product }) => {
 
   return (
     <>
-      <h3 className="text-xl sm:text-2xl font-bold mb-4">{price}</h3>
+      <h3 className="text-xl sm:text-2xl mb-4">{price}</h3>
       {options.map(({ id, name, values }, index) => (
         <React.Fragment key={id}>
           <label className="font-bold" htmlFor={name}>
-            {name}{' '}
+            {name}
           </label>
-          <select
-            className="bg-white focus:outline-none focus:shadow-outline block border rounded-lg py-2 px-4"
+          <div
+            className="flex bg-white rounded-lg mt-2"
             name={name}
             key={id}
             onBlur={event => handleOptionChange(index, event)}
           >
             {values.map(value => (
-              <option
+              <button
+                className="px-4 py-2 mr-4 rounded-lg border-solid border border-gray-500 hover:border-black focus:border-black"
                 value={value}
                 key={`${name}-${value}`}
                 disabled={checkDisabled(name, value)}
               >
                 {value}
-              </option>
+              </button>
             ))}
-          </select>
+          </div>
           <br />
         </React.Fragment>
       ))}
-      <label className="font-bold" htmlFor="quantity">
+      {/* <label className="font-bold" htmlFor="quantity">
         Quantity{' '}
       </label>
       <input
@@ -136,22 +137,18 @@ const ProductForm = ({ product }) => {
         step="1"
         onChange={handleQuantityChange}
         value={quantity}
-      />
-      <br />
+      /> */}
       <button
-        className="bg-purple-500 text-white py-2 px-4 hover:bg-purple-600"
+        className="bg-purple-500 text-white rounded-lg py-4 px-16 hover:bg-purple-600 uppercase font-bold tracking-wider"
         type="submit"
         disabled={!available || adding}
         onClick={handleAddToCart}
       >
-        Add to Cart
+        Add to bag
       </button>
       {added ? (
         <p className="mt-4 text-md">
-          <span role="img" aria-label="added">
-            ✔️
-          </span>{' '}
-          {product.title} added to your cart.
+          <h3 className="text-green-500">{product.title} added to your bag.</h3>
         </p>
       ) : null}
       {!available && <p>This Product is out of Stock!</p>}

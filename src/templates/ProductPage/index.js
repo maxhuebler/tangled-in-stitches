@@ -1,9 +1,9 @@
 import React from 'react'
-import Image from 'gatsby-image'
 import { graphql } from 'gatsby'
 
 import SEO from '~/components/seo'
 import ProductForm from '~/components/ProductForm'
+import ImageGallery from 'react-image-gallery'
 
 const ProductPage = ({ data }) => {
   const product = data.shopifyProduct
@@ -12,23 +12,30 @@ const ProductPage = ({ data }) => {
       <SEO title={product.title} description={product.description} />
       <div>
         <div className="grid grid-cols-1 sm:grid-cols-2">
-          <div>
-            {product.images.map(image => (
-              <Image
-                className="hidden sm:block mb-6 rounded-xl"
-                fluid={image.localFile.childImageSharp.fluid}
-                key={image.id}
-                alt={product.title}
-              />
-            ))}
+          <div className="px-0 sm:px-8">
+            <ImageGallery
+              items={product.images.map(image => ({
+                original: `${window.location.origin}${image.localFile.childImageSharp.fluid.src}`,
+                originalTitle: product.title,
+                originalAlt: image.id,
+              }))}
+              showBullets={true}
+              showNav={true}
+              showPlayButton={false}
+              showFullscreenButton={false}
+              showThumbnails={false}
+              slideDuration={375}
+              lazyLoad={true}
+            />
           </div>
-          <div className="px-12">
-            <h1 className="text-2xl sm:text-4xl font-bold">{product.title}</h1>
+          <div className="pr-8 mt-8 sm:mt-0">
+            <h1 className="text-4xl font-bold leading-none">{product.title}</h1>
+            <ProductForm product={product} />
+            <h2 className="font-bold mt-6">Product information</h2>
             <h2
-              className="mb-4"
+              className="mt-2"
               dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
             />
-            <ProductForm product={product} />
           </div>
         </div>
       </div>
@@ -78,7 +85,7 @@ export const query = graphql`
         localFile {
           childImageSharp {
             fluid(maxWidth: 910) {
-              ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              ...GatsbyImageSharpFluid
             }
           }
         }
