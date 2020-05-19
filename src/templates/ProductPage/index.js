@@ -25,7 +25,6 @@ const ProductPage = ({ data }) => {
               showFullscreenButton={false}
               showThumbnails={false}
               slideDuration={375}
-              lazyLoad={true}
             />
           </div>
           <div className="px-6 mt-8 sm:mt-0">

@@ -59,7 +59,7 @@ module.exports = {
           google: [
             {
               family: 'Roboto',
-              variants: ['400', '700', '500'],
+              variants: ['400', '700'],
               fontDisplay: 'swap',
             },
           ],
@@ -79,7 +79,7 @@ module.exports = {
       resolve: `gatsby-plugin-purgecss`,
       options: {
         printRejected: false,
-        develop: true,
+        develop: false,
         tailwind: true,
         ignore: ['react-image-gallery'],
       },
