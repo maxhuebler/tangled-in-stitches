@@ -15,7 +15,8 @@ const ProductPage = ({ data }) => {
           <div className="px-0 sm:px-8">
             <ImageGallery
               items={product.images.map(image => ({
-                original: `https://tangled-in-stitches-git-develop.maxhuebler.now.sh${image.localFile.childImageSharp.fluid.src}`,
+                // original: `https://tangled-in-stitches-git-develop.maxhuebler.now.sh${image.localFile.childImageSharp.fluid.src}`,
+                original: 'https://de9luwq5d40h2.cloudfront.net/catalog/product/large_image/69_41435100029.jpg',
                 originalTitle: product.title,
                 originalAlt: image.id,
               }))}
