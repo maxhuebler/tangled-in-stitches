@@ -48,24 +48,7 @@ const ProductGrid = () => {
 
   return (
     <div>
-      <div className="hidden md:flex justify-between px-12 mb-16">
-        <button className="mt-10 bg-purple-300 uppercase text-black text-lg font-black py-6 px-16 rounded-lg hover:bg-purple-400 hover:text-white">
-          <a href="/">home</a>
-        </button>
-        <button className="mt-10 bg-purple-300 uppercase text-black text-lg font-black py-6 px-16 rounded-lg hover:bg-purple-400 hover:text-white">
-          <a href="/">new</a>
-        </button>
-        <button className="mt-10 bg-purple-300 uppercase text-black text-lg font-black py-6 px-16 rounded-lg hover:bg-purple-400 hover:text-white">
-          <a href="/">disney</a>
-        </button>
-        <button className="mt-10 bg-purple-300 uppercase text-black text-lg font-black py-6 px-16 rounded-lg hover:bg-purple-400 hover:text-white">
-          <a href="/">villians</a>
-        </button>
-        <button className="mt-10 bg-purple-300 uppercase text-black text-lg font-black py-6 px-16 rounded-lg hover:bg-purple-400 hover:text-white">
-          <a href="/">funny</a>
-        </button>
-      </div>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 mt-6 mx-6 sm:mx-12">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 mt-8 mx-4 sm:mx-12">
         {allShopifyProduct.edges ? (
           allShopifyProduct.edges.map(
             ({
@@ -87,8 +70,12 @@ const ProductGrid = () => {
                     />
                   )}
                 </Link>
-                <h1 className="text-lg text-left font-bold">{title}</h1>
-                <h2 className="text-left">{getPrice(firstVariant.price)}</h2>
+                <h1 className="text-lg text-center sm:text-left font-bold">
+                  {title}
+                </h1>
+                <h2 className="text-center sm:text-left">
+                  {getPrice(firstVariant.price)}
+                </h2>
               </div>
             )
           )

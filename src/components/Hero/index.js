@@ -3,17 +3,14 @@ import React from 'react'
 export default function Hero() {
   return (
     <>
-      <div className="flex flex-col mx-auto bg-purple-200 py-24 sm:rounded-xl">
+      <div className="flex flex-col bg-purple-200 mx-auto py-24 sm:py-32 sm:rounded-xl max-w-7xl">
         <div className="text-center">
-          <h1 className="text-lg md:text-4xl uppercase font-black leading-tight">
+          <h1 className="text-3xl md:text-5xl uppercase font-bold leading-tight">
             $20 off $100 plus,
           </h1>
-          <h1 className="text-lg md:text-4xl uppercase font-black italic leading-tight">
+          <h1 className="text-xl md:text-3xl uppercase tracking-widest">
             get free next-day delivery
           </h1>
-          <button className="mt-10 bg-black text-white text-lg font-bold py-4 px-10 rounded-full hover:bg-gray-800">
-            <a href="/">Search All Today's Deals</a>
-          </button>
         </div>
       </div>
     </>
