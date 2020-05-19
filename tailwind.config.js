@@ -4,6 +4,7 @@ module.exports = {
   },
   theme: {
     fontFamily: {
+      sans: ['Roboto', 'sans-serif'],
       display: ['"Children of the Starlight"', 'sans-serif'],
     },
     extend: {

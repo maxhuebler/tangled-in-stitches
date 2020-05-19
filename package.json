@@ -19,6 +19,7 @@
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-helmet": "^5.2.1",
+    "react-image-gallery": "^1.0.7",
     "shopify-buy": "^2.8.0",
     "tailwindcss": "^1.4.6"
   },

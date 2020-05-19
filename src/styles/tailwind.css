@@ -5,7 +5,11 @@
 
 @tailwind utilities;
 
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap);
+
 @font-face {
   font-family: 'Children of the Starlight';
   src: url(font.ttf);
 }
+
+@import '~react-image-gallery/styles/css/image-gallery.css';
