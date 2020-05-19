@@ -53,6 +53,23 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-webfonts`,
+      options: {
+        fonts: {
+          google: [
+            {
+              family: 'Roboto',
+              variants: ['400', '700', '500'],
+              fontDisplay: 'swap',
+            },
+          ],
+        },
+        useMinify: true,
+        usePreload: true,
+        usePreconnect: true,
+      },
+    },
+    {
       resolve: `gatsby-plugin-postcss`,
       options: {
         postCssPlugins: [require('tailwindcss')],

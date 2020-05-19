@@ -28,7 +28,7 @@ const ProductPage = ({ data }) => {
               lazyLoad={true}
             />
           </div>
-          <div className="pr-8 mt-8 sm:mt-0">
+          <div className="px-6 mt-8 sm:mt-0">
             <h1 className="text-4xl font-bold leading-none">{product.title}</h1>
             <ProductForm product={product} />
             <h2 className="font-bold mt-6">Product information</h2>
