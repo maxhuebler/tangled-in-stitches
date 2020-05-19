@@ -21,14 +21,18 @@ const Cart = () => {
     <>
       {line_items}
       {checkout.lineItems.length < 1 ? (
-        <div className="flex grid grid-rows-2 justify-center font-bold">
-          <div className="text-4xl">Looks like your bag is empty!</div>
-          <div className="justify-center flex">
-            <Link href="/">
-              <button className="bg-purple-500 px-6 py-3 mt-2 rounded-lg uppercase text-white hover:bg-purple-600">
-                shop what's new
-              </button>
-            </Link>
+        <div className="flex justify-center h-32 sm:h-64">
+          <div className="grid grid-rows-1 text-center items-center px-4">
+            <div>
+              <div className="text-xl sm:text-2xl font-bold tracking-wide">
+                Looks like your bag is empty!
+              </div>
+              <Link to="/">
+                <button className="font-sans font-bold bg-purple-500 px-6 py-4 mt-2 rounded-lg uppercase text-white hover:bg-purple-600 tracking-wider">
+                  shop what's new
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       ) : (
@@ -37,7 +41,7 @@ const Cart = () => {
           <p>$ {checkout.subtotalPrice}</p>
           <p className="mb-4">Taxes and shipping calculated at checkout</p>
           <button
-            className="bg-purple-500 text-white py-2 px-4 hover:bg-purple-600"
+            className="bg-purple-500 rounded-lg text-white py-2 px-4 hover:bg-purple-600"
             onClick={handleCheckout}
             disabled={checkout.lineItems.length === 0}
           >

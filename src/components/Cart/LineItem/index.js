@@ -12,7 +12,7 @@ const LineItem = props => {
 
   const variantImage = line_item.variant.image ? (
     <img
-      className="h-20 sm:h-32"
+      className="h-24 sm:h-32"
       src={line_item.variant.image.src}
       alt={`${line_item.title} product shot`}
     />
@@ -22,8 +22,8 @@ const LineItem = props => {
     ? line_item.variant.selectedOptions.map(option => (
         <div className="grid grid-rows-1 mt-2">
           <div>
-            <h3 className="mt-2 font-bold">{option.name}</h3>
-            <h3>{option.value}</h3>
+            <h3 className="mt-2">{option.name}</h3>
+            <h3 className="font-bold">{option.value}</h3>
           </div>
         </div>
       ))
@@ -36,9 +36,9 @@ const LineItem = props => {
   return (
     <div className="flex justify-between border-solid border rounded-lg py-4 px-6 mb-6 mx-4">
       <div className="flex items-center leading-none">
-        <Link to={`/product/${line_item.id}/`}>{variantImage}</Link>
-        <div className="sm:text-lg px-8">
-          <p className="">{line_item.title}</p>
+        {variantImage}
+        <div className="sm:text-lg ml-6 sm:px-8">
+          <p>{line_item.title}</p>
           {line_item.variant.title === !'Default Title'
             ? line_item.variant.title
             : ''}
@@ -50,7 +50,7 @@ const LineItem = props => {
           {line_item.quantity}
         </button>
         <button
-          className="bg-purple-500 text-white px-3 py-1 sm:px-4 sm:py-2 hover:bg-purple-600"
+          className="bg-purple-500 text-white rounded-lg px-3 py-1 sm:px-4 sm:py-2 hover:bg-purple-600"
           onClick={handleRemove}
         >
           Remove
