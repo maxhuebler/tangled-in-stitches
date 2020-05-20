@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-import { Link } from 'gatsby'
 
 import StoreContext from '~/context/StoreContext'
 

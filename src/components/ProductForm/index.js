@@ -105,7 +105,7 @@ const ProductForm = ({ product }) => {
           <label className="font-bold" htmlFor={name}>
             {name}
           </label>
-          <div
+          <options
             className="flex bg-white rounded-lg mt-2"
             name={name}
             key={id}
@@ -121,7 +121,7 @@ const ProductForm = ({ product }) => {
                 {value}
               </button>
             ))}
-          </div>
+          </options>
           <br />
         </React.Fragment>
       ))}
