@@ -18,7 +18,7 @@ const ProductPage = ({ data }) => {
                 original: `https://tangled-in-stitches-git-develop.maxhuebler.now.sh${image.localFile.childImageSharp.fluid.src}`,
                 originalTitle: product.title,
                 originalAlt: image.id,
-                thumbnail: `https://tangled-in-stitches-git-develop.maxhuebler.now.sh${image.localFile.childImageSharp.fluid.src}`,
+                thumbnail: `https://tangled-in-stitches-git-develop.maxhuebler.now.sh${image.localFile.childImageSharp.fixed.src}`,
               }))}
               showBullets={true}
               showNav={false}
@@ -87,6 +87,9 @@ export const query = graphql`
           childImageSharp {
             fluid(maxWidth: 526) {
               ...GatsbyImageSharpFluid
+            }
+            fixed(width: 92) {
+              ...GatsbyImageSharpFixed
             }
           }
         }
