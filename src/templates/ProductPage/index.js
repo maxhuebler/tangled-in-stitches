@@ -29,7 +29,7 @@ const ProductPage = ({ data }) => {
               thumbnailPosition={'left'}
             />
           </div>
-          <div className="px-8 mt-8 sm:mt-0">
+          <div className="px-8 sm:px-2 mt-8 sm:mt-0">
             <h1 className="text-4xl font-bold leading-none">{product.title}</h1>
             <ProductForm product={product} />
             <h2 className="font-bold mt-6">Product information</h2>

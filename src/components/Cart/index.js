@@ -24,11 +24,11 @@ const Cart = () => {
         <div className="flex justify-center h-32 sm:h-64">
           <div className="grid grid-rows-1 text-center items-center px-4">
             <div>
-              <div className="text-xl sm:text-2xl font-bold tracking-wide">
+              <div className="text-xl sm:text-2xl tracking-wide">
                 Looks like your bag is empty!
               </div>
               <Link to="/">
-                <button className="font-sans font-bold bg-blue-700 px-6 py-4 mt-2 rounded-lg uppercase text-white hover:bg-blue-700 tracking-wider">
+                <button className="font-sans font-bold bg-blue-700 px-6 py-4 mt-4 rounded-lg uppercase text-white hover:bg-blue-700 tracking-widest">
                   shop what's new
                 </button>
               </Link>
