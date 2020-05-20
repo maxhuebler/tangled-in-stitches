@@ -15,11 +15,9 @@ const useQuantity = () => {
 }
 
 const Navigation = ({ siteTitle }) => {
-  const [quantity] = useQuantity()
-
   return (
     <header>
-      <nav className="items-center flex justify-between py-8 sm:py-12 max-w-7xl sm:mx-auto px-8">
+      <nav className="flex items-center justify-center py-8 max-w-7xl sm:py-10 sm:mx-auto">
         <div className="text-white">
           <Link to="/">
             <span className="font-display text-5xl sm:text-7xl text-black leading-none">
@@ -27,17 +25,11 @@ const Navigation = ({ siteTitle }) => {
             </span>
           </Link>
         </div>
-        <div className="flex justify-end items-center">
-          <div className="text-md sm:ml-4 sm:ml-0">
-            <a
-              href="/"
-              className="hidden sm:inline text-md ml-4 hover:underline"
-            >
-              About us
-            </a>
+        <div className="flex justify-end items-center text-center">
+          <div className="text-md text-white ">
             <Link to="/cart">
-              <button className="ml-4 text-center text-white bg-black justify-center h-8 w-8 rounded-full">
-                {quantity}
+              <button className="ml-4 bg-black justify-center h-8 w-8 rounded-full">
+                {useQuantity()}
               </button>
             </Link>
           </div>
