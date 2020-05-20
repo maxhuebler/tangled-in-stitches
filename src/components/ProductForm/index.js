@@ -139,7 +139,7 @@ const ProductForm = ({ product }) => {
         value={quantity}
       /> */}
       <button
-        className="bg-purple-500 text-white rounded-lg py-4 px-16 hover:bg-purple-600 uppercase font-bold tracking-wider"
+        className="bg-blue-700 text-white rounded-lg py-4 px-16 hover:bg-blue-800 uppercase font-bold tracking-wider"
         type="submit"
         disabled={!available || adding}
         onClick={handleAddToCart}

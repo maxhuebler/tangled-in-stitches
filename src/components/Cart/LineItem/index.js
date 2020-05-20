@@ -46,11 +46,11 @@ const LineItem = props => {
         </div>
       </div>
       <div className="flex items-center">
-        <button className="bg-purple-200 px-3 py-1 sm:px-4 sm:py-2 rounded-lg mr-2 sm:mr-8 cursor-default">
+        <button className="bg-blue-300 px-3 py-2 sm:px-4 sm:py-2 rounded-lg mr-2 sm:mr-8 cursor-default">
           {line_item.quantity}
         </button>
         <button
-          className="bg-purple-500 text-white rounded-lg px-3 py-1 sm:px-4 sm:py-2 hover:bg-purple-600"
+          className="bg-blue-700 text-white rounded-lg px-3 py-1 sm:px-4 sm:py-2 hover:bg-blue-800"
           onClick={handleRemove}
         >
           Remove

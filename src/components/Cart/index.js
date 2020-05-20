@@ -28,7 +28,7 @@ const Cart = () => {
                 Looks like your bag is empty!
               </div>
               <Link to="/">
-                <button className="font-sans font-bold bg-purple-500 px-6 py-4 mt-2 rounded-lg uppercase text-white hover:bg-purple-600 tracking-wider">
+                <button className="font-sans font-bold bg-blue-700 px-6 py-4 mt-2 rounded-lg uppercase text-white hover:bg-blue-700 tracking-wider">
                   shop what's new
                 </button>
               </Link>
@@ -41,7 +41,7 @@ const Cart = () => {
           <p>$ {checkout.subtotalPrice}</p>
           <p className="mb-4">Taxes and shipping calculated at checkout</p>
           <button
-            className="bg-purple-500 rounded-lg text-white py-2 px-4 hover:bg-purple-600"
+            className="bg-blue-700 rounded-lg text-white py-2 px-4 hover:bg-blue-800"
             onClick={handleCheckout}
             disabled={checkout.lineItems.length === 0}
           >

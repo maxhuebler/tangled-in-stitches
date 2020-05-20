@@ -3,8 +3,8 @@ import React from 'react'
 export default function Hero() {
   return (
     <>
-      <div className="flex flex-col bg-purple-200 mx-auto py-24 sm:py-32 xl:rounded-xl max-w-7xl">
-        <div className="text-center">
+      <div className="flex flex-col bg-blue-700 mx-auto py-24 sm:py-32 xl:rounded-xl max-w-7xl">
+        <div className="text-center text-white">
           <h1 className="text-3xl sm:text-5xl uppercase font-bold leading-tight">
             $20 off $100 plus,
           </h1>
