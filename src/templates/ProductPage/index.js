@@ -11,23 +11,25 @@ const ProductPage = ({ data }) => {
     <>
       <SEO title={product.title} description={product.description} />
       <div>
-        <div className="grid grid-cols-1 sm:grid-cols-2">
+        <div className="grid grid-cols-1 sm:grid-cols-2 items-center">
           <div className="px-0 sm:px-8">
             <ImageGallery
               items={product.images.map(image => ({
                 original: `https://tangled-in-stitches-git-develop.maxhuebler.now.sh${image.localFile.childImageSharp.fluid.src}`,
                 originalTitle: product.title,
                 originalAlt: image.id,
+                thumbnail: `https://tangled-in-stitches-git-develop.maxhuebler.now.sh${image.localFile.childImageSharp.fluid.src}`,
               }))}
               showBullets={true}
-              showNav={true}
+              showNav={false}
               showPlayButton={false}
               showFullscreenButton={false}
-              showThumbnails={false}
-              slideDuration={375}
+              showThumbnails={true}
+              slideDuration={350}
+              thumbnailPosition={'left'}
             />
           </div>
-          <div className="px-6 mt-8 sm:mt-0">
+          <div className="px-8 mt-8 sm:mt-0">
             <h1 className="text-4xl font-bold leading-none">{product.title}</h1>
             <ProductForm product={product} />
             <h2 className="font-bold mt-6">Product information</h2>
@@ -92,5 +94,4 @@ export const query = graphql`
     }
   }
 `
-
 export default ProductPage
