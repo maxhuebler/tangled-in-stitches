@@ -32,7 +32,7 @@ const ProductPage = ({ data }) => {
             <ProductForm product={product} />
             <h2 className="font-bold mt-6">Product information</h2>
             <h2
-              className="mt-2"
+              className="mt-2 text-justify md:max-w-lg"
               dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
             />
           </div>
