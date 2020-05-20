@@ -4,8 +4,7 @@ import reduce from 'lodash/reduce'
 import PropTypes from 'prop-types'
 
 import StoreContext from '~/context/StoreContext'
-import LargeLogo from '~/images/logo_375x79.png'
-import SmallLogo from '~/images/logo_240x50.png'
+import Logo from '~/images/logo.png'
 
 const useQuantity = () => {
   const {
@@ -23,13 +22,8 @@ const Navigation = ({ siteTitle }) => {
         <div className="text-white">
           <Link to="/">
             <img
-              className="hidden sm:flex"
-              src={LargeLogo}
-              alt={siteTitle}
-            ></img>
-            <img
-              className="flex sm:hidden"
-              src={SmallLogo}
+              className="w-64 sm:w-full sm:flex"
+              src={Logo}
               alt={siteTitle}
             ></img>
           </Link>
