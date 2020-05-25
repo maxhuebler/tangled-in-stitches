@@ -1,24 +1,27 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
+import { Link } from 'gatsby'
 
 import StoreContext from '~/context/StoreContext'
 
 const LineItem = props => {
-  const { line_item } = props
+  const { item } = props
+  const [quantity, setQuantity] = useState(item.quantity)
   const {
     removeLineItem,
+    updateLineItem,
     store: { client, checkout },
   } = useContext(StoreContext)
 
-  const variantImage = line_item.variant.image ? (
+  const variantImage = item.variant.image ? (
     <img
       className="h-24 sm:h-32"
-      src={line_item.variant.image.src}
-      alt={`${line_item.title} product shot`}
+      src={item.variant.image.src}
+      alt={`${item.title} product shot`}
     />
   ) : null
 
-  const selectedOptions = line_item.variant.selectedOptions
-    ? line_item.variant.selectedOptions.map(option => (
+  const selectedOptions = item.variant.selectedOptions
+    ? item.variant.selectedOptions.map(option => (
         <div className="grid grid-rows-1 mt-2">
           <div>
             <h3 className="mt-2">{option.name}</h3>
@@ -29,25 +32,37 @@ const LineItem = props => {
     : null
 
   const handleRemove = () => {
-    removeLineItem(client, checkout.id, line_item.id)
+    removeLineItem(client, checkout.id, item.id)
+  }
+
+  const handleQuantityChange = ({ target }) => {
+    setQuantity(target.value)
+    updateLineItem(client, checkout.id, item.id, target.value)
   }
 
   return (
     <div className="flex justify-between border-solid border rounded-lg py-4 px-6 mb-6 mx-4">
       <div className="flex items-center leading-none">
-        {variantImage}
+        <Link to={`/product/${item.variant.product.handle}/`}>
+          {variantImage}
+        </Link>
         <div className="sm:text-lg ml-6 sm:px-8">
-          <p>{line_item.title}</p>
-          {line_item.variant.title === !'Default Title'
-            ? line_item.variant.title
-            : ''}
+          <p>{item.title}</p>
+          {item.variant.title === !'Default Title' ? item.variant.title : ''}
           {selectedOptions}
         </div>
       </div>
       <div className="flex items-center">
-        <button className="bg-blue-300 px-3 py-2 sm:px-4 sm:py-2 rounded-lg mr-2 sm:mr-8 cursor-default">
-          {line_item.quantity}
-        </button>
+        <input
+          className="bg-white focus:outline-none focus:shadow-outline block border rounded-lg py-2 px-4 w-20 mr-8"
+          type="number"
+          id="quantity"
+          name="quantity"
+          min="1"
+          step="1"
+          onChange={handleQuantityChange}
+          value={quantity}
+        />
         <button
           className="bg-blue-700 text-white rounded-lg px-3 py-1 sm:px-4 sm:py-2 hover:bg-blue-800"
           onClick={handleRemove}

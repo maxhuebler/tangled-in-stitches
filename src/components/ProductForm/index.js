@@ -14,7 +14,6 @@ const ProductForm = ({ product }) => {
   } = product
   const [added, setAdded] = useState(false)
   const [variant, setVariant] = useState({ ...initialVariant })
-  // const [quantity, setQuantity] = useState(1)
   const {
     addVariantToCart,
     store: { client, adding },
@@ -42,10 +41,6 @@ const ProductForm = ({ product }) => {
   useEffect(() => {
     checkAvailability(product.shopifyId)
   }, [productVariant, checkAvailability, product.shopifyId])
-
-  // const handleQuantityChange = ({ target }) => {
-  //   setQuantity(target.value)
-  // }
 
   const handleOptionChange = (optionIndex, { target }) => {
     const { value } = target
@@ -125,19 +120,6 @@ const ProductForm = ({ product }) => {
           <br />
         </React.Fragment>
       ))}
-      {/* <label className="font-bold" htmlFor="quantity">
-        Quantity{' '}
-      </label>
-      <input
-        className="bg-white focus:outline-none focus:shadow-outline block border rounded-lg py-2 px-4 w-20"
-        type="number"
-        id="quantity"
-        name="quantity"
-        min="1"
-        step="1"
-        onChange={handleQuantityChange}
-        value={quantity}
-      /> */}
       <button
         className="bg-blue-700 text-white rounded-lg py-4 px-16 hover:bg-blue-800 uppercase font-bold tracking-wider"
         type="submit"

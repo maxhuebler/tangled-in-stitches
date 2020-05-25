@@ -13,13 +13,13 @@ const Cart = () => {
     window.open(checkout.webUrl)
   }
 
-  const line_items = checkout.lineItems.map(line_item => {
-    return <LineItem key={line_item.id.toString()} line_item={line_item} />
-  })
+  const lineItems = checkout.lineItems.map(item => (
+    <LineItem key={item.id.toString()} item={item} />
+  ))
 
   return (
     <>
-      {line_items}
+      {lineItems}
       {checkout.lineItems.length < 1 ? (
         <div className="flex justify-center h-32 sm:h-64">
           <div className="grid grid-rows-1 text-center items-center px-4">
