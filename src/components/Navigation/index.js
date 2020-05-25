@@ -30,7 +30,7 @@ const Navigation = ({ siteTitle }) => {
         </div>
         <div className="flex justify-end items-center text-center">
           <div className="text-md text-white ">
-            <Link to="/cart">
+            <Link to="/bag">
               <button className="ml-4 bg-black justify-center h-8 w-8 rounded-full">
                 {useQuantity()}
               </button>

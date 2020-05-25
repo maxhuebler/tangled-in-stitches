@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 import StoreContext from '~/context/StoreContext'
 import LineItem from './LineItem'
 
-const Cart = () => {
+const Bag = () => {
   const {
     store: { checkout },
   } = useContext(StoreContext)
@@ -53,4 +53,4 @@ const Cart = () => {
   )
 }
 
-export default Cart
+export default Bag

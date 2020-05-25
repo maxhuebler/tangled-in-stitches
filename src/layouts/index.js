@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
               {children}
               <footer>
                 <h2 className="text-center my-12">
-                  Tangled in Stitches © {new Date().getFullYear()}
+                  {data.site.siteMetadata.title} ©{new Date().getFullYear()}
                 </h2>
               </footer>
             </div>
