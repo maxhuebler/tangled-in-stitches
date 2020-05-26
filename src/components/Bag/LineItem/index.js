@@ -14,7 +14,7 @@ const LineItem = props => {
 
   const variantImage = item.variant.image ? (
     <img
-      className="h-24 sm:h-32"
+      className="h-24 w-auto sm:h-32"
       src={item.variant.image.src}
       alt={`${item.title} product shot`}
     />
@@ -54,7 +54,7 @@ const LineItem = props => {
       </div>
       <div className="flex items-center">
         <input
-          className="bg-white focus:outline-none focus:shadow-outline block border rounded-lg py-2 px-4 w-20 mr-8"
+          className="bg-white focus:outline-none focus:shadow-outline block border rounded-lg py-2 px-4 w-20 mr-2 sm:mr-6"
           type="number"
           id="quantity"
           name="quantity"
@@ -63,12 +63,15 @@ const LineItem = props => {
           onChange={handleQuantityChange}
           value={quantity}
         />
-        <button
-          className="bg-blue-700 text-white rounded-lg px-3 py-1 sm:px-4 sm:py-2 hover:bg-blue-800"
+        <svg
+          className="cursor-pointer"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          height="24"
           onClick={handleRemove}
         >
-          Remove
-        </button>
+          <path d="M8 6V4c0-1.1.9-2 2-2h4a2 2 0 0 1 2 2v2h5a1 1 0 0 1 0 2h-1v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8H3a1 1 0 1 1 0-2h5zM6 8v12h12V8H6zm8-2V4h-4v2h4zm-4 4a1 1 0 0 1 1 1v6a1 1 0 0 1-2 0v-6a1 1 0 0 1 1-1zm4 0a1 1 0 0 1 1 1v6a1 1 0 0 1-2 0v-6a1 1 0 0 1 1-1z" />
+        </svg>
       </div>
     </div>
   )
