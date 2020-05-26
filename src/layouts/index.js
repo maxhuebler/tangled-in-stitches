@@ -25,9 +25,9 @@ const Layout = ({ children }) => {
             <div className="mx-auto max-w-7xl">
               {children}
               <footer>
-                <div class="bg-gray-100 rounded-t-lg pt-20 pb-8 px-32 mt-12">
-                  <div className="grid grid-cols-3">
-                    <div className="col-span-1">
+                <div class="bg-gray-100 sm:rounded-t-xl pt-12 sm:pt-20 pb-8 px-6 sm:px-8 sm:px-32 mt-16">
+                  <div className="grid grid-flow-row sm:grid-cols-3 gap-8">
+                    <div className="row-span-1 sm:col-span-1">
                       <h1 className="text-xl font-bold">Customer Support</h1>
                       <ul className="mt-4 text-gray-600">
                         <li className="hover:text-black">
@@ -38,7 +38,7 @@ const Layout = ({ children }) => {
                         <li className="hover:text-black">Terms of Service</li>
                       </ul>
                     </div>
-                    <div className="col-span-1">
+                    <div className="row-span-1 sm:col-span-1">
                       <h1 className="text-xl font-bold">
                         Shop our collections
                       </h1>
@@ -49,11 +49,11 @@ const Layout = ({ children }) => {
                         <li className="hover:text-black">Pocket T-shirts</li>
                       </ul>
                     </div>
-                    <div className="col-span-1 mr-4">
-                      <h1 className="text-2xl font-bold text-right">
+                    <div className="row-span-1 sm:col-span-1 sm:mr-4">
+                      <h1 className="text-xl sm:text-2xl font-bold text-left sm:text-right">
                         orders@tangledinstitches.com
                       </h1>
-                      <ul className="mt-4 text-right text-gray-600">
+                      <ul className="mt-4 sm:text-right text-gray-600">
                         <li className="hover:text-black">Instagram</li>
                         <li className="hover:text-black">Twitter</li>
                         <li className="hover:text-black">Facebook</li>
