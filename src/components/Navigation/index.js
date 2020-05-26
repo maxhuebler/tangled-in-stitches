@@ -4,7 +4,6 @@ import reduce from 'lodash/reduce'
 import PropTypes from 'prop-types'
 
 import StoreContext from '~/context/StoreContext'
-import Logo from '~/images/logo.png'
 
 const useQuantity = () => {
   const {
@@ -19,18 +18,16 @@ const Navigation = ({ siteTitle }) => {
   return (
     <header>
       <nav className="flex text-center items-center justify-between py-8 max-w-7xl sm:py-12 sm:mx-auto">
-        <div className="hidden lg:flex"></div>
+        <div className="hidden lg:flex w-24"></div>
         <div className="text-white ml-4 lg:ml-0">
           <Link to="/">
-            <img
-              className="w-64 sm:w-full sm:flex"
-              src={Logo}
-              alt={siteTitle}
-            ></img>
+            <span className="font-display text-5xl sm:text-7xl text-black leading-none">
+              {siteTitle}
+            </span>
           </Link>
         </div>
         <div className="flex justify-end">
-          <div className="text-md text-black mr-6">
+          <div className="text-md text-black mr-2 sm:mr-6">
             <Link to="/bag">
               <svg
                 className="fill-current inline-block h-8 w-8"

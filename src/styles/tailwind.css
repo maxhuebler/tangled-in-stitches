@@ -3,3 +3,8 @@
 /* purgecss end ignore */
 
 @tailwind utilities;
+
+@font-face {
+  font-family: 'Children of the Starlight';
+  src: url(ChildrenoftheStarlight.ttf);
+}
