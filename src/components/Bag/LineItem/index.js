@@ -62,6 +62,7 @@ const LineItem = props => {
           step="1"
           onChange={handleQuantityChange}
           value={quantity}
+          aria-label="input"
         />
         <svg
           className="cursor-pointer"
