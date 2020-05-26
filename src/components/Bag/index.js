@@ -18,7 +18,7 @@ const Bag = () => {
   ))
 
   return (
-    <div className="h-screen">
+    <div className="sm:h-screen">
       {lineItems}
       {checkout.lineItems.length < 1 ? (
         <div className="flex justify-center h-32 sm:h-64">
