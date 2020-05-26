@@ -100,23 +100,22 @@ const ProductForm = ({ product }) => {
           <label className="font-bold" htmlFor={name}>
             {name}
           </label>
-          <options
-            className="flex bg-white rounded-lg mt-2"
+          <select
+            className="flex bg-gray-200 mt-2 px-4 py-2 rounded-lg"
             name={name}
             key={id}
             onBlur={event => handleOptionChange(index, event)}
           >
             {values.map(value => (
-              <button
-                className="px-4 py-2 mr-4 rounded-lg border-solid border border-gray-500 hover:border-black focus:border-black"
+              <option
                 value={value}
                 key={`${name}-${value}`}
                 disabled={checkDisabled(name, value)}
               >
                 {value}
-              </button>
+              </option>
             ))}
-          </options>
+          </select>
           <br />
         </React.Fragment>
       ))}
@@ -129,9 +128,9 @@ const ProductForm = ({ product }) => {
         Add to bag
       </button>
       {added ? (
-        <p className="mt-4 text-md">
+        <div className="mt-4 text-md">
           <h3 className="text-green-500">{product.title} added to your bag.</h3>
-        </p>
+        </div>
       ) : null}
       {!available && <p>This Product is out of Stock!</p>}
     </>
