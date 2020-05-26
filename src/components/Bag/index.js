@@ -18,7 +18,7 @@ const Bag = () => {
   ))
 
   return (
-    <>
+    <div className="h-screen">
       {lineItems}
       {checkout.lineItems.length < 1 ? (
         <div className="flex justify-center h-32 sm:h-64">
@@ -49,7 +49,7 @@ const Bag = () => {
           </button>
         </div>
       )}
-    </>
+    </div>
   )
 }
 

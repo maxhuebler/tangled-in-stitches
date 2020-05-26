@@ -10,7 +10,7 @@ const ProductPage = ({ data }) => {
   return (
     <>
       <SEO title={product.title} description={product.description} />
-      <div>
+      <div className="h-screen">
         <div className="grid grid-cols-1 sm:grid-cols-2 items-center">
           <div className="hidden sm:flex px-0 sm:px-8">
             <ImageGallery

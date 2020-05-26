@@ -48,7 +48,7 @@ const ProductGrid = () => {
 
   return (
     <div>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 mt-8 mx-4 sm:mx-12">
+      <div className="h-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 mt-8 mx-4 sm:mx-12">
         {allShopifyProduct.edges ? (
           allShopifyProduct.edges.map(
             ({
@@ -73,8 +73,9 @@ const ProductGrid = () => {
                 <h1 className="text-lg text-center sm:text-left font-bold">
                   {title}
                 </h1>
-                <h2 className="text-center sm:text-left">
-                  {getPrice(firstVariant.price)}
+                <h2 className="text-center sm:text-left text-gray-700">
+                  {getPrice(firstVariant.price)}{' '}
+                  <span className="font-bold text-xs">USD</span>
                 </h2>
               </div>
             )
