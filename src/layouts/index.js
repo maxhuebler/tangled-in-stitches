@@ -43,13 +43,13 @@ const Layout = ({ children }) => {
                         Shop Our Collections
                       </h1>
                       <ul className="mt-4 text-gray-600">
-                        <li className="hover:text-black">T-shirts</li>
-                        <li className="hover:text-black">Long sleeve</li>
-                        <li className="hover:text-black">Sweaters</li>
-                        <li className="hover:text-black">Pocket T-shirts</li>
+                        <li className="hover:text-black">T-Shirts</li>
+                        <li className="hover:text-black">Long Sleeve Shirts</li>
+                        <li className="hover:text-black">Stickers</li>
+                        <li className="hover:text-black">Pocket T-Shirts</li>
                       </ul>
                     </div>
-                    <div className="row-span-1 sm:col-span-1 sm:mr-4">
+                    <div className="row-span-1 sm:col-span-1">
                       <h1 className="text-xl sm:text-2xl font-bold text-left sm:text-right">
                         orders@tangledinstitches.com
                       </h1>
