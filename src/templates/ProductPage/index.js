@@ -10,15 +10,15 @@ const ProductPage = ({ data }) => {
   return (
     <>
       <SEO title={product.title} description={product.description} />
-      <div className="sm:h-screen">
+      <div>
         <div className="grid grid-cols-1 sm:grid-cols-2 items-center">
           <div className="hidden sm:flex px-0 sm:px-8">
             <ImageGallery
               items={product.images.map(image => ({
-                original: `https://tangled-in-stitches-git-develop.maxhuebler.now.sh${image.localFile.childImageSharp.fluid.src}`,
+                original: `${process.env.IMAGE_URL}${image.localFile.childImageSharp.fluid.src}`,
                 originalTitle: product.title,
                 originalAlt: image.id,
-                thumbnail: `https://tangled-in-stitches-git-develop.maxhuebler.now.sh${image.localFile.childImageSharp.fixed.src}`,
+                thumbnail: `${process.env.IMAGE_URL}${image.localFile.childImageSharp.fluid.src}`,
               }))}
               showBullets={true}
               showNav={false}
@@ -32,10 +32,10 @@ const ProductPage = ({ data }) => {
           <div className="visibile sm:hidden px-0 sm:px-8">
             <ImageGallery
               items={product.images.map(image => ({
-                original: `https://tangled-in-stitches-git-develop.maxhuebler.now.sh${image.localFile.childImageSharp.fluid.src}`,
+                original: `${process.env.IMAGE_URL}${image.localFile.childImageSharp.fluid.src}`,
                 originalTitle: product.title,
                 originalAlt: image.id,
-                thumbnail: `https://tangled-in-stitches-git-develop.maxhuebler.now.sh${image.localFile.childImageSharp.fixed.src}`,
+                thumbnail: `${process.env.IMAGE_URL}${image.localFile.childImageSharp.fluid.src}`,
               }))}
               showBullets={true}
               showNav={false}
@@ -103,9 +103,6 @@ export const query = graphql`
           childImageSharp {
             fluid(maxWidth: 526) {
               ...GatsbyImageSharpFluid
-            }
-            fixed(width: 92) {
-              ...GatsbyImageSharpFixed
             }
           }
         }

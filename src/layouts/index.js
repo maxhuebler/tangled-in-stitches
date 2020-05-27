@@ -5,6 +5,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import ContextProvider from '~/provider/ContextProvider'
 
 import Navigation from '~/components/Navigation'
+import Footer from '~/components/Footer'
 
 const Layout = ({ children }) => {
   return (
@@ -24,49 +25,23 @@ const Layout = ({ children }) => {
             <Navigation siteTitle={data.site.siteMetadata.title} />
             <div className="mx-auto max-w-7xl">
               {children}
-              <footer>
-                <div class="bg-gray-100 sm:rounded-t-xl pt-12 sm:pt-20 pb-8 px-6 sm:px-8 sm:px-32 mt-8">
-                  <div className="grid grid-flow-row sm:grid-cols-3 gap-8">
-                    <div className="row-span-1 sm:col-span-1">
-                      <h1 className="text-xl font-bold">Customer Support</h1>
-                      <ul className="mt-4 text-gray-600">
-                        <li className="hover:text-black">
-                          Returns & Exchanges
-                        </li>
-                        <li className="hover:text-black">FAQs</li>
-                        <li className="hover:text-black">Privacy Policy</li>
-                        <li className="hover:text-black">Terms of Service</li>
-                      </ul>
-                    </div>
-                    <div className="row-span-1 sm:col-span-1">
-                      <h1 className="text-xl font-bold">
-                        Shop Our Collections
-                      </h1>
-                      <ul className="mt-4 text-gray-600">
-                        <li className="hover:text-black">T-Shirts</li>
-                        <li className="hover:text-black">Long Sleeve Shirts</li>
-                        <li className="hover:text-black">Stickers</li>
-                        <li className="hover:text-black">Pocket T-Shirts</li>
-                      </ul>
-                    </div>
-                    <div className="row-span-1 sm:col-span-1">
-                      <h1 className="text-xl sm:text-2xl font-bold text-left sm:text-right">
-                        orders@tangledinstitches.com
-                      </h1>
-                      <ul className="mt-4 sm:text-right text-gray-600">
-                        <li className="hover:text-black">Instagram</li>
-                        <li className="hover:text-black">Twitter</li>
-                        <li className="hover:text-black">Facebook</li>
-                        <li className="hover:text-black">TikTok</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <h2 className="text-center mt-10 text-gray-600 text-sm">
-                    Copyright © {new Date().getFullYear()}{' '}
-                    {data.site.siteMetadata.title}
+              <div
+                className="bg-gray-100 flex flex-col max-w-7xl mx-auto py-20 mt-8 sm:mt-8 sm:rounded-xl cursor-pointer"
+                style={{
+                  backgroundImage:
+                    'linear-gradient(40deg, rgba(174,92,255,1) 0%, rgba(43,108,176,1) 100%)',
+                }}
+              >
+                <div className="text-center items-center sm:text-left sm:ml-16">
+                  <h1 className="text-4xl text-white font-bold leading-none">
+                    Check out all our Collections
+                  </h1>
+                  <h2 className="text-xl text-white uppercase tracking-widest mt-4 sm:mt-0">
+                    New styles every week
                   </h2>
                 </div>
-              </footer>
+              </div>
+              <Footer siteTitle={data.site.siteMetadata.title} />
             </div>
           </>
         )}
