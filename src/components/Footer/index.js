@@ -46,7 +46,7 @@ export default function Footer({ siteTitle }) {
             <ul className="mt-4 sm:text-right text-gray-600">
               <li className="hover:text-black">
                 <a
-                  href="https://instagram.com/tangledinstitches"
+                  href="https://www.instagram.com/tangledinstitches/"
                   target="_blank"
                   rel="noreferrer"
                 >
