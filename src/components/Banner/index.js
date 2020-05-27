@@ -8,7 +8,7 @@ export default function Banner() {
         className="bg-gray-100 flex flex-col max-w-7xl mx-auto py-20 mt-8 sm:mt-8 sm:rounded-xl"
         style={{
           backgroundImage:
-            'linear-gradient(200deg, rgba(174,92,255,1) 0%, rgba(43,108,176,1) 100%)',
+            'linear-gradient(200deg, rgba(222,188,255,1) 0%, rgba(169,211,255,1) 100%)',
         }}
       >
         <div className="text-center items-center sm:text-left sm:ml-16">

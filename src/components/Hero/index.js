@@ -7,7 +7,7 @@ export default function Hero() {
         className="flex flex-col mx-auto py-24 sm:py-32 xl:rounded-xl max-w-7xl"
         style={{
           backgroundImage:
-            'linear-gradient(40deg, rgba(174,92,255,1) 0%, rgba(43,108,176,1) 100%)',
+            'linear-gradient(40deg, rgba(222,188,255,1) 0%, rgba(169,211,255,1) 100%)',
         }}
       >
         <div className="text-center text-white">
