@@ -15,10 +15,10 @@ const ProductPage = ({ data }) => {
           <div className="hidden sm:flex px-0 sm:px-8">
             <ImageGallery
               items={product.images.map(image => ({
-                original: `${process.env.IMAGE_URL}${image.localFile.childImageSharp.fluid.src}`,
+                original: `https://tangled-in-stitches-git-develop.maxhuebler.now.sh${image.localFile.childImageSharp.fluid.src}`,
                 originalTitle: product.title,
                 originalAlt: image.id,
-                thumbnail: `${process.env.IMAGE_URL}${image.localFile.childImageSharp.fluid.src}`,
+                thumbnail: `https://tangled-in-stitches-git-develop.maxhuebler.now.sh${image.localFile.childImageSharp.fluid.src}`,
               }))}
               showBullets={true}
               showNav={false}
@@ -32,10 +32,10 @@ const ProductPage = ({ data }) => {
           <div className="visibile sm:hidden px-0 sm:px-8">
             <ImageGallery
               items={product.images.map(image => ({
-                original: `${process.env.IMAGE_URL}${image.localFile.childImageSharp.fluid.src}`,
+                original: `https://tangled-in-stitches-git-develop.maxhuebler.now.sh${image.localFile.childImageSharp.fluid.src}`,
                 originalTitle: product.title,
                 originalAlt: image.id,
-                thumbnail: `${process.env.IMAGE_URL}${image.localFile.childImageSharp.fluid.src}`,
+                thumbnail: `https://tangled-in-stitches-git-develop.maxhuebler.now.sh${image.localFile.childImageSharp.fluid.src}`,
               }))}
               showBullets={true}
               showNav={false}
