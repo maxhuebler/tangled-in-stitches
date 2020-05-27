@@ -6,5 +6,6 @@
 
 @font-face {
   font-family: 'Children of the Starlight';
+  font-display: swap;
   src: url(ChildrenoftheStarlight.ttf);
 }

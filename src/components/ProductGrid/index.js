@@ -11,7 +11,10 @@ const ProductGrid = () => {
   const { allShopifyProduct } = useStaticQuery(
     graphql`
       query {
-        allShopifyProduct(sort: { fields: [createdAt], order: ASC }) {
+        allShopifyProduct(
+          limit: 20
+          sort: { fields: [createdAt], order: ASC }
+        ) {
           edges {
             node {
               id
