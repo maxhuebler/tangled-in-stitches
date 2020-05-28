@@ -48,7 +48,6 @@ module.exports = {
         shopName: 'graphql',
         accessToken: 'dd4d4dc146542ba7763305d71d1b3d38',
         verbose: true,
-        apiVersion: '2020-04',
       },
     },
     {
