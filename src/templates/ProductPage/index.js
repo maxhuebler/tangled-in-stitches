@@ -3,6 +3,7 @@ import { graphql } from 'gatsby'
 
 import SEO from '~/components/seo'
 import ProductForm from '~/components/ProductForm'
+import New from '~/components/New'
 import ImageGallery from 'react-image-gallery'
 
 const ProductPage = ({ data }) => {
@@ -27,6 +28,7 @@ const ProductPage = ({ data }) => {
               showThumbnails={true}
               slideDuration={350}
               thumbnailPosition={'left'}
+              lazyLoad={true}
             />
           </div>
           <div className="visibile sm:hidden px-0 sm:px-8">
@@ -43,6 +45,7 @@ const ProductPage = ({ data }) => {
               showFullscreenButton={false}
               showThumbnails={false}
               slideDuration={350}
+              lazyLoad={true}
             />
           </div>
           <div className="px-8 sm:px-2 mt-8 sm:mt-0">
@@ -54,6 +57,9 @@ const ProductPage = ({ data }) => {
               dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
             />
           </div>
+        </div>
+        <div className="mt-12 sm:mt-24">
+          <New message={`You may also like`} />
         </div>
       </div>
     </>

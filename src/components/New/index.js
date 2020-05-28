@@ -4,7 +4,7 @@ import { useStaticQuery, graphql, Link } from 'gatsby'
 import StoreContext from '~/context/StoreContext'
 import Image from 'gatsby-image'
 
-export default function New() {
+export default function New({ message }) {
   const {
     store: { checkout },
   } = useContext(StoreContext)
@@ -47,11 +47,11 @@ export default function New() {
     }).format(parseFloat(price ? price : 0))
 
   return (
-    <div>
+    <>
       <h1 className="text-2xl sm:text-4xl font-bold tracking-wide mt-8 ml-4">
-        What's hot
+        {message}
       </h1>
-      <div className="h-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 mt-8 mx-4 sm:mx-12">
+      <div className="h-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6 mt-8 mx-4 sm:mx-12">
         {allShopifyProduct.edges ? (
           allShopifyProduct.edges.map(
             ({
@@ -67,7 +67,7 @@ export default function New() {
                 <Link to={`/product/${handle}/`}>
                   {firstImage && firstImage.localFile && (
                     <Image
-                      className="max-w-full mb-6 rounded-lg"
+                      className="max-w-full mb-6 rounded-lg hover:opacity-75"
                       fluid={firstImage.localFile.childImageSharp.fluid}
                       alt={handle}
                     />
@@ -87,6 +87,6 @@ export default function New() {
           <p>No Products found!</p>
         )}
       </div>
-    </div>
+    </>
   )
 }

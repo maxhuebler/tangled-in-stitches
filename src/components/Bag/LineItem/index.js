@@ -55,7 +55,7 @@ const LineItem = props => {
         </div>
         <div className="flex items-center">
           <p className="hidden sm:flex mr-4">
-            ${item.variant.price * quantity}
+            ${item.variant.price * quantity}.00
           </p>
           <input
             className="bg-white focus:outline-none focus:shadow-outline block border rounded-lg py-2 px-4 w-20 mr-2 sm:mr-6"

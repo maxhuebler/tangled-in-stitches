@@ -1,7 +1,7 @@
 import React from 'react'
 
 import SEO from '~/components/seo'
-import ProductGrid from '~/components/ProductGrid'
+// import ProductGrid from '~/components/ProductGrid'
 import Hero from '~/components/Hero'
 import Collections from '~/components/Collections'
 import New from '~/components/New'
@@ -13,7 +13,7 @@ const IndexPage = () => (
       keywords={[`tangled in stitches`, `home`, `shop`, `clothing`, `disney`]}
     />
     <Hero />
-    <New />
+    <New message={`What's hot`} />
     <Collections />
     {/* <ProductGrid /> */}
   </>
