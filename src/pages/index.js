@@ -2,8 +2,10 @@ import React from 'react'
 
 import SEO from '~/components/seo'
 import Hero from '~/components/Hero'
-import Collections from '~/components/Collections'
 import New from '~/components/New'
+
+import CollectionsList from '../components/CollectionsList'
+import CollectionsGrid from '../components/CollectionsGrid'
 
 const IndexPage = () => (
   <>
@@ -13,7 +15,16 @@ const IndexPage = () => (
     />
     <Hero />
     <New message={`What's Trending`} />
-    <Collections />
+    <div className="grid grid-cols-1 sm:grid-cols-5 mt-0 sm:mt-12 sm:mx-4">
+      <div className="hidden lg:block col-span-1 mr-6">
+        <CollectionsList />
+      </div>
+      <div className="col-span-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 mt-8 gap-4 sm:gap-6 items-center">
+          <CollectionsGrid />
+        </div>
+      </div>
+    </div>
   </>
 )
 
