@@ -40,7 +40,12 @@ export default function Footer({ siteTitle }) {
             </ul>
           </div>
           <div className="row-span-1 sm:col-span-1">
-            <h1 className="text-xl font-bold">orders@tangledinstitches.com</h1>
+            <a
+              className="text-xl font-bold"
+              href="mailto:orders@tangledinstitches.com"
+            >
+              orders@tangledinstitches.com
+            </a>
             <ul className="mt-4 text-gray-600">
               <li className="hover:text-black">
                 <a

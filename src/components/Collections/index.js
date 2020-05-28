@@ -21,11 +21,11 @@ export default function Collections() {
         <div className="hidden lg:block col-span-1 mr-6">
           {allShopifyCollection.edges
             ? allShopifyCollection.edges.map(({ node: { title } }) => (
-                <div
-                  key={title.toString()}
-                  className="mt-2 py-6 text-left text-gray-700 font-bold uppercase text-black tracking-widest slide-in-bottom border-b"
-                >
-                  <a className="hover:underline" href="/">
+                <div key={title.toString()} className="mt-2 py-6 border-b">
+                  <a
+                    className="text-gray-700 font-bold uppercase tracking-widest hover:underline hover:text-black"
+                    href="/"
+                  >
                     {title}
                   </a>
                 </div>

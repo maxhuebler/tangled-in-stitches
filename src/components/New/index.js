@@ -48,7 +48,7 @@ export default function New({ message }) {
 
   return (
     <>
-      <h1 className="text-2xl sm:text-4xl font-bold mt-8 mx-3">{message}</h1>
+      <h1 className="text-2xl sm:text-4xl font-bold mt-6 mx-3">{message}</h1>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6 mt-3 mx-3">
         {allShopifyProduct.edges ? (
           allShopifyProduct.edges.map(
