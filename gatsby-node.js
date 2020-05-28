@@ -4,7 +4,14 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
   return graphql(`
     {
-      allShopifyProduct {
+      products: allShopifyProduct {
+        edges {
+          node {
+            handle
+          }
+        }
+      }
+      collections: allShopifyCollection {
         edges {
           node {
             handle
@@ -13,10 +20,19 @@ exports.createPages = ({ graphql, actions }) => {
       }
     }
   `).then(result => {
-    result.data.allShopifyProduct.edges.forEach(({ node }) => {
+    result.data.products.edges.forEach(({ node }) => {
       createPage({
         path: `/product/${node.handle}/`,
         component: path.resolve(`./src/templates/ProductPage/index.js`),
+        context: {
+          handle: node.handle,
+        },
+      })
+    })
+    result.data.collections.edges.forEach(({ node }) => {
+      createPage({
+        path: `/collection/${node.handle}/`,
+        component: path.resolve(`./src/templates/CollectionPage/index.js`),
         context: {
           handle: node.handle,
         },

@@ -1,0 +1,114 @@
+import React, { useContext } from 'react'
+import { graphql, Link } from 'gatsby'
+
+import StoreContext from '~/context/StoreContext'
+import Image from 'gatsby-image'
+import SEO from '~/components/seo'
+
+const CollectionPage = ({ data }) => {
+  const collection = data.shopifyCollection
+  const {
+    store: { checkout },
+  } = useContext(StoreContext)
+
+  const getPrice = price =>
+    Intl.NumberFormat(undefined, {
+      currency: checkout.currencyCode ? checkout.currencyCode : 'USD',
+      minimumFractionDigits: 2,
+      style: 'currency',
+    }).format(parseFloat(price ? price : 0))
+
+  return (
+    <>
+      <SEO title={collection.title} description={collection.description} />
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 mt-8 mx-4 sm:mx-4">
+        {collection.products ? (
+          collection.products.map(
+            ({
+              id,
+              handle,
+              title,
+              images: [firstImage],
+              variants: [firstVariant],
+            }) => (
+              <div className="flex flex-col min-h-full" key={id}>
+                <Link to={`/product/${handle}/`}>
+                  {firstImage && firstImage.localFile && (
+                    <Image
+                      className="max-w-full mb-6 rounded-lg"
+                      fluid={firstImage.localFile.childImageSharp.fluid}
+                      alt={handle}
+                    />
+                  )}
+                </Link>
+                <h1 className="text-lg text-center sm:text-left font-bold">
+                  {title}
+                </h1>
+                <h2 className="text-center sm:text-left text-gray-700">
+                  {getPrice(firstVariant.price)}{' '}
+                  <span className="font-bold text-xs">USD</span>
+                </h2>
+              </div>
+            )
+          )
+        ) : (
+          <p className="text-center">No Products found!</p>
+        )}
+      </div>
+    </>
+  )
+}
+
+export const query = graphql`
+  query($handle: String!) {
+    shopifyCollection(handle: { eq: $handle }) {
+      id
+      handle
+      title
+      description
+      products {
+        id
+        handle
+        title
+        images {
+          id
+          originalSrc
+          localFile {
+            childImageSharp {
+              fluid(maxWidth: 302) {
+                ...GatsbyImageSharpFluid_withWebp_tracedSVG
+              }
+            }
+          }
+        }
+        variants {
+          title
+          price
+          id
+          availableForSale
+          shopifyId
+          selectedOptions {
+            name
+            value
+          }
+        }
+        priceRange {
+          maxVariantPrice {
+            currencyCode
+            amount
+          }
+          minVariantPrice {
+            amount
+            currencyCode
+          }
+        }
+        options {
+          id
+          name
+          values
+        }
+      }
+    }
+  }
+`
+export default CollectionPage
