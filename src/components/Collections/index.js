@@ -21,7 +21,10 @@ export default function Collections() {
         <div className="hidden lg:block col-span-1 mr-6">
           {allShopifyCollection.edges
             ? allShopifyCollection.edges.map(({ node: { title } }) => (
-                <div className="mt-2 py-6 text-left text-gray-700 font-bold uppercase text-black tracking-widest slide-in-bottom border-b">
+                <div
+                  key={title.toString()}
+                  className="mt-2 py-6 text-left text-gray-700 font-bold uppercase text-black tracking-widest slide-in-bottom border-b"
+                >
                   <a className="hover:underline" href="/">
                     {title}
                   </a>
@@ -34,6 +37,7 @@ export default function Collections() {
             {allShopifyCollection.edges
               ? allShopifyCollection.edges.map(({ node: { title } }) => (
                   <div
+                    key={title.toString()}
                     className="bg-purple-200 mx-4 sm:mx-0 py-32 px-8 sm:py-56 sm:px-20 text-center rounded-lg font-bold text-3xl uppercase text-white tracking-widest hover:opacity-75 cursor-pointer"
                     style={{
                       backgroundImage: `linear-gradient(${Math.random() *

@@ -32,7 +32,7 @@ export default function Footer({ siteTitle }) {
             <ul className="mt-4 text-gray-600">
               {allShopifyCollection.edges
                 ? allShopifyCollection.edges.map(({ node: { title } }) => (
-                    <li className="hover:text-black">
+                    <li key={title.toString()} className="hover:text-black">
                       <a href="/">{title}</a>
                     </li>
                   ))
@@ -44,9 +44,9 @@ export default function Footer({ siteTitle }) {
             <ul className="mt-4 text-gray-600">
               <li className="hover:text-black">
                 <a
-                  href="https://www.instagram.com/tangledinstitches/"
+                  href="https://www.instagram.com/tangledinstitches"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noreferrer noopener"
                 >
                   Instagram
                 </a>
@@ -55,7 +55,7 @@ export default function Footer({ siteTitle }) {
                 <a
                   href="https://www.facebook.com/tangledinstitches"
                   target="_blank"
-                  rel="noreferrer"
+                  rel="noreferrer noopener"
                 >
                   Facebook
                 </a>

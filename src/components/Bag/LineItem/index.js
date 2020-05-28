@@ -22,11 +22,9 @@ const LineItem = props => {
 
   const selectedOptions = item.variant.selectedOptions
     ? item.variant.selectedOptions.map(option => (
-        <div className="grid grid-rows-1 mt-2">
-          <div>
-            <h3 className="mt-2">{option.name}</h3>
-            <h3 className="font-bold">{option.value}</h3>
-          </div>
+        <div key={option.name.toString()} className="grid grid-rows-1 mt-2">
+          <h3 className="mt-2">{option.name}</h3>
+          <h3 className="font-bold">{option.value}</h3>
         </div>
       ))
     : null
@@ -61,7 +59,6 @@ const LineItem = props => {
             className="sm:hidden bg-white focus:outline-none focus:shadow-outline block border rounded-lg py-2 px-4 w-16 mr-2 sm:mr-6"
             type="tel"
             pattern="[0-9]*"
-            id="quantity"
             name="quantity"
             min="1"
             step="1"
@@ -72,7 +69,6 @@ const LineItem = props => {
           <input
             className="hidden sm:flex bg-white focus:outline-none focus:shadow-outline block border rounded-lg py-2 px-4 w-20 mr-2 sm:mr-6"
             type="number"
-            id="quantity"
             name="quantity"
             min="1"
             step="1"
