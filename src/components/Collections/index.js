@@ -17,7 +17,7 @@ export default function Collections() {
   )
   return (
     <>
-      <div className="grid grid-cols-1 sm:grid-cols-5 mt-0 sm:mt-12 sm:mx-3">
+      <div className="grid grid-cols-1 sm:grid-cols-5 mt-0 sm:mt-12 sm:mx-4">
         <div className="hidden lg:block col-span-1 mr-6">
           {allShopifyCollection.edges
             ? allShopifyCollection.edges.map(({ node: { title } }) => (
