@@ -120,7 +120,7 @@ const ProductForm = ({ product }) => {
         </React.Fragment>
       ))}
       <button
-        className="bg-blue-700 text-white rounded-lg py-4 px-16 hover:bg-purple-500 uppercase font-bold tracking-wider"
+        className="bg-blue-300 text-white rounded-lg py-4 px-16 hover:bg-purple-300 uppercase font-bold tracking-wider"
         type="submit"
         disabled={!available || adding}
         onClick={handleAddToCart}

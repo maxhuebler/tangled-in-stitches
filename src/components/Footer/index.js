@@ -17,7 +17,7 @@ export default function Footer({ siteTitle }) {
   )
   return (
     <footer>
-      <div className="bg-gray-100 sm:rounded-t-xl pt-12 sm:pt-20 pb-8 px-6 sm:px-8 sm:px-32 mt-8">
+      <div className="bg-gray-100 sm:rounded-t-xl pt-12 sm:pt-20 pb-8 px-6 sm:px-8 sm:px-32 mt-12">
         <div className="grid grid-flow-row sm:grid-cols-3 gap-8">
           <div className="row-span-1 sm:col-span-1">
             <h1 className="text-xl font-bold">Customer Support</h1>
@@ -53,17 +53,15 @@ export default function Footer({ siteTitle }) {
                   Check out our styles on Instagram
                 </a>
               </li>
-              {/* <li className="hover:text-black">
-                <a href="https://twitter.com/tangledinstitches">Twitter</a>
-              </li>
               <li className="hover:text-black">
-                <a href="https://facebook.com/tangledinstitches">Facebook</a>
-              </li>
-              <li className="hover:text-black">
-                <a href="https://www.tiktok.com/@tangledinstitches?lang=en">
-                  TikTok
+                <a
+                  href="https://www.facebook.com/tangledinstitches"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Facebook
                 </a>
-              </li> */}
+              </li>
             </ul>
           </div>
         </div>

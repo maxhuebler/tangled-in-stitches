@@ -20,8 +20,8 @@ const Bag = () => {
   return (
     <div className="sm:h-screen">
       {checkout.lineItems.length >= 1 ? (
-        <h1 className="text-gray-800 mb-4 ml-4 sm:ml-0 text-xl sm:text-3xl font-bold">
-          Your shopping bag ({checkout.lineItems.length} items) :
+        <h1 className="text-gray-800 mb-4 ml-4 text-xl sm:text-3xl font-bold">
+          Your shopping bag ({checkout.lineItems.length} seperate items) :
         </h1>
       ) : null}
       {lineItems}
@@ -33,8 +33,8 @@ const Bag = () => {
                 Looks like your bag is empty!
               </div>
               <Link to="/">
-                <button className="bg-blue-700 px-6 py-3 mt-4 rounded-lg uppercase text-white hover:bg-purple-500 tracking-widest">
-                  continue shopping
+                <button className="bg-blue-300 rounded-lg text-xl text-white mt-2 py-3 px-4 hover:bg-purple-300 tracking-widest">
+                  Continue Shopping
                 </button>
               </Link>
             </div>
@@ -46,7 +46,7 @@ const Bag = () => {
           <p>$ {checkout.subtotalPrice}</p>
           <p className="mb-4">Taxes and shipping calculated at checkout</p>
           <button
-            className="bg-blue-700 rounded-lg text-white py-2 px-4 hover:bg-purple-500"
+            className="bg-blue-300 rounded-lg text-white py-2 px-4 hover:bg-purple-300"
             onClick={handleCheckout}
             disabled={checkout.lineItems.length === 0}
           >
