@@ -12,7 +12,7 @@ const IndexPage = () => (
       keywords={[`tangled in stitches`, `home`, `shop`, `clothing`, `disney`]}
     />
     <Hero />
-    <New message={`What's trending`} />
+    <New message={`What's Trending`} />
     <Collections />
   </>
 )

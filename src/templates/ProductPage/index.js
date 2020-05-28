@@ -11,7 +11,7 @@ const ProductPage = ({ data }) => {
   return (
     <>
       <SEO title={product.title} description={product.description} />
-      <div className="sm:h-screen">
+      <div>
         <div className="grid grid-cols-1 sm:grid-cols-2 items-center">
           <div className="hidden sm:flex px-0 sm:px-8">
             <ImageGallery
@@ -59,7 +59,7 @@ const ProductPage = ({ data }) => {
           </div>
         </div>
         <div className="mt-12 sm:mt-24">
-          <New message={`You may also like`} />
+          <New message={`You May Also Like`} />
         </div>
       </div>
     </>
