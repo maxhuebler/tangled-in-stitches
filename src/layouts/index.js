@@ -26,7 +26,7 @@ const Layout = ({ children }) => {
             <Navigation siteTitle={data.site.siteMetadata.title} />
             <div className="mx-auto max-w-7xl">
               {children}
-              <Banner />
+              {/* <Banner /> */}
               <Footer siteTitle={data.site.siteMetadata.title} />
             </div>
           </>

@@ -15,7 +15,7 @@ const IndexPage = () => (
     <Hero />
     <New />
     <Collections />
-    <ProductGrid />
+    {/* <ProductGrid /> */}
   </>
 )
 

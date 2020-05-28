@@ -48,7 +48,9 @@ export default function New() {
 
   return (
     <div>
-      <h1 className="text-4xl font-bold tracking-wide mt-8">What's hot</h1>
+      <h1 className="text-4xl font-bold tracking-wide mt-8">
+        What's <span className="italic">hot</span>
+      </h1>
       <div className="h-full grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8 mt-8 mx-4 sm:mx-12">
         {allShopifyProduct.edges ? (
           allShopifyProduct.edges.map(
