@@ -33,7 +33,7 @@ const Bag = () => {
                 Looks like your bag is empty!
               </div>
               <Link to="/">
-                <button className="bg-blue-300 rounded-lg text-xl text-white mt-2 py-3 px-4 hover:bg-purple-300 tracking-widest">
+                <button className="bg-blue-300 text-white rounded-lg py-4 px-16 hover:bg-purple-300 uppercase font-bold tracking-wider mt-4">
                   Continue Shopping
                 </button>
               </Link>
@@ -46,7 +46,7 @@ const Bag = () => {
           <p>$ {checkout.subtotalPrice}</p>
           <p className="mb-4">Taxes and shipping calculated at checkout</p>
           <button
-            className="bg-blue-300 rounded-lg text-white py-2 px-4 hover:bg-purple-300"
+            className="bg-blue-300 text-white rounded-lg py-4 px-16 hover:bg-purple-300 uppercase font-bold tracking-wider"
             onClick={handleCheckout}
             disabled={checkout.lineItems.length === 0}
           >

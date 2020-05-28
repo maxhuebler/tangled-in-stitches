@@ -5,7 +5,7 @@ export default function Collections() {
   const { allShopifyCollection } = useStaticQuery(
     graphql`
       query {
-        allShopifyCollection(limit: 10) {
+        allShopifyCollection(limit: 6, skip: 1) {
           edges {
             node {
               title
@@ -17,11 +17,11 @@ export default function Collections() {
   )
   return (
     <>
-      <div className="grid grid-cols-1 sm:grid-cols-5 mt-0 sm:mt-8">
-        <div className="hidden lg:block col-span-1 mr-8 mt-4">
+      <div className="grid grid-cols-1 sm:grid-cols-5 mt-0 sm:mt-12 sm:mx-3">
+        <div className="hidden lg:block col-span-1 mr-6">
           {allShopifyCollection.edges
             ? allShopifyCollection.edges.map(({ node: { title } }) => (
-                <div className="mt-2 py-6 text-left text-gray-700 font-bold uppercase text-black tracking-widest slide-in-bottom border-b sm:ml-4">
+                <div className="mt-2 py-6 text-left text-gray-700 font-bold uppercase text-black tracking-widest slide-in-bottom border-b">
                   <a className="hover:underline" href="/">
                     {title}
                   </a>
@@ -30,7 +30,7 @@ export default function Collections() {
             : null}
         </div>
         <div className="col-span-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 mt-8 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 mt-8 gap-4 sm:gap-6 items-center">
             {allShopifyCollection.edges
               ? allShopifyCollection.edges.map(({ node: { title } }) => (
                   <div
