@@ -4,10 +4,10 @@ import { graphql, Link } from 'gatsby'
 import StoreContext from '~/context/StoreContext'
 import Image from 'gatsby-image'
 import SEO from '~/components/seo'
+import CollectionsList from '~/components/CollectionsList'
 
 const CollectionPage = ({ data }) => {
   const collection = data.collection
-  const collections = data.collections
   const {
     store: { checkout },
   } = useContext(StoreContext)
@@ -22,21 +22,14 @@ const CollectionPage = ({ data }) => {
   return (
     <>
       <SEO title={collection.title} description={collection.description} />
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 mt-8 mx-4 sm:mx-4">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 mx-4 sm:mx-4">
         <div className="hidden lg:block col-span-1 mr-6">
-          {collections.edges
-            ? collections.edges.map(({ node: { title, handle } }) => (
-                <div key={title.toString()} className="mt-2 py-6 border-b">
-                  <Link to={`/collection/${handle}`}>
-                    <div className="text-gray-700 font-bold uppercase tracking-widest hover:underline hover:text-black">
-                      {title}
-                    </div>
-                  </Link>
-                </div>
-              ))
-            : null}
+          <CollectionsList />
         </div>
         <div className="col-span-4">
+          <h1 className="hidden sm:flex text-2xl font-bold tracking-widest ml-4 mt-3 py-4 uppercase border-b">
+            {collection.title}
+          </h1>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 mt-8 mx-4 sm:mx-4">
             {collection.products ? (
               collection.products.map(
@@ -124,14 +117,6 @@ export const query = graphql`
           id
           name
           values
-        }
-      }
-    }
-    collections: allShopifyCollection(limit: 8) {
-      edges {
-        node {
-          title
-          handle
         }
       }
     }

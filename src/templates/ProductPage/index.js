@@ -13,7 +13,7 @@ const ProductPage = ({ data }) => {
       <SEO title={product.title} description={product.description} />
       <div>
         <div className="grid grid-cols-1 sm:grid-cols-2 items-center">
-          <div className="hidden sm:flex px-0 sm:px-8">
+          <div className="hidden sm:flex px-0 sm:px-8 md:px-0">
             <ImageGallery
               items={product.images.map(image => ({
                 original: `https://tangled-in-stitches-git-develop.maxhuebler.now.sh${image.localFile.childImageSharp.fluid.src}`,

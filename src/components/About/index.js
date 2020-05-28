@@ -19,7 +19,9 @@ export default function About() {
       <Hero />
       <div className="mt-12 mx-4">
         <h1 className="font-bold text-4xl">{about.title}</h1>
-        <p className="text-xl text-justify tracking-wider">{about.subtitle}</p>
+        <p className="text-xl sm:text-justify tracking-wider">
+          {about.subtitle}
+        </p>
       </div>
     </div>
   )
