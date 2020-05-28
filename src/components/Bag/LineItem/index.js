@@ -58,7 +58,7 @@ const LineItem = props => {
             ${item.variant.price * quantity}.00
           </p>
           <input
-            className="sm:hidden bg-white focus:outline-none focus:shadow-outline block border rounded-lg py-2 px-4 w-20 mr-2 sm:mr-6"
+            className="sm:hidden bg-white focus:outline-none focus:shadow-outline block border rounded-lg py-2 px-4 w-12 mr-2 sm:mr-6"
             type="tel"
             pattern="[0-9]*"
             id="quantity"

@@ -21,7 +21,7 @@ const Bag = () => {
     <div className="sm:h-screen">
       {checkout.lineItems.length >= 1 ? (
         <h1 className="text-gray-800 mb-4 ml-4 text-xl sm:text-3xl font-bold">
-          Your shopping bag ({checkout.lineItems.length} seperate items) :
+          Your shopping bag:
         </h1>
       ) : null}
       {lineItems}

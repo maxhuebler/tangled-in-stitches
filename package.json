@@ -1,7 +1,7 @@
 {
   "name": "tangled-in-stitches",
   "private": true,
-  "author": "Max Huebler <max@huebler.us>",
+  "author": "Max Huebler",
   "dependencies": {
     "gatsby": "^2.19.5",
     "gatsby-image": "^2.2.29",
