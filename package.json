@@ -12,6 +12,7 @@
     "gatsby-plugin-root-import": "^2.0.5",
     "gatsby-plugin-sharp": "^2.4.0",
     "gatsby-plugin-webfonts": "^1.1.2",
+    "gatsby-source-datocms": "^2.2.4",
     "gatsby-source-filesystem": "^2.1.33",
     "gatsby-source-shopify": "^3.0.24",
     "gatsby-transformer-sharp": "^2.3.0",

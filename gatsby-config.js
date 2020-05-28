@@ -51,6 +51,14 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-datocms`,
+      options: {
+        apiToken: `f14850eb7583ec505dae39fda22a64`,
+        preview: false,
+        disableLiveReload: false,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-root-import',
       options: {
         '~': path.join(__dirname, 'src/'),
