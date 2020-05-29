@@ -29,8 +29,8 @@ const CollectionPage = ({ data }) => {
           <CollectionsList />
         </div>
         <div className="col-span-4">
-          <h1 className="hidden sm:flex text-2xl font-bold tracking-widest ml-4 mt-3 py-4 uppercase border-b">
-            {collection.title}
+          <h1 className="hidden sm:flex text-2xl font-bold tracking-widest ml-4 mt-3 py-4 uppercase border-b items-center text-center">
+            {collection.title} ({collection.products.length} items)
           </h1>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 mt-8 mx-4 sm:mx-4">
             {collection.products ? (

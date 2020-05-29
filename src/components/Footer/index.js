@@ -32,7 +32,7 @@ export default function Footer({ siteTitle }) {
             </ul>
           </div>
           <div className="row-span-1 sm:col-span-1">
-            <h1 className="text-xl font-bold">Shop Our Collections</h1>
+            <h1 className="text-xl font-bold">Shop our Collections</h1>
             <ul className="mt-4 text-gray-600">
               {allShopifyCollection.edges
                 ? allShopifyCollection.edges.map(
