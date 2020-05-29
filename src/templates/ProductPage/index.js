@@ -13,13 +13,14 @@ const ProductPage = ({ data }) => {
       <SEO title={product.title} description={product.description} />
       <div>
         <div className="grid grid-cols-1 sm:grid-cols-2 items-center">
-          <div className="hidden sm:flex px-0 sm:px-8 md:px-0">
+          <div className="hidden sm:flex px-0 sm:px-8 md:px-0 mr-4">
             <ImageGallery
               items={product.images.map((image) => ({
-                original: `https://tangled-in-stitches-git-develop.maxhuebler.now.sh${image.localFile.childImageSharp.fluid}`,
+                original: `https://tangled-in-stitches-git-develop.maxhuebler.now.sh${image.localFile.childImageSharp.fluid.src}`,
                 originalTitle: product.title,
                 originalAlt: image.id,
-                thumbnail: `https://tangled-in-stitches-git-develop.maxhuebler.now.sh${image.localFile.childImageSharp.fluid}`,
+                thumbnail: `https://tangled-in-stitches-git-develop.maxhuebler.now.sh${image.localFile.childImageSharp.fluid.src}`,
+                thumbnailAlt: image.id,
               }))}
               showBullets={true}
               showNav={false}
@@ -38,6 +39,7 @@ const ProductPage = ({ data }) => {
                 originalTitle: product.title,
                 originalAlt: image.id,
                 thumbnail: `https://tangled-in-stitches-git-develop.maxhuebler.now.sh${image.localFile.childImageSharp.fluid.src}`,
+                thumbnailAlt: image.id,
               }))}
               showBullets={true}
               showNav={false}
@@ -51,9 +53,11 @@ const ProductPage = ({ data }) => {
           <div className="px-8 sm:px-2 mt-8 sm:mt-0">
             <h1 className="text-4xl font-bold leading-none">{product.title}</h1>
             <ProductForm product={product} />
-            <h2 className="font-bold mt-6">Product information</h2>
+            <h2 className="font-bold mt-12 tracking-wide font-grey-800 leading-none">
+              Product information
+            </h2>
             <h2
-              className="mt-2 text-justify md:max-w-lg"
+              className="mt-2 text-justify md:max-w-xl"
               dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
             />
           </div>
@@ -85,6 +89,7 @@ export const query = graphql`
         id
         title
         price
+        compareAtPrice
         availableForSale
         shopifyId
         selectedOptions {
@@ -108,7 +113,7 @@ export const query = graphql`
         localFile {
           childImageSharp {
             fluid(maxWidth: 526) {
-              ...GatsbyImageSharpFluid_withWebp
+              ...GatsbyImageSharpFluid
             }
           }
         }
