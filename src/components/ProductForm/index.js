@@ -12,8 +12,10 @@ const ProductForm = ({ product }) => {
     variants: [initialVariant],
     priceRange: { minVariantPrice },
   } = product
+
   const [added, setAdded] = useState(false)
   const [variant, setVariant] = useState({ ...initialVariant })
+
   const {
     addVariantToCart,
     store: { client, adding },
@@ -21,6 +23,7 @@ const ProductForm = ({ product }) => {
 
   const productVariant =
     client.product.helpers.variantForOptions(product, variant) || variant
+
   const [available, setAvailable] = useState(productVariant.availableForSale)
 
   const checkAvailability = useCallback(
@@ -94,7 +97,14 @@ const ProductForm = ({ product }) => {
 
   return (
     <>
-      <h3 className="text-xl sm:text-2xl mb-4">{price}</h3>
+      {productVariant.compareAtPrice !== null ? (
+        <h3 className="text-xl sm:text-2xl mb-4">
+          {price}{' '}
+          <span className="line-through">{productVariant.compareAtPrice}</span>
+        </h3>
+      ) : (
+        <h3 className="text-xl sm:text-2xl mb-4">{price}</h3>
+      )}
       {options.map(({ id, name, values }, index) => (
         <React.Fragment key={id}>
           <label className="font-bold" htmlFor={name}>
