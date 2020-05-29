@@ -22,7 +22,7 @@ export default function CollectionsList() {
         ? allShopifyCollection.edges.map(({ node: { title, handle } }) => (
             <div key={title.toString()} className="mt-2 py-6 border-b">
               <Link to={`/collection/${handle}`}>
-                <div className="text-gray-700 font-bold uppercase tracking-widest hover:underline hover:text-black">
+                <div className="text-gray-800 font-bold uppercase tracking-widest hover:underline hover:text-black">
                   {title}
                 </div>
               </Link>

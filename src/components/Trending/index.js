@@ -48,7 +48,9 @@ export default function Trending({ message }) {
 
   return (
     <>
-      <h1 className="text-2xl sm:text-4xl font-bold mt-6 mx-4">{message}</h1>
+      <h1 className="text-2xl text-gray-800 font-bold tracking-widest py-4 uppercase mt-4 mx-4">
+        {message}
+      </h1>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 sm:gap-6 mt-3 mx-4">
         {allShopifyProduct.edges ? (
           allShopifyProduct.edges.map(
@@ -65,7 +67,7 @@ export default function Trending({ message }) {
                 <Link to={`/product/${handle}/`}>
                   {firstImage && firstImage.localFile && (
                     <Image
-                      className="max-w-full mb-6 rounded-lg hover:opacity-75"
+                      className="max-w-full mb-6 rounded-lg hover:opacity-75 hover:shadow-lg"
                       fluid={firstImage.localFile.childImageSharp.fluid}
                       alt={handle}
                     />
