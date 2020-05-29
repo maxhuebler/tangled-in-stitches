@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 
 import StoreContext from '~/context/StoreContext'
 
-const LineItem = props => {
+const LineItem = (props) => {
   const { item } = props
   const [quantity, setQuantity] = useState(item.quantity)
   const {
@@ -21,7 +21,7 @@ const LineItem = props => {
   ) : null
 
   const selectedOptions = item.variant.selectedOptions
-    ? item.variant.selectedOptions.map(option => (
+    ? item.variant.selectedOptions.map((option) => (
         <div key={option.name.toString()} className="grid grid-rows-1 mt-2">
           <h3 className="mt-2">{option.name}</h3>
           <h3 className="font-bold">{option.value}</h3>

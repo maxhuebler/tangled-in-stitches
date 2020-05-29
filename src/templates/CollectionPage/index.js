@@ -13,7 +13,7 @@ const CollectionPage = ({ data }) => {
     store: { checkout },
   } = useContext(StoreContext)
 
-  const getPrice = price =>
+  const getPrice = (price) =>
     Intl.NumberFormat(undefined, {
       currency: checkout.currencyCode ? checkout.currencyCode : 'USD',
       minimumFractionDigits: 2,

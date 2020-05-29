@@ -6,8 +6,8 @@ import About from '~/components/About'
 const AboutPage = () => (
   <>
     <SEO
-      title="Home"
-      keywords={[`tangled in stitches`, `home`, `shop`, `clothing`, `disney`]}
+      title="About"
+      keywords={[`tangled in stitches`, `about`, `about us`]}
     />
     <About />
   </>

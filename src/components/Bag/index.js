@@ -13,7 +13,7 @@ const Bag = () => {
     window.open(checkout.webUrl)
   }
 
-  const lineItems = checkout.lineItems.map(item => (
+  const lineItems = checkout.lineItems.map((item) => (
     <LineItem key={item.id.toString()} item={item} />
   ))
 

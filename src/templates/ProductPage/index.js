@@ -15,7 +15,7 @@ const ProductPage = ({ data }) => {
         <div className="grid grid-cols-1 sm:grid-cols-2 items-center">
           <div className="hidden sm:flex px-0 sm:px-8 md:px-0">
             <ImageGallery
-              items={product.images.map(image => ({
+              items={product.images.map((image) => ({
                 original: `https://tangled-in-stitches-git-develop.maxhuebler.now.sh${image.localFile.childImageSharp.fluid.src}`,
                 originalTitle: product.title,
                 originalAlt: image.id,
@@ -33,7 +33,7 @@ const ProductPage = ({ data }) => {
           </div>
           <div className="visibile sm:hidden px-0 sm:px-8">
             <ImageGallery
-              items={product.images.map(image => ({
+              items={product.images.map((image) => ({
                 original: `https://tangled-in-stitches-git-develop.maxhuebler.now.sh${image.localFile.childImageSharp.fluid.src}`,
                 originalTitle: product.title,
                 originalAlt: image.id,

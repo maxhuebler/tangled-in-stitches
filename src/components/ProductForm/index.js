@@ -24,11 +24,11 @@ const ProductForm = ({ product }) => {
   const [available, setAvailable] = useState(productVariant.availableForSale)
 
   const checkAvailability = useCallback(
-    productId => {
-      client.product.fetch(productId).then(fetchedProduct => {
+    (productId) => {
+      client.product.fetch(productId).then((fetchedProduct) => {
         // this checks the currently selected variant for availability
         const result = fetchedProduct.variants.filter(
-          variant => variant.id === productVariant.shopifyId
+          (variant) => variant.id === productVariant.shopifyId
         )
         if (result.length > 0) {
           setAvailable(result[0].available)
@@ -104,9 +104,9 @@ const ProductForm = ({ product }) => {
             className="flex bg-gray-200 mt-2 px-4 py-2 rounded-lg"
             name={name}
             key={id}
-            onBlur={event => handleOptionChange(index, event)}
+            onBlur={(event) => handleOptionChange(index, event)}
           >
-            {values.map(value => (
+            {values.map((value) => (
               <option
                 value={value}
                 key={`${name}-${value}`}
