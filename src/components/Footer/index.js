@@ -24,7 +24,7 @@ export default function Footer({ siteTitle }) {
             <h1 className="text-xl font-bold">Customer Support</h1>
             <ul className="mt-4 text-gray-600">
               <Link to="/about">
-                <li className="hover:text-black">About us</li>
+                <li className="hover:text-black">About Us</li>
               </Link>
               <li className="hover:text-black">Returns & Exchanges</li>
               <li className="hover:text-black">Privacy Policy</li>
