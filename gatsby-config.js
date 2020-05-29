@@ -74,6 +74,11 @@ module.exports = {
               variants: ['400', '700'],
               fontDisplay: 'swap',
             },
+            {
+              family: 'Norican',
+              variants: ['400'],
+              fontDisplay: 'swap',
+            },
           ],
         },
         useMinify: true,
