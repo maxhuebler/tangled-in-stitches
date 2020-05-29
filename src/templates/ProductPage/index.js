@@ -16,10 +16,10 @@ const ProductPage = ({ data }) => {
           <div className="hidden sm:flex px-0 sm:px-8 md:px-0">
             <ImageGallery
               items={product.images.map((image) => ({
-                original: `https://tangled-in-stitches-git-develop.maxhuebler.now.sh${image.localFile.childImageSharp.fluid.src}`,
+                original: `https://tangled-in-stitches-git-develop.maxhuebler.now.sh${image.localFile.childImageSharp.fluid}`,
                 originalTitle: product.title,
                 originalAlt: image.id,
-                thumbnail: `https://tangled-in-stitches-git-develop.maxhuebler.now.sh${image.localFile.childImageSharp.fluid.src}`,
+                thumbnail: `https://tangled-in-stitches-git-develop.maxhuebler.now.sh${image.localFile.childImageSharp.fluid}`,
               }))}
               showBullets={true}
               showNav={false}
@@ -108,7 +108,7 @@ export const query = graphql`
         localFile {
           childImageSharp {
             fluid(maxWidth: 526) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp
             }
           }
         }
