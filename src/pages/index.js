@@ -2,7 +2,7 @@ import React from 'react'
 
 import SEO from '~/components/seo'
 import Hero from '~/components/Hero'
-import New from '~/components/New'
+import Trending from '~/components/Trending'
 
 import CollectionsList from '../components/CollectionsList'
 import CollectionsGrid from '../components/CollectionsGrid'
@@ -14,7 +14,7 @@ const IndexPage = () => (
       keywords={[`tangled in stitches`, `home`, `shop`, `clothing`, `disney`]}
     />
     <Hero />
-    <New message={`What's Trending`} />
+    <Trending message={`What's Trending`} />
     <div className="grid grid-cols-1 sm:grid-cols-5 mt-0 sm:mt-12 sm:mx-4">
       <div className="hidden lg:block col-span-1 mr-6">
         <CollectionsList />

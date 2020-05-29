@@ -5,7 +5,7 @@ export default function CollectionsGrid() {
   const { allShopifyCollection } = useStaticQuery(
     graphql`
       query {
-        allShopifyCollection(limit: 8) {
+        allShopifyCollection(skip: 5) {
           edges {
             node {
               title

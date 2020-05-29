@@ -5,6 +5,7 @@ import StoreContext from '~/context/StoreContext'
 import Image from 'gatsby-image'
 import SEO from '~/components/seo'
 import CollectionsList from '~/components/CollectionsList'
+import Hero from '~/components/Hero'
 
 const CollectionPage = ({ data }) => {
   const collection = data.collection
@@ -22,7 +23,8 @@ const CollectionPage = ({ data }) => {
   return (
     <>
       <SEO title={collection.title} description={collection.description} />
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 mx-4 sm:mx-4">
+      <Hero />
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 mx-4 sm:mx-4 mt-8">
         <div className="hidden lg:block col-span-1 mr-6">
           <CollectionsList />
         </div>

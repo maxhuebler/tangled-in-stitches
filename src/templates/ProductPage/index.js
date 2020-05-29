@@ -3,7 +3,7 @@ import { graphql } from 'gatsby'
 
 import SEO from '~/components/seo'
 import ProductForm from '~/components/ProductForm'
-import New from '~/components/New'
+import Trending from '~/components/Trending'
 import ImageGallery from 'react-image-gallery'
 
 const ProductPage = ({ data }) => {
@@ -59,7 +59,7 @@ const ProductPage = ({ data }) => {
           </div>
         </div>
         <div className="mt-12 sm:mt-24">
-          <New message={`You May Also Like`} />
+          <Trending message={`You May Also Like`} />
         </div>
       </div>
     </>
