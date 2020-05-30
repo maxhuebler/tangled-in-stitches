@@ -40,24 +40,39 @@ const CollectionPage = ({ data }) => {
                   handle,
                   title,
                   images: [firstImage],
-                  variants: [firstVariant],
+                  variants: [firstVariant, secondVariant],
                 }) => (
                   <div className="flex flex-col min-h-full" key={id}>
                     <Link to={`/product/${handle}/`}>
                       {firstImage && firstImage.localFile && (
-                        <Image
-                          className="max-w-full mb-6 rounded-lg"
-                          fluid={firstImage.localFile.childImageSharp.fluid}
-                          alt={handle}
-                        />
+                        <>
+                          {secondVariant.compareAtPrice !== null ? (
+                            <div className="bg-blue-300 px-6 py-2 ml-4 mt-4 absolute z-50 shadow hover:shadow-lg">
+                              <h2 className="text-lg tracking-widest text-white uppercase">
+                                sale
+                              </h2>
+                            </div>
+                          ) : null}
+                          <Image
+                            className="max-w-full mb-6 rounded-lg"
+                            fluid={firstImage.localFile.childImageSharp.fluid}
+                            alt={handle}
+                          />
+                        </>
                       )}
                     </Link>
                     <h1 className="text-lg text-center sm:text-left font-bold">
                       {title}
                     </h1>
                     <h2 className="text-center sm:text-left text-gray-700">
-                      {getPrice(firstVariant.price)}{' '}
-                      <span className="font-bold text-xs">USD</span>
+                      {getPrice(firstVariant.price)}
+                      <span className="font-bold text-xs"> USD</span>{' '}
+                      {secondVariant.compareAtPrice !== null ? (
+                        <span className="line-through font-bold">
+                          {getPrice(secondVariant.compareAtPrice)}
+                          <span className="font-bold text-xs">USD</span>
+                        </span>
+                      ) : null}
                     </h2>
                   </div>
                 )
@@ -97,6 +112,7 @@ export const query = graphql`
         variants {
           title
           price
+          compareAtPrice
           id
           availableForSale
           shopifyId

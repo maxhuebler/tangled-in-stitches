@@ -31,6 +31,7 @@ export default function Trending({ message }) {
               }
               variants {
                 price
+                compareAtPrice
               }
             }
           }
@@ -60,24 +61,33 @@ export default function Trending({ message }) {
                 handle,
                 title,
                 images: [firstImage],
-                variants: [firstVariant],
+                variants: [price, secondVariant],
               },
             }) => (
               <div className="flex flex-col min-h-full" key={id}>
                 <Link to={`/product/${handle}/`}>
                   {firstImage && firstImage.localFile && (
-                    <Image
-                      className="max-w-full mb-6 rounded-lg hover:opacity-75"
-                      fluid={firstImage.localFile.childImageSharp.fluid}
-                      alt={handle}
-                    />
+                    <>
+                      {secondVariant.compareAtPrice !== null ? (
+                        <div className="bg-blue-300 px-6 py-1 ml-3 mt-3 absolute z-50 shadow hover:shadow-lg">
+                          <h2 className="text-lg tracking-widest text-white uppercase">
+                            sale
+                          </h2>
+                        </div>
+                      ) : null}
+                      <Image
+                        className="relative max-w-full mb-6 rounded-lg hover:opacity-75"
+                        fluid={firstImage.localFile.childImageSharp.fluid}
+                        alt={handle}
+                      />
+                    </>
                   )}
                 </Link>
                 <h1 className="text-lg text-center sm:text-left font-bold">
                   {title}
                 </h1>
                 <h2 className="text-center sm:text-left text-gray-700">
-                  {getPrice(firstVariant.price)}{' '}
+                  {getPrice(price.price)}{' '}
                   <span className="font-bold text-xs">USD</span>
                 </h2>
               </div>
