@@ -69,8 +69,8 @@ export default function Trending({ message }) {
                   {firstImage && firstImage.localFile && (
                     <>
                       {secondVariant.compareAtPrice !== null ? (
-                        <div className="bg-blue-300 px-6 py-1 ml-3 mt-3 absolute z-50 shadow hover:shadow-lg">
-                          <h2 className="text-lg tracking-widest text-white uppercase">
+                        <div className="bg-blue-300 px-3 py-1 sm:px-6 sm:py-2 sm:ml-4 sm:mt-4 absolute z-50 shadow-md hover:bg-purple-300">
+                          <h2 className="sm:text-lg tracking-widest text-white uppercase">
                             sale
                           </h2>
                         </div>

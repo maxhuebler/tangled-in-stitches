@@ -1,4 +1,5 @@
 import React, { useState, useContext, useEffect, useCallback } from 'react'
+import { Link } from 'gatsby'
 import find from 'lodash/find'
 import isEqual from 'lodash/isEqual'
 import PropTypes from 'prop-types'
@@ -100,7 +101,7 @@ const ProductForm = ({ product }) => {
       {productVariant.compareAtPrice !== null ? (
         <h3 className="text-xl sm:text-2xl mb-4">
           {price}{' '}
-          <span className="line-through">{productVariant.compareAtPrice}</span>
+          <span className="line-through">${productVariant.compareAtPrice}</span>
         </h3>
       ) : (
         <h3 className="text-xl sm:text-2xl mb-4">{price}</h3>
@@ -139,7 +140,12 @@ const ProductForm = ({ product }) => {
       </button>
       {added ? (
         <div className="mt-4 text-md">
-          <h3 className="text-green-500">{product.title} added to your bag.</h3>
+          <h3 className="text-green-500">
+            {product.title} added to your{' '}
+            <Link to="/bag">
+              <span className="font-bold underline">bag.</span>
+            </Link>
+          </h3>
         </div>
       ) : null}
       {!available && <p>This Product is out of Stock!</p>}

@@ -56,7 +56,7 @@ const ProductPage = ({ data }) => {
             <h2 className="font-bold mt-12 tracking-wide font-grey-800 leading-none">
               Product information
             </h2>
-            <h2
+            <p
               className="mt-2 text-justify md:max-w-xl"
               dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
             />

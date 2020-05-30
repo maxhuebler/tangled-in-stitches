@@ -29,7 +29,7 @@ const CollectionPage = ({ data }) => {
           <CollectionsList />
         </div>
         <div className="col-span-4">
-          <h1 className="hidden sm:flex text-2xl font-bold tracking-widest ml-4 mt-3 py-4 uppercase border-b items-center text-center">
+          <h1 className="sm:flex text-lg sm:text-2xl font-bold tracking-widest ml-4 sm:mt-3 py-4 uppercase border-b items-center sm:text-center">
             {collection.title} ({collection.products.length} items)
           </h1>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 mt-8 mx-4 sm:mx-4">
@@ -47,8 +47,8 @@ const CollectionPage = ({ data }) => {
                       {firstImage && firstImage.localFile && (
                         <>
                           {secondVariant.compareAtPrice !== null ? (
-                            <div className="bg-blue-300 px-6 py-2 ml-4 mt-4 absolute z-50 shadow hover:shadow-lg">
-                              <h2 className="text-lg tracking-widest text-white uppercase">
+                            <div className="bg-blue-300 px-3 py-1 sm:px-6 sm:py-2 sm:ml-4 sm:mt-4 absolute z-50 shadow-md hover:bg-purple-300">
+                              <h2 className="sm:text-lg tracking-widest text-white uppercase">
                                 sale
                               </h2>
                             </div>
@@ -70,7 +70,7 @@ const CollectionPage = ({ data }) => {
                       {secondVariant.compareAtPrice !== null ? (
                         <span className="line-through font-bold">
                           {getPrice(secondVariant.compareAtPrice)}
-                          <span className="font-bold text-xs">USD</span>
+                          <span className="font-bold text-xs"> USD</span>
                         </span>
                       ) : null}
                     </h2>
