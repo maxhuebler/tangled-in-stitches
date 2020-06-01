@@ -76,7 +76,7 @@ export default function Trending({ message }) {
                         </div>
                       ) : null}
                       <Image
-                        className="transition duration-300 ease-out transform hover:scale-110 relative max-w-full mb-6 rounded-lg hover:opacity-75"
+                        className="transition duration-300 ease-out transform hover:scale-105 relative max-w-full mb-6 rounded-lg hover:opacity-75"
                         fluid={firstImage.localFile.childImageSharp.fluid}
                         alt={handle}
                       />
