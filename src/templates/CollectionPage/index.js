@@ -54,7 +54,7 @@ const CollectionPage = ({ data }) => {
                             </div>
                           ) : null}
                           <Image
-                            className="max-w-full mb-6 rounded-lg"
+                            className="transition duration-300 ease-out transform hover:scale-105 max-w-full mb-6 rounded-lg"
                             fluid={firstImage.localFile.childImageSharp.fluid}
                             alt={handle}
                           />

@@ -22,7 +22,7 @@ export default function CollectionsGrid() {
         ? allShopifyCollection.edges.map(({ node: { title, handle } }) => (
             <Link key={title.toString()} to={`/collection/${handle}`}>
               <div
-                className="bg-purple-200 mx-4 sm:mx-0 py-32 sm:py-56 text-center rounded-lg font-bold text-3xl uppercase text-white tracking-widest hover:opacity-75 hover:shadow-lg cursor-pointer"
+                className="transition duration-300 ease-out transform hover:scale-y-105 bg-purple-200 mx-4 sm:mx-0 py-32 sm:py-56 text-center rounded-lg font-bold text-3xl uppercase text-white tracking-widest hover:opacity-75 hover:shadow-lg cursor-pointer"
                 style={{
                   backgroundImage: `linear-gradient(${
                     Math.random() * 270
