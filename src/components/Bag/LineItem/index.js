@@ -14,7 +14,7 @@ const LineItem = (props) => {
 
   const variantImage = item.variant.image ? (
     <img
-      className="h-32 sm:h-48 transition duration-300 ease-out transform hover:scale-105"
+      className="h-auto w-32 sm:h-48 sm:w-auto transition duration-300 ease-out transform hover:scale-105"
       src={item.variant.image.src}
       alt={`${item.title} product shot`}
     />

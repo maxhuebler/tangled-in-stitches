@@ -23,9 +23,11 @@ export default function Footer({ siteTitle }) {
           <div className="row-span-1 sm:col-span-1">
             <h1 className="text-xl font-bold">Customer Support</h1>
             <ul className="mt-4 text-gray-700">
-              <Link to="/about">
-                <li className="hover:text-black">About Us</li>
-              </Link>
+              <li className="hover:text-black">
+                <Link to="/about">
+                  <p>About us</p>
+                </Link>
+              </li>
               <li className="hover:text-black">Returns & Exchanges</li>
               <li className="hover:text-black">Privacy Policy</li>
               <li className="hover:text-black">Terms of Service</li>
@@ -37,9 +39,9 @@ export default function Footer({ siteTitle }) {
               {allShopifyCollection.edges
                 ? allShopifyCollection.edges.map(
                     ({ node: { title, handle } }) => (
-                      <Link key={title.toString()} to={`/collection/${handle}`}>
-                        <li className="hover:text-black">{title}</li>
-                      </Link>
+                      <li key={title.toString()} className="hover:text-black">
+                        <Link to={`/collection/${handle}`}>{title}</Link>
+                      </li>
                     )
                   )
                 : null}
@@ -74,7 +76,7 @@ export default function Footer({ siteTitle }) {
             </ul>
           </div>
         </div>
-        <h2 className="text-center mt-10 text-gray-600 text-sm">
+        <h2 className="text-center mt-10 text-gray-700 text-sm">
           Copyright © {new Date().getFullYear()} {siteTitle}
         </h2>
       </div>
