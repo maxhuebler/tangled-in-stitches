@@ -49,7 +49,7 @@ export default function Trending({ message }) {
 
   return (
     <>
-      <h1 className="text-2xl text-gray-800 font-bold tracking-widest py-4 uppercase mx-4 sm:mx-8 mt-1">
+      <h1 className="text-2xl text-gray-700 font-bold tracking-widest py-4 uppercase mx-4 sm:mx-8">
         {message}
       </h1>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 sm:gap-6 mx-4 sm:mx-8">

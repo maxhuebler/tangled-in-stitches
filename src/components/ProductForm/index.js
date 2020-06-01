@@ -108,11 +108,11 @@ const ProductForm = ({ product }) => {
       )}
       {options.map(({ id, name, values }, index) => (
         <React.Fragment key={id}>
-          <label className="font-bold" htmlFor={name}>
+          <label className="font-bold uppercase" htmlFor={name}>
             {name}
           </label>
           <select
-            className="flex bg-gray-200 mt-2 px-4 py-2 rounded-lg"
+            className="flex bg-gray-100 px-6 py-3 rounded-lg border-2 border-blue-300"
             name={name}
             key={id}
             onBlur={(event) => handleOptionChange(index, event)}
@@ -131,7 +131,7 @@ const ProductForm = ({ product }) => {
         </React.Fragment>
       ))}
       <button
-        className="bg-blue-300 text-white rounded-lg py-4 px-16 hover:bg-purple-300 uppercase font-bold tracking-wider transition duration-300 ease-out transform hover:scale-105"
+        className="bg-blue-300 disabled text-white rounded-lg py-4 px-16 hover:bg-purple-300 uppercase font-bold tracking-wider transition duration-300 ease-out transform hover:scale-105"
         type="submit"
         disabled={!available || adding}
         onClick={handleAddToCart}

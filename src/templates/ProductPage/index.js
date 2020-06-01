@@ -51,7 +51,7 @@ const ProductPage = ({ data }) => {
           <h1 className="text-4xl font-bold leading-none">{product.title}</h1>
           <ProductForm product={product} />
           <div className="sm:px-8 sm:py-6 mt-12 sm:border rounded-lg">
-            <h2 className="font-bold tracking-wider font-grey-800 uppercase">
+            <h2 className="font-bold tracking-wider text-gray-700 uppercase">
               Product information
             </h2>
             <p

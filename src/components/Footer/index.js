@@ -22,7 +22,7 @@ export default function Footer({ siteTitle }) {
         <div className="grid grid-flow-row sm:grid-cols-3 gap-8">
           <div className="row-span-1 sm:col-span-1">
             <h1 className="text-xl font-bold">Customer Support</h1>
-            <ul className="mt-4 text-gray-600">
+            <ul className="mt-4 text-gray-700">
               <Link to="/about">
                 <li className="hover:text-black">About Us</li>
               </Link>
@@ -33,7 +33,7 @@ export default function Footer({ siteTitle }) {
           </div>
           <div className="row-span-1 sm:col-span-1">
             <h1 className="text-xl font-bold">Shop our Collections</h1>
-            <ul className="mt-4 text-gray-600">
+            <ul className="mt-4 text-gray-700">
               {allShopifyCollection.edges
                 ? allShopifyCollection.edges.map(
                     ({ node: { title, handle } }) => (
@@ -52,7 +52,7 @@ export default function Footer({ siteTitle }) {
             >
               orders@tangledinstitches.com
             </a>
-            <ul className="mt-4 text-gray-600">
+            <ul className="mt-4 text-gray-700">
               <li className="hover:text-black">
                 <a
                   href="https://www.instagram.com/tangledinstitches"

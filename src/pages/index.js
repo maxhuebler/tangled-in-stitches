@@ -14,7 +14,9 @@ const IndexPage = () => (
       keywords={[`tangled in stitches`, `home`, `shop`, `clothing`, `disney`]}
     />
     <Hero />
-    <Trending message={`What's Trending`} />
+    <div className="mt-1">
+      <Trending message={`What's Trending`} />
+    </div>
     <div className="grid grid-cols-1 sm:grid-cols-5 mt-0 sm:mt-12 sm:mx-8">
       <div className="hidden lg:block col-span-1 mr-6">
         <CollectionsList />
