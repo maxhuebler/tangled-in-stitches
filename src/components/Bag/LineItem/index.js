@@ -40,7 +40,7 @@ const LineItem = (props) => {
 
   return (
     <>
-      <div className="flex justify-between border-solid border rounded-lg py-4 px-4 sm:px-6 mb-6 mx-4">
+      <div className="flex justify-between border-solid border rounded-lg py-4 px-4 sm:px-6 mb-6 mx-8">
         <div className="flex items-center leading-none">
           <Link to={`/product/${item.variant.product.handle}/`}>
             {variantImage}

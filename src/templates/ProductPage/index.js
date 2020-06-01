@@ -11,60 +11,58 @@ const ProductPage = ({ data }) => {
   return (
     <>
       <SEO title={product.title} description={product.description} />
-      <div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 items-center">
-          <div className="hidden sm:flex px-0 sm:px-8 md:px-0 mr-4">
-            <ImageGallery
-              items={product.images.map((image) => ({
-                original: `https://tangled-in-stitches-git-develop.maxhuebler.now.sh${image.localFile.childImageSharp.fluid.src}`,
-                originalTitle: product.title,
-                originalAlt: image.id,
-                thumbnail: `https://tangled-in-stitches-git-develop.maxhuebler.now.sh${image.localFile.childImageSharp.fluid.src}`,
-                thumbnailAlt: image.id,
-              }))}
-              showBullets={true}
-              showNav={false}
-              showPlayButton={false}
-              showFullscreenButton={false}
-              showThumbnails={true}
-              slideDuration={350}
-              thumbnailPosition={'left'}
-              lazyLoad={true}
-            />
-          </div>
-          <div className="visibile sm:hidden px-0 sm:px-8">
-            <ImageGallery
-              items={product.images.map((image) => ({
-                original: `https://tangled-in-stitches-git-develop.maxhuebler.now.sh${image.localFile.childImageSharp.fluid.src}`,
-                originalTitle: product.title,
-                originalAlt: image.id,
-                thumbnail: `https://tangled-in-stitches-git-develop.maxhuebler.now.sh${image.localFile.childImageSharp.fluid.src}`,
-                thumbnailAlt: image.id,
-              }))}
-              showBullets={true}
-              showNav={false}
-              showPlayButton={false}
-              showFullscreenButton={false}
-              showThumbnails={false}
-              slideDuration={350}
-              lazyLoad={true}
-            />
-          </div>
-          <div className="px-8 sm:px-2 mt-8 sm:mt-0">
-            <h1 className="text-4xl font-bold leading-none">{product.title}</h1>
-            <ProductForm product={product} />
-            <h2 className="font-bold mt-12 tracking-wide font-grey-800 leading-none">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:mx-8 items-end">
+        <div className="hidden sm:flex px-0 md:px-0">
+          <ImageGallery
+            items={product.images.map((image) => ({
+              original: `https://tangled-in-stitches-git-develop.maxhuebler.now.sh${image.localFile.childImageSharp.fluid.src}`,
+              originalTitle: product.title,
+              originalAlt: image.id,
+              thumbnail: `https://tangled-in-stitches-git-develop.maxhuebler.now.sh${image.localFile.childImageSharp.fluid.src}`,
+              thumbnailAlt: image.id,
+            }))}
+            showBullets={true}
+            showNav={false}
+            showPlayButton={false}
+            showFullscreenButton={false}
+            showThumbnails={true}
+            slideDuration={350}
+            thumbnailPosition={'left'}
+          />
+        </div>
+        <div className="visibile sm:hidden">
+          <ImageGallery
+            items={product.images.map((image) => ({
+              original: `https://tangled-in-stitches-git-develop.maxhuebler.now.sh${image.localFile.childImageSharp.fluid.src}`,
+              originalTitle: product.title,
+              originalAlt: image.id,
+              thumbnail: `https://tangled-in-stitches-git-develop.maxhuebler.now.sh${image.localFile.childImageSharp.fluid.src}`,
+              thumbnailAlt: image.id,
+            }))}
+            showBullets={true}
+            showNav={false}
+            showPlayButton={false}
+            showFullscreenButton={false}
+            showThumbnails={false}
+            slideDuration={350}
+          />
+        </div>
+        <div className="mx-8 sm:mx-0">
+          <h1 className="text-4xl font-bold leading-none">{product.title}</h1>
+          <ProductForm product={product} />
+          <div className="sm:px-8 sm:py-6 mt-12 sm:border rounded-lg">
+            <h2 className="font-bold tracking-wider font-grey-800 uppercase">
               Product information
             </h2>
             <p
-              className="mt-2 text-justify md:max-w-xl"
+              className="text-justify"
               dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
-            />
+            ></p>
           </div>
         </div>
-        <div className="mt-12 sm:mt-24">
-          <Trending message={`You May Also Like`} />
-        </div>
+      </div>
+      <div className="mt-12 sm:mt-32">
+        <Trending message={`You May Also Like`} />
       </div>
     </>
   )

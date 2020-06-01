@@ -15,7 +15,7 @@ const IndexPage = () => (
     />
     <Hero />
     <Trending message={`What's Trending`} />
-    <div className="grid grid-cols-1 sm:grid-cols-5 mt-0 sm:mt-12 sm:mx-4">
+    <div className="grid grid-cols-1 sm:grid-cols-5 mt-0 sm:mt-12 sm:mx-8">
       <div className="hidden lg:block col-span-1 mr-6">
         <CollectionsList />
       </div>

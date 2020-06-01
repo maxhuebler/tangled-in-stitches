@@ -18,7 +18,7 @@ export default function Footer({ siteTitle }) {
   )
   return (
     <footer>
-      <div className="bg-gray-100 sm:rounded-t-xl pt-12 sm:pt-20 pb-8 px-6 sm:px-8 sm:px-32 mt-12 sm:mx-4">
+      <div className="bg-gray-100 sm:rounded-t-xl pt-12 sm:pt-20 pb-8 px-6 sm:px-8 sm:px-32 mt-12 sm:mx-8">
         <div className="grid grid-flow-row sm:grid-cols-3 gap-8">
           <div className="row-span-1 sm:col-span-1">
             <h1 className="text-xl font-bold">Customer Support</h1>

@@ -24,15 +24,15 @@ const CollectionPage = ({ data }) => {
     <>
       <SEO title={collection.title} description={collection.description} />
       <Hero />
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 mx-4 sm:mx-4 mt-8">
-        <div className="hidden lg:block col-span-1 mr-6">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 mx-8 mt-8">
+        <div className="hidden lg:block col-span-1">
           <CollectionsList />
         </div>
         <div className="col-span-4">
-          <h1 className="sm:flex text-lg sm:text-2xl font-bold tracking-widest ml-4 sm:mt-3 py-4 uppercase border-b items-center sm:text-center">
+          <h1 className="sm:flex text-lg sm:text-2xl font-bold tracking-widest sm:ml-4 sm:mt-3 py-4 uppercase border-b items-center text-center">
             {collection.title} ({collection.products.length} items)
           </h1>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 mt-8 mx-4 sm:mx-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 mt-8 sm:ml-4">
             {collection.products ? (
               collection.products.map(
                 ({

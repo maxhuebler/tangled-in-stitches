@@ -19,7 +19,7 @@ export default function About() {
   return (
     <div className="sm:h-screen">
       <Hero />
-      <div className="mt-12 mx-4">
+      <div className="mt-12 mx-8">
         <h1 className="font-bold text-4xl">{about.title}</h1>
         <p className="text-xl sm:text-justify tracking-wide mt-4">
           {about.paragraph1}

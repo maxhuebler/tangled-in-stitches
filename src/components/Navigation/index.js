@@ -27,7 +27,7 @@ const Navigation = ({ siteTitle }) => {
           </Link>
         </div>
         <div className="flex justify-end">
-          <div className="text-md text-black mr-2 sm:mr-4">
+          <div className="text-md text-black mr-2 sm:mr-8">
             <Link to="/bag">
               <div className="flex justify-center">
                 <svg
