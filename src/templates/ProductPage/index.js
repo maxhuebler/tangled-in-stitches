@@ -11,7 +11,7 @@ const ProductPage = ({ data }) => {
   return (
     <>
       <SEO title={product.title} description={product.description} />
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:mx-8 items-end">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:mx-8">
         <div className="hidden sm:flex px-0 md:px-0">
           <ImageGallery
             items={product.images.map((image) => ({

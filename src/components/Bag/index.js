@@ -20,7 +20,7 @@ const Bag = () => {
   return (
     <div className="sm:h-screen">
       {checkout.lineItems.length >= 1 ? (
-        <h1 className="text-gray-800 mb-4 ml-4 text-xl sm:text-3xl font-bold">
+        <h1 className="text-gray-800 mb-4 ml-8 text-xl sm:text-3xl font-bold">
           Your shopping bag:
         </h1>
       ) : null}
