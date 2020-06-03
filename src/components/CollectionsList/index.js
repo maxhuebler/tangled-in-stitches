@@ -17,7 +17,7 @@ export default function CollectionsList() {
     `
   )
   return (
-    <>
+    <div className="hidden lg:block col-span-1 mr-6">
       {allShopifyCollection.edges
         ? allShopifyCollection.edges.map(({ node: { title, handle } }) => (
             <div key={title.toString()} className="mt-2 py-6 border-b">
@@ -29,6 +29,6 @@ export default function CollectionsList() {
             </div>
           ))
         : null}
-    </>
+    </div>
   )
 }

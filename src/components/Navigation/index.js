@@ -17,7 +17,7 @@ const useQuantity = () => {
 const Navigation = ({ siteTitle }) => {
   return (
     <header>
-      <nav className="flex text-center items-center justify-between py-8 max-w-7xl sm:py-12 sm:mx-auto">
+      <nav className="flex text-center items-center justify-between py-8 sm:py-12">
         <div className="hidden lg:flex w-24"></div>
         <div className="ml-6 lg:ml-0">
           <Link to="/">

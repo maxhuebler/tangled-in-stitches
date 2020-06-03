@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 
 import ContextProvider from '~/context/ContextProvider'
-
 import Navigation from '~/components/Navigation'
 import Footer from '~/components/Footer'
 
@@ -21,13 +20,11 @@ const Layout = ({ children }) => {
           }
         `}
         render={(data) => (
-          <>
+          <div className="max-w-7xl mx-auto">
             <Navigation siteTitle={data.site.siteMetadata.title} />
-            <div className="mx-auto max-w-7xl">
-              {children}
-              <Footer siteTitle={data.site.siteMetadata.title} />
-            </div>
-          </>
+            {children}
+            <Footer siteTitle={data.site.siteMetadata.title} />
+          </div>
         )}
       />
     </ContextProvider>

@@ -18,13 +18,9 @@ const IndexPage = () => (
       <Trending message={`What's Trending`} />
     </div>
     <div className="grid grid-cols-1 sm:grid-cols-5 mt-0 sm:mt-12 sm:mx-8">
-      <div className="hidden lg:block col-span-1 mr-6">
-        <CollectionsList />
-      </div>
+      <CollectionsList />
       <div className="col-span-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 mt-8 gap-4 sm:gap-6 items-center">
-          <CollectionsGrid />
-        </div>
+        <CollectionsGrid />
       </div>
     </div>
   </>
