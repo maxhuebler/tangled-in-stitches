@@ -11,7 +11,7 @@ export default function Trending({ message }) {
   const { allShopifyProduct } = useStaticQuery(
     graphql`
       query {
-        allShopifyProduct(limit: 6, sort: { fields: [createdAt], order: ASC }) {
+        allShopifyProduct(limit: 4, sort: { fields: [createdAt], order: ASC }) {
           edges {
             node {
               id
@@ -49,10 +49,10 @@ export default function Trending({ message }) {
 
   return (
     <>
-      <h1 className="text-2xl text-gray-700 font-bold tracking-widest py-4 uppercase mx-4 sm:mx-8">
+      <h1 className="text-2xl text-gray-700 font-bold tracking-widest py-4 uppercase mx-8">
         {message}
       </h1>
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 sm:gap-6 mx-4 sm:mx-8">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 mx-8">
         {allShopifyProduct.edges ? (
           allShopifyProduct.edges.map(
             ({
@@ -76,7 +76,7 @@ export default function Trending({ message }) {
                         </div>
                       ) : null}
                       <Image
-                        className="transition duration-300 ease-out transform hover:scale-105 relative max-w-full mb-6 rounded-lg hover:opacity-75"
+                        className="transition duration-300 ease-out transform hover:scale-105 relative max-w-full mb-6 rounded-lg hover:opacity-50"
                         fluid={firstImage.localFile.childImageSharp.fluid}
                         alt={handle}
                       />
