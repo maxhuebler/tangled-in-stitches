@@ -30,7 +30,7 @@ module.exports = {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `tangled-in-stitches`,
-        short_name: `tangled`,
+        short_name: `tangled-in-stitches`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,

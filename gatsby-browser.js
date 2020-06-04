@@ -1,2 +1,2 @@
-import './src/styles/tailwind.css'
+import './src/styles/styles.css'
 import 'react-image-gallery/styles/css/image-gallery.css'
