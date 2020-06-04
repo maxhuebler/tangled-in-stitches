@@ -1,6 +1,17 @@
 import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
 
 export default function Hero() {
+  const { hero } = useStaticQuery(
+    graphql`
+      query HeroQuery {
+        hero: datoCmsHero {
+          title
+          subtitle
+        }
+      }
+    `
+  )
   return (
     <>
       <div
@@ -12,10 +23,10 @@ export default function Hero() {
       >
         <div className="text-center text-white">
           <h1 className="text-3xl sm:text-5xl uppercase font-bold leading-tight">
-            $20 off $100 plus
+            {hero.title}
           </h1>
           <h1 className="text-xl md:text-3xl uppercase tracking-widest">
-            get free next-day delivery
+            {hero.subtitle}
           </h1>
         </div>
       </div>
