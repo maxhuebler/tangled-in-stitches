@@ -17,7 +17,7 @@ export default function Grid() {
     `
   )
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 mt-8 gap-4 sm:gap-6 items-center">
+    <div className="grid grid-cols-1 md:grid-cols-2 mt-8 gap-4 sm:gap-8 items-center">
       {allShopifyCollection.edges
         ? allShopifyCollection.edges.map(({ node: { title, handle } }) => (
             <Link key={title.toString()} to={`/collection/${handle}`}>

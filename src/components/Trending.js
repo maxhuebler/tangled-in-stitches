@@ -87,8 +87,8 @@ export default function Trending({ message }) {
                   {title}
                 </h1>
                 <h2 className="text-center sm:text-left text-gray-700">
-                  {getPrice(price.price)}{' '}
-                  <span className="font-bold text-xs">USD</span>
+                  {getPrice(price.price)}
+                  <span className="font-bold text-xs"> USD</span>
                 </h2>
               </div>
             )
