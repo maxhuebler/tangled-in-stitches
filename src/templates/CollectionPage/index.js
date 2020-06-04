@@ -3,8 +3,8 @@ import { graphql, Link } from 'gatsby'
 
 import StoreContext from '~/context/StoreContext'
 import Image from 'gatsby-image'
-import SEO from '~/components/seo'
-import CollectionsList from '~/components/CollectionsList'
+import SEO from '~/components/SEO'
+import CollectionsList from '~/components/Collections/List'
 import Hero from '~/components/Hero'
 
 const CollectionPage = ({ data }) => {

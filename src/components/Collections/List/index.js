@@ -1,7 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 
-export default function CollectionsList() {
+export default function List() {
   const { allShopifyCollection } = useStaticQuery(
     graphql`
       query {
