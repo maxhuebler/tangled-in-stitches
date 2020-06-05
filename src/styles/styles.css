@@ -4,3 +4,7 @@
 /* purgecss end ignore */
 
 @tailwind utilities;
+
+.text-indent {
+  text-indent: 3rem;
+}
