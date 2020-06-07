@@ -23,7 +23,7 @@ exports.createPages = ({ graphql, actions }) => {
     result.data.products.edges.forEach(({ node }) => {
       createPage({
         path: `/product/${node.handle}/`,
-        component: path.resolve(`./src/templates/ProductPage/index.js`),
+        component: path.resolve(`./src/templates/ProductPage.js`),
         context: {
           handle: node.handle,
         },
@@ -32,7 +32,7 @@ exports.createPages = ({ graphql, actions }) => {
     result.data.collections.edges.forEach(({ node }) => {
       createPage({
         path: `/collection/${node.handle}/`,
-        component: path.resolve(`./src/templates/CollectionPage/index.js`),
+        component: path.resolve(`./src/templates/CollectionPage.js`),
         context: {
           handle: node.handle,
         },
