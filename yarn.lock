@@ -2756,12 +2756,11 @@ babel-preset-fbjs@^3.3.0:
     "@babel/plugin-transform-template-literals" "^7.0.0"
     babel-plugin-syntax-trailing-function-commas "^7.0.0-beta.0"
 
-babel-preset-gatsby-package@^0.4.3:
-  version "0.4.3"
-  resolved "https://registry.yarnpkg.com/babel-preset-gatsby-package/-/babel-preset-gatsby-package-0.4.3.tgz#dd6a6ed84571372c94a716c1f0c1a0abc5a270bc"
-  integrity sha512-332g1meh7uJiy4yE6RS78/N99xi1kYMbqIQYIY4uib3sxLzX4F0FCTODOnViUjuOetvydXVOkr1Gmz+fS1KgcA==
+babel-preset-gatsby-package@^0.4.4:
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/babel-preset-gatsby-package/-/babel-preset-gatsby-package-0.4.4.tgz#88499e284aaee4043b8c9c282c0fea2f0f117eec"
+  integrity sha512-gsqhrwS3uWzmOW1SwtdLN5ggRIkVau5TotFfIv1rZ+CGy8aOOQFy873HQzE38uf7bqDsDvRvfXTdFyZbJLT+CQ==
   dependencies:
-    "@babel/plugin-proposal-class-properties" "^7.10.1"
     "@babel/plugin-proposal-nullish-coalescing-operator" "^7.10.1"
     "@babel/plugin-proposal-optional-chaining" "^7.10.1"
     "@babel/plugin-syntax-dynamic-import" "^7.8.3"
@@ -6397,6 +6396,18 @@ gatsby-core-utils@^1.3.5:
     proper-lockfile "^4.1.1"
     xdg-basedir "^4.0.0"
 
+gatsby-core-utils@^1.3.6:
+  version "1.3.6"
+  resolved "https://registry.yarnpkg.com/gatsby-core-utils/-/gatsby-core-utils-1.3.6.tgz#5a001593276b0c1cc4a3c6c9a34da428e9374590"
+  integrity sha512-ptd//w6MX1/hUGO2KBffSUKSYIVU3SFRM2cKXN3CMmCQvn8ul2OHCjpNY8MyZQuluWk8nRtvhjEGrl+KJtcOnw==
+  dependencies:
+    ci-info "2.0.0"
+    configstore "^5.0.1"
+    fs-extra "^8.1.0"
+    node-object-hash "^2.0.0"
+    proper-lockfile "^4.1.1"
+    xdg-basedir "^4.0.0"
+
 gatsby-graphiql-explorer@^0.4.5:
   version "0.4.5"
   resolved "https://registry.yarnpkg.com/gatsby-graphiql-explorer/-/gatsby-graphiql-explorer-0.4.5.tgz#63795dc891e0ddc25436f51495342f0f7a2a0a1f"
@@ -6679,15 +6690,36 @@ gatsby-source-filesystem@^2.3.10:
     valid-url "^1.0.9"
     xstate "^4.10.0"
 
-gatsby-source-shopify@^3.2.10:
-  version "3.2.10"
-  resolved "https://registry.yarnpkg.com/gatsby-source-shopify/-/gatsby-source-shopify-3.2.10.tgz#aaae3140f60e73c0ee6d624f74bf43185fbb0792"
-  integrity sha512-tqGqgVk7iErffpMZbxAc1WvlvDQib7qCXXEyMp4ChW9eowTXQlJMZTO/JoBl0M/eN/WMDKnuqPWDsUn/2/t6lQ==
+gatsby-source-filesystem@^2.3.12:
+  version "2.3.12"
+  resolved "https://registry.yarnpkg.com/gatsby-source-filesystem/-/gatsby-source-filesystem-2.3.12.tgz#d92cb9c6c4685ab272399b57f42134dcc61effdf"
+  integrity sha512-VFyQCpmbt+VGvXkd6Yrm0EmoVQ7vv3bAHSsy3pnXK61Ak3lQxGcwZlPU/z9famoODCTkePnkL1vtY6pxdCZ1FA==
   dependencies:
-    babel-preset-gatsby-package "^0.4.3"
+    "@babel/runtime" "^7.10.2"
+    better-queue "^3.8.10"
+    bluebird "^3.7.2"
+    chokidar "3.4.0"
+    file-type "^12.4.2"
+    fs-extra "^8.1.0"
+    gatsby-core-utils "^1.3.6"
+    got "^9.6.0"
+    md5-file "^3.2.3"
+    mime "^2.4.6"
+    pretty-bytes "^5.3.0"
+    progress "^2.0.3"
+    read-chunk "^3.2.0"
+    valid-url "^1.0.9"
+    xstate "^4.10.0"
+
+gatsby-source-shopify@^3.2.12:
+  version "3.2.12"
+  resolved "https://registry.yarnpkg.com/gatsby-source-shopify/-/gatsby-source-shopify-3.2.12.tgz#8ef8f33072690ad84e3158a29a666e9889a89172"
+  integrity sha512-FnzKtX6CkHzg6DuDwb2p2uY93X6dPuJwI70UWpX/DIfw8goZ8ca3rRaaPONgoe5WPWTfVWPMwhpieBjvkWOi/g==
+  dependencies:
+    babel-preset-gatsby-package "^0.4.4"
     chalk "^2.4.2"
     gatsby-node-helpers "^0.3.0"
-    gatsby-source-filesystem "^2.3.10"
+    gatsby-source-filesystem "^2.3.12"
     graphql-request "^1.8.2"
     lodash "^4.17.15"
     p-iteration "^1.1.8"
