@@ -14,7 +14,7 @@
     "gatsby-plugin-webfonts": "^1.1.2",
     "gatsby-source-datocms": "^2.2.5",
     "gatsby-source-filesystem": "^2.3.10",
-    "gatsby-source-shopify": "^3.2.12",
+    "gatsby-source-shopify": "^3.2.13",
     "gatsby-transformer-sharp": "^2.5.4",
     "lodash": "^4.17.15",
     "prop-types": "^15.7.2",
