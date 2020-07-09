@@ -16,7 +16,7 @@
     "gatsby-source-filesystem": "^2.3.10",
     "gatsby-source-shopify": "^3.2.14",
     "gatsby-transformer-sharp": "^2.5.4",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
