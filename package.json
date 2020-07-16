@@ -23,7 +23,7 @@
     "react-helmet": "^6.0.0",
     "react-image-gallery": "^1.0.7",
     "shopify-buy": "^2.10.0",
-    "tailwindcss": "^1.4.6"
+    "tailwindcss": "^1.5.1"
   },
   "scripts": {
     "build": "gatsby build",
