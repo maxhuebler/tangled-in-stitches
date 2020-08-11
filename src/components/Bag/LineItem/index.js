@@ -1,16 +1,10 @@
-import React, { useContext, useState } from 'react'
+import React from 'react'
 import { Link } from 'gatsby'
 
-import StoreContext from '~/context/StoreContext'
+import { useUpdateItemQuantity } from 'gatsby-theme-shopify-manager'
 
-const LineItem = (props) => {
-  const { item } = props
-  const [quantity, setQuantity] = useState(item.quantity)
-  const {
-    removeLineItem,
-    updateLineItem,
-    store: { client, checkout },
-  } = useContext(StoreContext)
+const LineItem = ({ item }) => {
+  const updateItemQuantity = useUpdateItemQuantity()
 
   const variantImage = item.variant.image ? (
     <img
@@ -29,13 +23,12 @@ const LineItem = (props) => {
       ))
     : null
 
-  const handleRemove = () => {
-    removeLineItem(client, checkout.id, item.id)
-  }
-
-  const handleQuantityChange = ({ target }) => {
-    setQuantity(target.value)
-    updateLineItem(client, checkout.id, item.id, target.value)
+  async function removeFromCart(variantId) {
+    try {
+      await updateItemQuantity(variantId, 0)
+    } catch (e) {
+      console.log(e)
+    }
   }
 
   return (
@@ -52,17 +45,15 @@ const LineItem = (props) => {
           </div>
         </div>
         <div className="flex items-center">
-          <p className="hidden sm:flex mr-4">
-            ${item.variant.price * quantity}.00
-          </p>
-          <input
+          <p className="hidden sm:flex mr-4">${item.variant.price}</p>
+          {/* <input
             className="sm:hidden bg-white focus:outline-none focus:shadow-outline block border rounded-lg py-2 px-4 w-16 mr-2 sm:mr-6"
             type="tel"
             pattern="[0-9]*"
             name="quantity"
             min="1"
             step="1"
-            onChange={handleQuantityChange}
+            onChange={updateQuantity()}
             value={quantity}
             aria-label="input"
           />
@@ -72,16 +63,17 @@ const LineItem = (props) => {
             name="quantity"
             min="1"
             step="1"
-            onChange={handleQuantityChange}
+            onChange={updateQuantity()}
             value={quantity}
             aria-label="input"
-          />
+          /> */}
           <svg
             className="cursor-pointer"
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             height="24"
-            onClick={handleRemove}
+            variant="link"
+            onClick={() => removeFromCart(item.variant.id)}
           >
             <path d="M8 6V4c0-1.1.9-2 2-2h4a2 2 0 0 1 2 2v2h5a1 1 0 0 1 0 2h-1v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8H3a1 1 0 1 1 0-2h5zM6 8v12h12V8H6zm8-2V4h-4v2h4zm-4 4a1 1 0 0 1 1 1v6a1 1 0 0 1-2 0v-6a1 1 0 0 1 1-1zm4 0a1 1 0 0 1 1 1v6a1 1 0 0 1-2 0v-6a1 1 0 0 1 1-1z" />
           </svg>

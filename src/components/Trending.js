@@ -1,13 +1,9 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 
-import StoreContext from '~/context/StoreContext'
 import Image from 'gatsby-image'
 
 export default function Trending({ message }) {
-  const {
-    store: { checkout },
-  } = useContext(StoreContext)
   const { allShopifyProduct } = useStaticQuery(
     graphql`
       query {
@@ -39,13 +35,6 @@ export default function Trending({ message }) {
       }
     `
   )
-
-  const getPrice = (price) =>
-    Intl.NumberFormat(undefined, {
-      currency: checkout.currencyCode ? checkout.currencyCode : 'USD',
-      minimumFractionDigits: 2,
-      style: 'currency',
-    }).format(parseFloat(price ? price : 0))
 
   return (
     <>
@@ -87,7 +76,7 @@ export default function Trending({ message }) {
                   {title}
                 </h1>
                 <h2 className="text-center sm:text-left text-gray-700">
-                  {getPrice(price.price)}
+                  {price.price}
                   <span className="font-bold text-xs"> USD</span>
                 </h2>
               </div>

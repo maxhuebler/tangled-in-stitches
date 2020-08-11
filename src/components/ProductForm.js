@@ -1,139 +1,71 @@
-import React, { useState, useContext, useEffect, useCallback } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import { Link } from 'gatsby'
-import find from 'lodash/find'
-import isEqual from 'lodash/isEqual'
 import PropTypes from 'prop-types'
 
-import StoreContext from '~/context/StoreContext'
+import { OptionPicker } from './OptionPicker'
+import { prepareVariantsWithOptions } from '../utilities'
+import { useAddItemToCart } from 'gatsby-theme-shopify-manager'
 
 const ProductForm = ({ product }) => {
-  const {
-    options,
-    variants,
-    variants: [initialVariant],
-    priceRange: { minVariantPrice },
-  } = product
+  const colors = product.options.find(
+    (option) => option.name.toLowerCase() === 'color'
+  ).values
 
+  const sizes = product.options.find(
+    (option) => option.name.toLowerCase() === 'size'
+  ).values
+
+  const variants = useMemo(() => prepareVariantsWithOptions(product.variants), [
+    product.variants,
+  ])
+
+  const addItemToCart = useAddItemToCart()
+  const [variant, setVariant] = useState(variants[0])
+  const [color, setColor] = useState(variant.color)
+  const [size, setSize] = useState(variant.size)
   const [added, setAdded] = useState(false)
-  const [variant, setVariant] = useState({ ...initialVariant })
-
-  const {
-    addVariantToCart,
-    store: { client, adding },
-  } = useContext(StoreContext)
-
-  const productVariant =
-    client.product.helpers.variantForOptions(product, variant) || variant
-
-  const [available, setAvailable] = useState(productVariant.availableForSale)
-
-  const checkAvailability = useCallback(
-    (productId) => {
-      client.product.fetch(productId).then((fetchedProduct) => {
-        // this checks the currently selected variant for availability
-        const result = fetchedProduct.variants.filter(
-          (variant) => variant.id === productVariant.shopifyId
-        )
-        if (result.length > 0) {
-          setAvailable(result[0].available)
-        }
-      })
-    },
-    [client.product, productVariant.shopifyId]
-  )
 
   useEffect(() => {
-    checkAvailability(product.shopifyId)
-  }, [productVariant, checkAvailability, product.shopifyId])
-
-  const handleOptionChange = (optionIndex, { target }) => {
-    const { value } = target
-    const currentOptions = [...variant.selectedOptions]
-
-    currentOptions[optionIndex] = {
-      ...currentOptions[optionIndex],
-      value,
-    }
-
-    const selectedVariant = find(variants, ({ selectedOptions }) =>
-      isEqual(currentOptions, selectedOptions)
-    )
-
-    setVariant({ ...selectedVariant })
-  }
-
-  const handleAddToCart = () => {
-    addVariantToCart(productVariant.shopifyId, 1)
-    setAdded(true)
-  }
-
-  /* 
-  Using this in conjunction with a select input for variants 
-  can cause a bug where the buy button is disabled, this 
-  happens when only one variant is available and it's not the
-  first one in the dropdown list. I didn't feel like putting 
-  in time to fix this since its an edge case and most people
-  wouldn't want to use dropdown styled selector anyways - 
-  at least if the have a sense for good design lol.
-  */
-  const checkDisabled = (name, value) => {
-    const match = find(variants, {
-      selectedOptions: [
-        {
-          name: name,
-          value: value,
-        },
-      ],
+    const newVariant = variants.find((variant) => {
+      return variant.size === size && variant.color === color
     })
-    if (match === undefined) return true
-    if (match.availableForSale === true) return false
-    return true
-  }
 
-  const price = Intl.NumberFormat(undefined, {
-    currency: minVariantPrice.currencyCode,
-    minimumFractionDigits: 2,
-    style: 'currency',
-  }).format(variant.price)
+    if (variant.shopifyId !== newVariant.shopifyId) {
+      setVariant(newVariant)
+    }
+  }, [size, color, variants, variant.shopifyId])
+
+  async function handleAddToCart() {
+    try {
+      await addItemToCart(variant.shopifyId, 1)
+      setAdded(true)
+    } catch (e) {
+      setAdded(false)
+    }
+  }
 
   return (
     <>
-      {productVariant.compareAtPrice !== null ? (
-        <h3 className="text-xl sm:text-2xl mb-4">
-          {price}{' '}
-          <span className="line-through">${productVariant.compareAtPrice}</span>
-        </h3>
-      ) : (
-        <h3 className="text-xl sm:text-2xl mb-4">{price}</h3>
-      )}
-      {options.map(({ id, name, values }, index) => (
-        <React.Fragment key={id}>
-          <label className="font-bold uppercase" htmlFor={name}>
-            {name}
-          </label>
-          <select
-            className="flex bg-gray-100 px-6 py-3 rounded-lg border-2 border-blue-300"
-            name={name}
-            key={id}
-            onBlur={(event) => handleOptionChange(index, event)}
-          >
-            {values.map((value) => (
-              <option
-                value={value}
-                key={`${name}-${value}`}
-                disabled={checkDisabled(name, value)}
-              >
-                {value}
-              </option>
-            ))}
-          </select>
-          <br />
-        </React.Fragment>
-      ))}
+      {/*TODO: Add sale price comparision */}
+      <h3 className="text-xl sm:text-2xl mb-4">${variant.price}</h3>
+      <div className="grid grid-cols-2 mb-4">
+        <OptionPicker
+          key="Color"
+          name="Color"
+          options={colors}
+          selected={color}
+          onChange={(event) => setColor(event.target.value)}
+        />
+        <OptionPicker
+          key="Size"
+          name="Size"
+          options={sizes}
+          selected={size}
+          onChange={(event) => setSize(event.target.value)}
+        />
+      </div>
       <button
         className="bg-blue-300 disabled text-white rounded-lg py-4 px-16 hover:bg-purple-300 uppercase font-bold tracking-wider transition duration-300 ease-out transform hover:scale-105"
-        type="submit"
-        disabled={!available || adding}
         onClick={handleAddToCart}
       >
         Add to bag
@@ -148,7 +80,6 @@ const ProductForm = ({ product }) => {
           </h3>
         </div>
       ) : null}
-      {!available && <p>This Product is out of Stock!</p>}
     </>
   )
 }
