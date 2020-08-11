@@ -1,2 +1,2 @@
 import './src/styles/styles.css'
-import 'react-image-gallery/styles/css/image-gallery.css'
+import 'keen-slider/keen-slider.min.css'

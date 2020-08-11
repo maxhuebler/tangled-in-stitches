@@ -1,51 +1,53 @@
 import React from 'react'
 import { graphql } from 'gatsby'
+import { useKeenSlider } from 'keen-slider/react'
+import Image from 'gatsby-image'
 
 import SEO from '~/components/SEO'
 import ProductForm from '~/components/ProductForm'
 import Trending from '~/components/Trending'
-import ImageGallery from 'react-image-gallery'
 
 const ProductPage = ({ data }) => {
   const product = data.shopifyProduct
+
+  const [currentSlide, setCurrentSlide] = React.useState(0)
+  const [sliderRef, slider] = useKeenSlider({
+    initial: 0,
+    slideChanged(s) {
+      setCurrentSlide(s.details().relativeSlide)
+    },
+  })
+
   return (
     <>
       <SEO title={product.title} description={product.description} />
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:mx-8">
-        <div className="hidden sm:flex px-0 md:px-0">
-          <ImageGallery
-            items={product.images.map((image) => ({
-              original: `https://tangled-in-stitches-git-develop.maxhuebler.now.sh${image.localFile.childImageSharp.fluid.src}`,
-              originalTitle: product.title,
-              originalAlt: image.id,
-              thumbnail: `https://tangled-in-stitches-git-develop.maxhuebler.now.sh${image.localFile.childImageSharp.fluid.src}`,
-              thumbnailAlt: image.id,
-            }))}
-            showBullets={true}
-            showNav={false}
-            showPlayButton={false}
-            showFullscreenButton={false}
-            showThumbnails={true}
-            slideDuration={350}
-            thumbnailPosition={'left'}
-          />
-        </div>
-        <div className="visibile sm:hidden">
-          <ImageGallery
-            items={product.images.map((image) => ({
-              original: `https://tangled-in-stitches-git-develop.maxhuebler.now.sh${image.localFile.childImageSharp.fluid.src}`,
-              originalTitle: product.title,
-              originalAlt: image.id,
-              thumbnail: `https://tangled-in-stitches-git-develop.maxhuebler.now.sh${image.localFile.childImageSharp.fluid.src}`,
-              thumbnailAlt: image.id,
-            }))}
-            showBullets={true}
-            showNav={false}
-            showPlayButton={false}
-            showFullscreenButton={false}
-            showThumbnails={false}
-            slideDuration={350}
-          />
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:mx-8 items-center">
+        <div>
+          <div ref={sliderRef} className="keen-slider">
+            {product.images.map((image) => (
+              <div className="keen-slider__slide h-auto">
+                <Image fluid={image.localFile.childImageSharp.fluid} />
+              </div>
+            ))}
+          </div>
+          {slider && (
+            <div className="flex justify-center">
+              {[...Array(slider.details().size).keys()].map((idx) => {
+                return (
+                  <button
+                    key={idx}
+                    onClick={() => {
+                      slider.moveToSlideRelative(idx)
+                    }}
+                    className={
+                      'mt-4 w-3 h-3 mx-2 rounded-full cursor-pointer bg-gray-600' +
+                      (currentSlide === idx ? ' bg-blue-700' : '')
+                    }
+                  />
+                )
+              })}
+            </div>
+          )}
         </div>
         <div className="mx-8 sm:mx-0">
           <h1 className="text-4xl font-bold leading-none">{product.title}</h1>
@@ -111,7 +113,7 @@ export const query = graphql`
         localFile {
           childImageSharp {
             fluid(maxWidth: 526) {
-              ...GatsbyImageSharpFluid
+              ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
           }
         }

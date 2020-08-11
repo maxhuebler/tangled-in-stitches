@@ -17,11 +17,11 @@
     "gatsby-source-shopify": "^3.2.26",
     "gatsby-theme-shopify-manager": "^0.1.7",
     "gatsby-transformer-sharp": "^2.5.12",
+    "keen-slider": "^5.2.2",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-helmet": "^6.1.0",
-    "react-image-gallery": "^1.0.7",
     "shopify-buy": "^2.11.0",
     "tailwindcss": "^1.6.2"
   },
@@ -29,6 +29,12 @@
     "build": "gatsby build",
     "start": "gatsby develop",
     "format": "prettier --write \"src/**/*.js\""
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "es5"
   },
   "devDependencies": {
     "gatsby-plugin-postcss": "^2.3.3",
