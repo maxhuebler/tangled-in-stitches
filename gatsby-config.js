@@ -47,6 +47,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-theme-shopify-manager`,
+      options: {
+        shopName: 'graphql.myshopify.com',
+        accessToken: 'dd4d4dc146542ba7763305d71d1b3d38',
+      },
+    },
+    {
       resolve: `gatsby-source-datocms`,
       options: {
         apiToken: `f14850eb7583ec505dae39fda22a64`,

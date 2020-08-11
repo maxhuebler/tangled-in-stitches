@@ -1,7 +1,6 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { graphql, Link } from 'gatsby'
 
-import StoreContext from '~/context/StoreContext'
 import Image from 'gatsby-image'
 import SEO from '~/components/SEO'
 import CollectionsList from '~/components/Collections/List'
@@ -9,16 +8,6 @@ import Hero from '~/components/Hero'
 
 const CollectionPage = ({ data }) => {
   const collection = data.collection
-  const {
-    store: { checkout },
-  } = useContext(StoreContext)
-
-  const getPrice = (price) =>
-    Intl.NumberFormat(undefined, {
-      currency: checkout.currencyCode ? checkout.currencyCode : 'USD',
-      minimumFractionDigits: 2,
-      style: 'currency',
-    }).format(parseFloat(price ? price : 0))
 
   return (
     <>
@@ -65,11 +54,11 @@ const CollectionPage = ({ data }) => {
                       {title}
                     </h1>
                     <h2 className="text-center sm:text-left text-gray-700">
-                      {getPrice(firstVariant.price)}
+                      {firstVariant.price}
                       <span className="font-bold text-xs"> USD</span>{' '}
                       {secondVariant.compareAtPrice !== null ? (
                         <span className="line-through font-bold">
-                          {getPrice(secondVariant.compareAtPrice)}
+                          {secondVariant.compareAtPrice}
                           <span className="font-bold text-xs"> USD</span>
                         </span>
                       ) : null}

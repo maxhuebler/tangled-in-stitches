@@ -1,31 +1,41 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { Link } from 'gatsby'
-
-import StoreContext from '~/context/StoreContext'
 import LineItem from './LineItem'
 
+import {
+  useCartItems,
+  useCheckoutUrl,
+  useCart,
+} from 'gatsby-theme-shopify-manager'
+
 const Bag = () => {
-  const {
-    store: { checkout },
-  } = useContext(StoreContext)
+  const cartItems = useCartItems()
+  const checkoutUrl = useCheckoutUrl()
 
-  const handleCheckout = () => {
-    window.open(checkout.webUrl)
+  const cart = useCart()
+  const { total } = getCartTotals(cart)
+
+  function getCartTotals(cart) {
+    if (cart == null) {
+      return { tax: '-', total: '-' }
+    }
+    const total = cart.totalPriceV2
+      ? `$${Number(cart.totalPriceV2.amount).toFixed(2)}`
+      : '-'
+    return { total }
   }
-
-  const lineItems = checkout.lineItems.map((item) => (
-    <LineItem key={item.id.toString()} item={item} />
-  ))
 
   return (
     <div className="sm:h-screen">
-      {checkout.lineItems.length >= 1 ? (
+      {cartItems.length >= 1 ? (
         <h1 className="text-gray-800 mb-4 ml-8 text-xl sm:text-3xl font-bold">
           Your shopping bag:
         </h1>
       ) : null}
-      {lineItems}
-      {checkout.lineItems.length < 1 ? (
+      {cartItems.map((lineItem) => (
+        <LineItem key={lineItem.toString()} item={lineItem} />
+      ))}
+      {cartItems.length < 1 ? (
         <div className="flex justify-center h-32 sm:h-64">
           <div className="grid grid-rows-1 text-center items-center px-4">
             <div>
@@ -43,15 +53,16 @@ const Bag = () => {
       ) : (
         <div className="flex flex-col items-end pr-10">
           <h2 className="text-lg font-bold">Subtotal</h2>
-          <p>$ {checkout.subtotalPrice}</p>
+          <p>{total}</p>
           <p className="mb-4">Taxes and shipping calculated at checkout</p>
-          <button
+          <a
             className="bg-blue-300 text-white rounded-lg py-4 px-16 hover:bg-purple-300 uppercase font-bold tracking-wider transition duration-300 ease-out transform hover:scale-105"
-            onClick={handleCheckout}
-            disabled={checkout.lineItems.length === 0}
+            target="_blank"
+            rel="noopener noreferrer"
+            href={checkoutUrl}
           >
             Check out
-          </button>
+          </a>
         </div>
       )}
     </div>
