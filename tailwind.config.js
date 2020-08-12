@@ -1,7 +1,5 @@
 module.exports = {
-  purge: {
-    enabled: false,
-  },
+  purge: ['./src/**/*.tsx'],
   theme: {
     fontFamily: {
       sans: ['Roboto', 'sans-serif'],

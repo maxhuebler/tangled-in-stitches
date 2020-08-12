@@ -3,7 +3,7 @@ import { useStaticQuery, graphql, Link } from 'gatsby'
 
 import Image from 'gatsby-image'
 
-export default function Trending({ message }) {
+export default function Trending(message: string): JSX.Element {
   const { allShopifyProduct } = useStaticQuery(
     graphql`
       query {
@@ -39,7 +39,7 @@ export default function Trending({ message }) {
   return (
     <>
       <h1 className="text-2xl text-gray-700 font-bold tracking-widest py-4 uppercase mx-8">
-        {message}
+        {/* {message} */}
       </h1>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 mx-8">
         {allShopifyProduct.edges ? (

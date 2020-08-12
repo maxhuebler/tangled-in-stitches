@@ -1,9 +1,8 @@
 import React from 'react'
+import SEO from '../components/SEO'
+import Bag from '../components/Bag'
 
-import SEO from '~/components/SEO'
-import Bag from '~/components/Bag'
-
-const BagPage = () => (
+const BagPage = (): JSX.Element => (
   <>
     <SEO title="Bag" />
     <Bag />

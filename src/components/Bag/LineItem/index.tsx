@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 
 import { useUpdateItemQuantity } from 'gatsby-theme-shopify-manager'
 
-const LineItem = ({ item }) => {
+const LineItem = ({ item }): JSX.Element => {
   const updateItemQuantity = useUpdateItemQuantity()
 
   const variantImage = item.variant.image ? (
@@ -26,9 +26,7 @@ const LineItem = ({ item }) => {
   async function removeFromCart(variantId) {
     try {
       await updateItemQuantity(variantId, 0)
-    } catch (e) {
-      console.log(e)
-    }
+    } catch (e) {}
   }
 
   return (

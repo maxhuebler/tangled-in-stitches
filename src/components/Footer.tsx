@@ -1,7 +1,11 @@
 import React from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 
-export default function Footer({ siteTitle }: string) {
+interface FooterProperties {
+  siteTitle: string
+}
+
+export default function Footer({ siteTitle }: FooterProperties): JSX.Element {
   const { allShopifyCollection } = useStaticQuery(
     graphql`
       query {
@@ -38,7 +42,7 @@ export default function Footer({ siteTitle }: string) {
             <ul className="mt-4 text-gray-700">
               {allShopifyCollection.edges
                 ? allShopifyCollection.edges.map(
-                    ({ node: { title, handle } }) => (
+                    ({ node: { title, handle } }: string) => (
                       <li key={title.toString()} className="hover:text-black">
                         <Link to={`/collection/${handle}`}>{title}</Link>
                       </li>

@@ -9,7 +9,12 @@ interface SEOProperties {
   title: string
 }
 
-function SEO({ description, lang, meta = [], title }: SEOProperties) {
+function SEO({
+  description,
+  lang,
+  meta = [],
+  title,
+}: SEOProperties): JSX.Element {
   return (
     <StaticQuery
       query={graphql`

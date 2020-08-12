@@ -1,8 +1,8 @@
 import React from 'react'
-import SEO from '~/components/SEO'
-import About from '~/components/About'
+import SEO from '../components/SEO'
+import About from '../components/About'
 
-const AboutPage = () => (
+const AboutPage = (): JSX.Element => (
   <>
     <SEO title="About" />
     <About />

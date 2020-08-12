@@ -7,14 +7,12 @@ import {
 } from 'gatsby-theme-shopify-manager'
 import LineItem from './LineItem'
 
-const Bag = () => {
+const Bag = (): JSX.Element => {
   const cartItems = useCartItems()
   const checkoutUrl = useCheckoutUrl()
-
   const cart = useCart()
-  const { total } = getCartTotals(cart)
 
-  function getCartTotals(cart) {
+  function getCartTotals() {
     if (cart == null) {
       return { tax: '-', total: '-' }
     }
@@ -23,6 +21,8 @@ const Bag = () => {
       : '-'
     return { total }
   }
+
+  const { total } = getCartTotals()
 
   return (
     <div className="sm:h-screen">
@@ -42,7 +42,10 @@ const Bag = () => {
                 Looks like your bag is empty!
               </div>
               <Link to="/">
-                <button className="bg-blue-300 text-white rounded-lg py-4 px-16 hover:bg-purple-300 uppercase font-bold tracking-wider mt-4">
+                <button
+                  type="submit"
+                  className="bg-blue-300 text-white rounded-lg py-4 px-16 hover:bg-purple-300 uppercase font-bold tracking-wider mt-4"
+                >
                   Continue Shopping
                 </button>
               </Link>

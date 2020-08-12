@@ -2,11 +2,11 @@ import React from 'react'
 import { graphql, Link } from 'gatsby'
 
 import Image from 'gatsby-image'
-import SEO from '~/components/SEO'
-import CollectionsList from '~/components/Collections/List'
-import Hero from '~/components/Hero'
+import SEO from '../components/SEO'
+import CollectionsList from '../components/Collections/List'
+import Hero from '../components/Hero'
 
-const CollectionPage = ({ data }) => {
+const CollectionPage = ({ data }): JSX.Element => {
   const { collection } = data
 
   return (

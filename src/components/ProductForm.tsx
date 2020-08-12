@@ -2,10 +2,10 @@ import React, { useState, useEffect, useMemo } from 'react'
 import { Link } from 'gatsby'
 
 import { useAddItemToCart } from 'gatsby-theme-shopify-manager'
-import { OptionPicker } from './OptionPicker'
+import OptionPicker from './OptionPicker'
 import { prepareVariantsWithOptions } from '../utilities'
 
-const ProductForm = ({ product }) => {
+const ProductForm = ({ product }): JSX.Element => {
   const colors = product.options.find(
     (option) => option.name.toLowerCase() === 'color'
   ).values
@@ -32,7 +32,7 @@ const ProductForm = ({ product }) => {
     if (variant.shopifyId !== newVariant.shopifyId) {
       setVariant(newVariant)
     }
-  }, [size, color, variants, variant.shopifyId])
+  }, [size, color, variants, variant.shopifyId, variant.color, variant.size])
 
   async function handleAddToCart() {
     try {
@@ -65,6 +65,7 @@ const ProductForm = ({ product }) => {
       </div>
       <button
         className="bg-blue-300 disabled text-white rounded-lg py-4 px-16 hover:bg-purple-300 uppercase font-bold tracking-wider"
+        type="submit"
         onClick={handleAddToCart}
       >
         Add to bag

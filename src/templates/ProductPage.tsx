@@ -3,13 +3,12 @@ import { graphql } from 'gatsby'
 import { useKeenSlider } from 'keen-slider/react'
 import Image from 'gatsby-image'
 
-import SEO from '~/components/SEO'
-import ProductForm from '~/components/ProductForm'
-import Trending from '~/components/Trending'
+import SEO from '../components/SEO'
+import ProductForm from '../components/ProductForm'
+import Trending from '../components/Trending'
 
-const ProductPage = ({ data }) => {
+const ProductPage = ({ data }): JSX.Element => {
   const product = data.shopifyProduct
-
   const [currentSlide, setCurrentSlide] = React.useState(0)
   const [sliderRef, slider] = useKeenSlider({
     initial: 0,
@@ -25,7 +24,10 @@ const ProductPage = ({ data }) => {
         <div>
           <div ref={sliderRef} className="keen-slider">
             {product.images.map((image) => (
-              <div className="keen-slider__slide h-auto">
+              <div
+                key={image}
+                className="keen-slider__slide h-auto sm:rounded-lg"
+              >
                 <Image fluid={image.localFile.childImageSharp.fluid} />
               </div>
             ))}
@@ -36,6 +38,7 @@ const ProductPage = ({ data }) => {
                 return (
                   <button
                     key={idx}
+                    type="submit"
                     onClick={() => {
                       slider.moveToSlideRelative(idx)
                     }}
