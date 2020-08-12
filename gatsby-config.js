@@ -1,9 +1,7 @@
-const path = require('path')
-
 module.exports = {
   siteMetadata: {
     title: `Tangled in Stitches`,
-    description: `Tangled in Stitches Clothing Company, Disney Insipired Clothing`,
+    description: `Tangled in Stitches Clothing Company`,
     author: `max@huebler.us`,
   },
   plugins: [
@@ -39,14 +37,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-shopify`,
-      options: {
-        shopName: 'graphql',
-        accessToken: 'dd4d4dc146542ba7763305d71d1b3d38',
-        verbose: true,
-      },
-    },
-    {
       resolve: `gatsby-theme-shopify-manager`,
       options: {
         shopName: 'graphql.myshopify.com',
@@ -59,12 +49,6 @@ module.exports = {
         apiToken: `f14850eb7583ec505dae39fda22a64`,
         preview: false,
         disableLiveReload: false,
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-root-import',
-      options: {
-        '~': path.join(__dirname, 'src/'),
       },
     },
     {
@@ -92,16 +76,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-postcss`,
       options: {
-        postCssPlugins: [require('tailwindcss')],
-      },
-    },
-    {
-      resolve: `gatsby-plugin-purgecss`,
-      options: {
-        printRejected: false,
-        develop: false,
-        tailwind: true,
-        ignore: ['react-image-gallery'],
+        postCssPlugins: [require('tailwindcss'), require('autoprefixer')],
       },
     },
   ],
