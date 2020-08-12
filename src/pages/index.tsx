@@ -9,10 +9,7 @@ import CollectionsGrid from '../components/Collections/Grid'
 
 const IndexPage = () => (
   <>
-    <SEO
-      title="Home"
-      keywords={[`tangled in stitches`, `home`, `shop`, `clothing`, `disney`]}
-    />
+    <SEO title="Home" />
     <Hero />
     <div className="mt-1">
       <Trending message={`What's Trending`} />

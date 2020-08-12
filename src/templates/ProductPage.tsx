@@ -39,10 +39,9 @@ const ProductPage = ({ data }) => {
                     onClick={() => {
                       slider.moveToSlideRelative(idx)
                     }}
-                    className={
-                      'mt-4 w-3 h-3 mx-2 rounded-full cursor-pointer bg-gray-600' +
-                      (currentSlide === idx ? ' bg-blue-700' : '')
-                    }
+                    className={`mt-4 w-3 h-3 mx-2 rounded-full cursor-pointer bg-gray-600${
+                      currentSlide === idx ? ' bg-blue-700' : ''
+                    }`}
                   />
                 )
               })}
@@ -59,12 +58,12 @@ const ProductPage = ({ data }) => {
             <p
               className="text-justify"
               dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
-            ></p>
+            />
           </div>
         </div>
       </div>
       <div className="mt-12 sm:mt-32">
-        <Trending message={`You May Also Like`} />
+        <Trending message="You May Also Like" />
       </div>
     </>
   )

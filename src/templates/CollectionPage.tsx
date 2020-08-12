@@ -7,7 +7,7 @@ import CollectionsList from '~/components/Collections/List'
 import Hero from '~/components/Hero'
 
 const CollectionPage = ({ data }) => {
-  const collection = data.collection
+  const { collection } = data
 
   return (
     <>

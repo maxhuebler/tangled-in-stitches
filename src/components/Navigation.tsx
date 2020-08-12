@@ -2,15 +2,17 @@ import React from 'react'
 import { Link } from 'gatsby'
 import { useCartCount } from 'gatsby-theme-shopify-manager'
 
-import PropTypes from 'prop-types'
+interface Props {
+  siteTitle: string
+}
 
-const Navigation = ({ siteTitle }) => {
+const Navigation = ({ siteTitle }: Props) => {
   const cartCount = useCartCount()
 
   return (
     <header>
       <nav className="flex text-center items-center justify-between py-8 sm:py-12">
-        <div className="hidden lg:flex w-24"></div>
+        <div className="hidden lg:flex w-24" />
         <div className="ml-6 lg:ml-0">
           <Link to="/">
             <span className="font-display text-4xl sm:text-5xl text-gray-800 leading-none">
@@ -39,14 +41,6 @@ const Navigation = ({ siteTitle }) => {
       </nav>
     </header>
   )
-}
-
-Navigation.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Navigation.defaultProps = {
-  siteTitle: ``,
 }
 
 export default Navigation

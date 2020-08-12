@@ -1,11 +1,14 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 
 import Navigation from '~/components/Navigation'
 import Footer from '~/components/Footer'
 
-const Layout = ({ children }) => {
+interface Props {
+  children: Node
+}
+
+const Layout = ({ children }: Props) => {
   return (
     <StaticQuery
       query={graphql`
@@ -38,10 +41,6 @@ const Layout = ({ children }) => {
       )}
     />
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout

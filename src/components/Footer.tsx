@@ -1,7 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql, Link } from 'gatsby'
 
-export default function Footer({ siteTitle }) {
+export default function Footer({ siteTitle }: string) {
   const { allShopifyCollection } = useStaticQuery(
     graphql`
       query {

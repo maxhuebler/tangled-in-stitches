@@ -1,10 +1,9 @@
 import React, { useState, useEffect, useMemo } from 'react'
 import { Link } from 'gatsby'
-import PropTypes from 'prop-types'
 
+import { useAddItemToCart } from 'gatsby-theme-shopify-manager'
 import { OptionPicker } from './OptionPicker'
 import { prepareVariantsWithOptions } from '../utilities'
-import { useAddItemToCart } from 'gatsby-theme-shopify-manager'
 
 const ProductForm = ({ product }) => {
   const colors = product.options.find(
@@ -46,7 +45,7 @@ const ProductForm = ({ product }) => {
 
   return (
     <>
-      {/*TODO: Add sale price comparision */}
+      {/* TODO: Add sale price comparision */}
       <h3 className="text-xl sm:text-2xl mb-4">${variant.price}</h3>
       <div className="grid grid-cols-2 mb-4">
         <OptionPicker
@@ -82,46 +81,6 @@ const ProductForm = ({ product }) => {
       ) : null}
     </>
   )
-}
-
-ProductForm.propTypes = {
-  product: PropTypes.shape({
-    descriptionHtml: PropTypes.string,
-    handle: PropTypes.string,
-    id: PropTypes.string,
-    shopifyId: PropTypes.string,
-    images: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.string,
-        originalSrc: PropTypes.string,
-      })
-    ),
-    options: PropTypes.arrayOf(
-      PropTypes.shape({
-        id: PropTypes.string,
-        name: PropTypes.string,
-        values: PropTypes.arrayOf(PropTypes.string),
-      })
-    ),
-    productType: PropTypes.string,
-    title: PropTypes.string,
-    variants: PropTypes.arrayOf(
-      PropTypes.shape({
-        availableForSale: PropTypes.bool,
-        id: PropTypes.string,
-        price: PropTypes.string,
-        title: PropTypes.string,
-        shopifyId: PropTypes.string,
-        selectedOptions: PropTypes.arrayOf(
-          PropTypes.shape({
-            name: PropTypes.string,
-            value: PropTypes.string,
-          })
-        ),
-      })
-    ),
-  }),
-  addVariantToCart: PropTypes.func,
 }
 
 export default ProductForm

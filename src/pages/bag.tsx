@@ -5,7 +5,7 @@ import Bag from '~/components/Bag'
 
 const BagPage = () => (
   <>
-    <SEO title="Bag" keywords={[`bag`, `cart`, `checkout`]} />
+    <SEO title="Bag" />
     <Bag />
   </>
 )
