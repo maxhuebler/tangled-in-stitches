@@ -1,7 +1,6 @@
-import React from 'react'
 import { Link } from 'gatsby'
-
 import { useUpdateItemQuantity } from 'gatsby-theme-shopify-manager'
+import React from 'react'
 
 const LineItem = ({ item }): JSX.Element => {
   const updateItemQuantity = useUpdateItemQuantity()

@@ -1,10 +1,10 @@
-import React from 'react'
 import { graphql } from 'gatsby'
-import { useKeenSlider } from 'keen-slider/react'
 import Image from 'gatsby-image'
+import { useKeenSlider } from 'keen-slider/react'
+import React from 'react'
 
-import SEO from '../components/SEO'
 import ProductForm from '../components/ProductForm'
+import SEO from '../components/SEO'
 import Trending from '../components/Trending'
 
 const ProductPage = ({ data }): JSX.Element => {

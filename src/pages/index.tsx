@@ -1,9 +1,10 @@
 import React from 'react'
-import SEO from '../components/SEO'
-import Hero from '../components/Hero'
-import Trending from '../components/Trending'
-import CollectionsList from '../components/Collections/List'
+
 import CollectionsGrid from '../components/Collections/Grid'
+import CollectionsList from '../components/Collections/List'
+import Hero from '../components/Hero'
+import SEO from '../components/SEO'
+import Trending from '../components/Trending'
 
 const IndexPage = (): JSX.Element => (
   <>

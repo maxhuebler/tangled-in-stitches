@@ -26,10 +26,11 @@
   },
   "scripts": {
     "build": "gatsby build",
+    "clean": "gatsby clean",
     "start": "gatsby develop",
     "format": "prettier --write 'src/**/*.tsx'",
-    "lint": "eslint . --ext .tsx",
-    "lint-fix": "eslint --fix . --ext .tsx"
+    "lint": "eslint . --ext .tsx,.ts",
+    "lint-fix": "eslint . --fix --ext .tsx,.ts"
   },
   "prettier": {
     "semi": false,

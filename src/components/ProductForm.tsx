@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useMemo } from 'react'
 import { Link } from 'gatsby'
-
 import { useAddItemToCart } from 'gatsby-theme-shopify-manager'
-import OptionPicker from './OptionPicker'
+import React, { useEffect, useMemo, useState } from 'react'
+
 import { prepareVariantsWithOptions } from '../utilities'
+import OptionPicker from './OptionPicker'
 
 const ProductForm = ({ product }): JSX.Element => {
   const colors = product.options.find(

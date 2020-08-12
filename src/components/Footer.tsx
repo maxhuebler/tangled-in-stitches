@@ -1,5 +1,5 @@
+import { Link, graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
-import { useStaticQuery, graphql, Link } from 'gatsby'
 
 interface FooterProperties {
   siteTitle: string

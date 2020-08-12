@@ -1,5 +1,5 @@
+import { Link, graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
-import { useStaticQuery, graphql, Link } from 'gatsby'
 
 export default function List(): JSX.Element {
   const { allShopifyCollection } = useStaticQuery(

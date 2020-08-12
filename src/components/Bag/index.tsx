@@ -1,10 +1,11 @@
-import React from 'react'
 import { Link } from 'gatsby'
 import {
+  useCart,
   useCartItems,
   useCheckoutUrl,
-  useCart,
 } from 'gatsby-theme-shopify-manager'
+import React from 'react'
+
 import LineItem from './LineItem'
 
 const Bag = (): JSX.Element => {

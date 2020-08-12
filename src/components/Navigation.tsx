@@ -1,6 +1,6 @@
-import React from 'react'
 import { Link } from 'gatsby'
 import { useCartCount } from 'gatsby-theme-shopify-manager'
+import React from 'react'
 
 interface Props {
   siteTitle: string
