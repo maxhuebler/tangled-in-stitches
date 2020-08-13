@@ -9,7 +9,7 @@ import React from 'react'
 import LineItem from './LineItem'
 
 const Bag = (): JSX.Element => {
-  const cartItems = useCartItems()
+  const lineItems = useCartItems()
   const checkoutUrl = useCheckoutUrl()
   const cart = useCart()
 
@@ -27,15 +27,15 @@ const Bag = (): JSX.Element => {
 
   return (
     <div className="sm:h-screen">
-      {cartItems.length >= 1 ? (
+      {lineItems.length >= 1 ? (
         <h1 className="text-gray-800 mb-4 ml-8 text-xl sm:text-3xl font-bold">
           Your shopping bag:
         </h1>
       ) : null}
-      {cartItems.map((lineItem) => (
-        <LineItem key={lineItem.toString()} item={lineItem} />
+      {lineItems.map((item) => (
+        <LineItem key={item.id} item={item} />
       ))}
-      {cartItems.length < 1 ? (
+      {lineItems.length < 1 ? (
         <div className="flex justify-center h-32 sm:h-64">
           <div className="grid grid-rows-1 text-center items-center px-4">
             <div>
