@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Tangled in Stitches`,
@@ -8,7 +12,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: 'UA-52251554-5',
+        trackingId: "UA-52251554-5",
         anonymize: true,
         respectDNT: true,
       },
@@ -39,14 +43,14 @@ module.exports = {
     {
       resolve: `gatsby-theme-shopify-manager`,
       options: {
-        shopName: 'graphql.myshopify.com',
-        accessToken: 'dd4d4dc146542ba7763305d71d1b3d38',
+        shopName: process.env.SHOP_NAME,
+        accessToken: process.env.SHOP_TOKEN,
       },
     },
     {
       resolve: `gatsby-source-datocms`,
       options: {
-        apiToken: `f14850eb7583ec505dae39fda22a64`,
+        apiToken: process.env.DATOCMS_TOKEN,
         preview: false,
         disableLiveReload: false,
       },
@@ -57,14 +61,14 @@ module.exports = {
         fonts: {
           google: [
             {
-              family: 'Roboto',
-              variants: ['400', '700'],
-              fontDisplay: 'swap',
+              family: "Roboto",
+              variants: ["400", "700"],
+              fontDisplay: "swap",
             },
             {
-              family: 'Norican',
-              variants: ['400'],
-              fontDisplay: 'swap',
+              family: "Norican",
+              variants: ["400"],
+              fontDisplay: "swap",
             },
           ],
         },
@@ -76,7 +80,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-postcss`,
       options: {
-        postCssPlugins: [require('tailwindcss')],
+        postCssPlugins: [require("tailwindcss")],
       },
     },
   ],
