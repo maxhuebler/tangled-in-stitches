@@ -81,8 +81,9 @@ const ProductForm = ({ product }: ProductProperties): JSX.Element => {
         />
       </div>
       <button
-        className="bg-blue-300 disabled text-white rounded-lg py-4 px-16 hover:bg-purple-300 uppercase font-bold tracking-wider"
+        className="bg-blue-300 w-64 py-4 rounded-lg hover:bg-purple-300 text-white uppercase font-bold tracking-wider"
         type="submit"
+        aria-label="add to cart"
         onClick={handleAddToCart}
       >
         Add to bag
@@ -90,8 +91,8 @@ const ProductForm = ({ product }: ProductProperties): JSX.Element => {
       {added ? (
         <div className="mt-4 text-md">
           <h3 className="text-green-500">
-            {product.title} added to your{' '}
             <Link to="/bag">
+              {product.title} added to your{' '}
               <span className="font-bold underline">bag.</span>
             </Link>
           </h3>

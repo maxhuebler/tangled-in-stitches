@@ -15,9 +15,12 @@ const OptionPicker = ({
 }: OptionProperties): JSX.Element => {
   return (
     <div>
-      <label className="block tracking-wide text-gray-700">{name}</label>
+      <label htmlFor={name} className="block tracking-wide text-gray-700">
+        {name}
+      </label>
       <select
         className="block w-64 px-4 py-4 uppercase border-2 border-black rounded-lg"
+        id={name}
         onChange={onChange}
         value={selected}
       >

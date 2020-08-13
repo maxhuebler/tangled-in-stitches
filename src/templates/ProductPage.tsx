@@ -64,11 +64,12 @@ const ProductPage = ({ data }: Props): JSX.Element => {
                 return (
                   <button
                     key={idx}
+                    aria-label="Next product slide"
                     type="submit"
                     onClick={() => {
                       slider.moveToSlideRelative(idx)
                     }}
-                    className={`mt-4 w-3 h-3 mx-2 rounded-full cursor-pointer bg-gray-600${
+                    className={`mt-4 w-3 h-3 mx-2 rounded-full cursor-pointer bg-gray-600 hover:bg-blue-700${
                       currentSlide === idx ? ' bg-blue-700' : ''
                     }`}
                   />

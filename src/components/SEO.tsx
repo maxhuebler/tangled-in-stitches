@@ -9,12 +9,7 @@ interface SEOProperties {
   title: string
 }
 
-function SEO({
-  description,
-  lang,
-  meta = [],
-  title,
-}: SEOProperties): JSX.Element {
+function SEO({ description, meta = [], title }: SEOProperties): JSX.Element {
   return (
     <StaticQuery
       query={graphql`
@@ -33,9 +28,6 @@ function SEO({
           description || data.site.siteMetadata.description
         return (
           <Helmet
-            htmlAttributes={{
-              lang,
-            }}
             title={title}
             titleTemplate={`%s | ${data.site.siteMetadata.title}`}
             meta={[
@@ -72,7 +64,9 @@ function SEO({
                 content: metaDescription,
               },
             ].concat(meta)}
-          />
+          >
+            <html lang="en" />
+          </Helmet>
         )
       }}
     />

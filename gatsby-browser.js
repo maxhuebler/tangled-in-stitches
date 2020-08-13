@@ -1,2 +1,2 @@
-import './src/styles/styles.css'
+import './src/css/index.css'
 import 'keen-slider/keen-slider.min.css'
