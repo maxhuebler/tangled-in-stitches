@@ -2050,7 +2050,7 @@
     "@typescript-eslint/typescript-estree" "2.34.0"
     eslint-visitor-keys "^1.1.0"
 
-"@typescript-eslint/parser@^3.6.1", "@typescript-eslint/parser@^3.9.0":
+"@typescript-eslint/parser@^3.9.0":
   version "3.9.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/parser/-/parser-3.9.0.tgz#344978a265d9a5c7c8f13e62c78172a4374dabea"
   integrity sha512-rDHOKb6uW2jZkHQniUQVZkixQrfsZGUCNWWbKWep4A5hGhN5dLHMUCNAWnC4tXRlHedXkTDptIpxs6e4Pz8UfA==
@@ -2721,19 +2721,6 @@ autoprefixer@^9.4.5, autoprefixer@^9.8.4:
     browserslist "^4.12.0"
     caniuse-lite "^1.0.30001097"
     colorette "^1.2.0"
-    normalize-range "^0.1.2"
-    num2fraction "^1.2.2"
-    postcss "^7.0.32"
-    postcss-value-parser "^4.1.0"
-
-autoprefixer@^9.8.6:
-  version "9.8.6"
-  resolved "https://registry.yarnpkg.com/autoprefixer/-/autoprefixer-9.8.6.tgz#3b73594ca1bf9266320c5acf1588d74dea74210f"
-  integrity sha512-XrvP4VVHdRBCdX1S3WXVD8+RyG9qeb1D5Sn1DeLiG2xfSpzellk5k54xbUERJ3M5DggQxes39UGOTP8CFrEGbg==
-  dependencies:
-    browserslist "^4.12.0"
-    caniuse-lite "^1.0.30001109"
-    colorette "^1.2.1"
     normalize-range "^0.1.2"
     num2fraction "^1.2.2"
     postcss "^7.0.32"
@@ -3547,11 +3534,6 @@ caniuse-lite@^1.0.0, caniuse-lite@^1.0.30001093, caniuse-lite@^1.0.30001097:
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001105.tgz#d2cb0b31e5cf2f3ce845033b61c5c01566549abf"
   integrity sha512-JupOe6+dGMr7E20siZHIZQwYqrllxotAhiaej96y6x00b/48rPt42o+SzOSCPbrpsDWvRja40Hwrj0g0q6LZJg==
 
-caniuse-lite@^1.0.30001109:
-  version "1.0.30001113"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001113.tgz#22016ab55b5a8b04fa00ca342d9ee1b98df48065"
-  integrity sha512-qMvjHiKH21zzM/VDZr6oosO6Ri3U0V2tC015jRXjOecwQCJtsU5zklTNTk31jQbIOP8gha0h1ccM/g0ECP+4BA==
-
 case@^1.6.2:
   version "1.6.3"
   resolved "https://registry.yarnpkg.com/case/-/case-1.6.3.tgz#0a4386e3e9825351ca2e6216c60467ff5f1ea1c9"
@@ -3922,7 +3904,7 @@ color@^3.0.0, color@^3.1.2:
     color-convert "^1.9.1"
     color-string "^1.5.2"
 
-colorette@^1.2.0, colorette@^1.2.1:
+colorette@^1.2.0:
   version "1.2.1"
   resolved "https://registry.yarnpkg.com/colorette/-/colorette-1.2.1.tgz#4d0b921325c14faf92633086a536db6e89564b1b"
   integrity sha512-puCDz0CzydiSYOrnXpz/PKd69zRrribezjtE9yd4zvytoRc8+RY/KJPvtPFKZS3E3wP6neGyMe0vOTlHO5L3Pw==
@@ -5480,33 +5462,6 @@ escape-string-regexp@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/escape-string-regexp/-/escape-string-regexp-2.0.0.tgz#a30304e99daa32e23b2fd20f51babd07cffca344"
   integrity sha512-UpzcLCXolUWcNu5HtVMHYdXJjArjsF9C0aNnquZYY4uW/Vu0miy5YoWvbV345HauVvcAUnpRuhMMcqTcGOY2+w==
-
-eslint-config-airbnb-base@^14.2.0:
-  version "14.2.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-airbnb-base/-/eslint-config-airbnb-base-14.2.0.tgz#fe89c24b3f9dc8008c9c0d0d88c28f95ed65e9c4"
-  integrity sha512-Snswd5oC6nJaevs3nZoLSTvGJBvzTfnBqOIArkf3cbyTyq9UD79wOk8s+RiL6bhca0p/eRO6veczhf6A/7Jy8Q==
-  dependencies:
-    confusing-browser-globals "^1.0.9"
-    object.assign "^4.1.0"
-    object.entries "^1.1.2"
-
-eslint-config-airbnb-typescript@^9.0.0:
-  version "9.0.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-airbnb-typescript/-/eslint-config-airbnb-typescript-9.0.0.tgz#2524f3fa6fceb3df4ae191d1e1114a04fe54c6e6"
-  integrity sha512-BxckAZU4rwfOidZVucAO120fTSGQAugimS8HFp7OoiordpyNkq5bxSlTPZ2XxSY8Q2NWDIygqtJKqupZld/TXA==
-  dependencies:
-    "@typescript-eslint/parser" "^3.6.1"
-    eslint-config-airbnb "^18.2.0"
-    eslint-config-airbnb-base "^14.2.0"
-
-eslint-config-airbnb@^18.2.0:
-  version "18.2.0"
-  resolved "https://registry.yarnpkg.com/eslint-config-airbnb/-/eslint-config-airbnb-18.2.0.tgz#8a82168713effce8fc08e10896a63f1235499dcd"
-  integrity sha512-Fz4JIUKkrhO0du2cg5opdyPKQXOI2MvF8KUvN2710nJMT6jaRUpRE2swrJftAjVGL7T1otLM5ieo5RqS1v9Udg==
-  dependencies:
-    eslint-config-airbnb-base "^14.2.0"
-    object.assign "^4.1.0"
-    object.entries "^1.1.2"
 
 eslint-config-prettier@^6.11.0:
   version "6.11.0"

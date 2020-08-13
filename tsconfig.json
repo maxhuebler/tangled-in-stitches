@@ -1,9 +1,9 @@
 {
   "compilerOptions": {
     /* Basic Options */
-    "target": "esnext",
-    "module": "esnext",
-    "lib": ["dom", "esnext"],
+    "target": "ESNext",
+    "module": "ESNext",
+    "lib": ["DOM", "ESNext"],
     "jsx": "preserve",
     "isolatedModules": true,
 

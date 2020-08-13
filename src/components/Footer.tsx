@@ -1,4 +1,4 @@
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import { graphql, Link, useStaticQuery } from 'gatsby'
 import React from 'react'
 
 interface FooterProperties {

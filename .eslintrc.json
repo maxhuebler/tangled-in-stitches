@@ -1,7 +1,5 @@
 {
-  "env": {
-    "browser": true
-  },
+  "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "project": "./tsconfig.json"
   },
@@ -10,20 +8,23 @@
       "version": "detect"
     }
   },
+  "plugins": ["prettier"],
   "extends": [
-    "airbnb-typescript",
-    "airbnb/hooks",
-    "plugin:@typescript-eslint/eslint-recommended",
     "plugin:react/recommended",
     "plugin:@typescript-eslint/recommended",
     "prettier/@typescript-eslint",
-    "plugin:prettier/recommended",
-    "prettier",
-    "prettier/@typescript-eslint",
-    "prettier/react"
+    "plugin:prettier/recommended"
   ],
   "rules": {
-    "react/require-default-props": 0,
-    "react/no-unused-prop-types": 0
+    "sort-imports": [
+      "error",
+      {
+        "ignoreCase": true,
+        "ignoreDeclarationSort": true,
+        "memberSyntaxSortOrder": ["single", "multiple", "all", "none"]
+      }
+    ],
+    "react/no-unused-prop-types": 0,
+    "prettier/prettier": "error"
   }
 }

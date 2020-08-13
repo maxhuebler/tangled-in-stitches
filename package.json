@@ -29,8 +29,7 @@
     "clean": "gatsby clean",
     "start": "gatsby develop",
     "format": "prettier --write 'src/**/*.tsx'",
-    "lint": "eslint . --ext .tsx,.ts",
-    "lint-fix": "eslint . --fix --ext .tsx,.ts"
+    "lint": "eslint '*/**/*.{js,ts,tsx}' --fix"
   },
   "prettier": {
     "semi": false,
@@ -45,12 +44,8 @@
     "@types/shopify-buy": "^2.10.2",
     "@typescript-eslint/eslint-plugin": "^3.9.0",
     "@typescript-eslint/parser": "^3.9.0",
-    "autoprefixer": "^9.8.6",
     "eslint": "^7.6.0",
-    "eslint-config-airbnb-typescript": "^9.0.0",
     "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.20.5",
     "eslint-plugin-react-hooks": "^4.0.8",
