@@ -44,7 +44,7 @@ const CollectionPage = ({ data }: CollectionProperties): JSX.Element => {
     <>
       <SEO title={collection.title} description={collection.description} />
       <Hero />
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8 mx-8 mt-8">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-0 sm:gap-8 mx-4 sm:mx-8 mt-8">
         <div className="hidden lg:block col-span-1">
           <CollectionsList />
         </div>
@@ -52,7 +52,7 @@ const CollectionPage = ({ data }: CollectionProperties): JSX.Element => {
           <h1 className="sm:flex text-lg sm:text-2xl font-bold tracking-widest sm:ml-4 sm:mt-3 py-4 uppercase border-b items-center text-center">
             {collection.title} ({collection.products.length} items)
           </h1>
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 mt-8 sm:ml-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-8 mt-8 sm:ml-4">
             {collection.products.map((product: ProductProperties) => (
               <div className="flex flex-col min-h-full" key={product.id}>
                 <Link to={`/product/${product.handle}/`}>
