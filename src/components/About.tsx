@@ -1,11 +1,11 @@
-import React from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
-import { useStaticQuery, graphql } from 'gatsby'
+import React from 'react'
 
-import Hero from '~/components/Hero'
-import CollectionList from '~/components/Collections/List'
+import CollectionList from './Collections/List'
+import Hero from './Hero'
 
-export default function About() {
+export default function About(): JSX.Element {
   const { about } = useStaticQuery(
     graphql`
       query AboutPageQuery {

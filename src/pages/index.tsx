@@ -1,21 +1,17 @@
 import React from 'react'
 
-import SEO from '~/components/SEO'
-import Hero from '~/components/Hero'
-import Trending from '~/components/Trending'
-
-import CollectionsList from '../components/Collections/List'
 import CollectionsGrid from '../components/Collections/Grid'
+import CollectionsList from '../components/Collections/List'
+import Hero from '../components/Hero'
+import SEO from '../components/SEO'
+import Trending from '../components/Trending'
 
-const IndexPage = () => (
+const IndexPage = (): JSX.Element => (
   <>
-    <SEO
-      title="Home"
-      keywords={[`tangled in stitches`, `home`, `shop`, `clothing`, `disney`]}
-    />
+    <SEO title="Home" />
     <Hero />
     <div className="mt-1">
-      <Trending message={`What's Trending`} />
+      <Trending />
     </div>
     <div className="grid grid-cols-1 sm:grid-cols-5 mt-0 sm:mt-12 sm:mx-8">
       <div className="col-span-1">

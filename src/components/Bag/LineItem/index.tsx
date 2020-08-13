@@ -1,9 +1,30 @@
-import React from 'react'
 import { Link } from 'gatsby'
-
 import { useUpdateItemQuantity } from 'gatsby-theme-shopify-manager'
+import React from 'react'
 
-const LineItem = ({ item }) => {
+interface ItemProperties {
+  item: {
+    title: string
+    handle: string
+    variant: {
+      title: string
+      id: string
+      price: string
+      image: {
+        title: string
+        src: string
+      }
+      selectedOptions: [
+        {
+          name: string
+          value: string
+        }
+      ]
+    }
+  }
+}
+
+const LineItem = ({ item }: ItemProperties): JSX.Element => {
   const updateItemQuantity = useUpdateItemQuantity()
 
   const variantImage = item.variant.image ? (
@@ -23,14 +44,6 @@ const LineItem = ({ item }) => {
       ))
     : null
 
-  async function removeFromCart(variantId) {
-    try {
-      await updateItemQuantity(variantId, 0)
-    } catch (e) {
-      console.log(e)
-    }
-  }
-
   return (
     <>
       <div className="flex justify-between border-solid border rounded-lg py-4 px-4 sm:px-6 mb-6 mx-8">
@@ -40,7 +53,7 @@ const LineItem = ({ item }) => {
           </Link>
           <div className="sm:text-lg ml-6 sm:px-8">
             <p className="tracking-wider">{item.title}</p>
-            {item.variant.title === !'Default Title' ? item.variant.title : ''}
+            {item.variant.title}
             {selectedOptions}
           </div>
         </div>
@@ -72,8 +85,7 @@ const LineItem = ({ item }) => {
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
             height="24"
-            variant="link"
-            onClick={() => removeFromCart(item.variant.id)}
+            onClick={() => updateItemQuantity(item.variant.id, 0)}
           >
             <path d="M8 6V4c0-1.1.9-2 2-2h4a2 2 0 0 1 2 2v2h5a1 1 0 0 1 0 2h-1v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V8H3a1 1 0 1 1 0-2h5zM6 8v12h12V8H6zm8-2V4h-4v2h4zm-4 4a1 1 0 0 1 1 1v6a1 1 0 0 1-2 0v-6a1 1 0 0 1 1-1zm4 0a1 1 0 0 1 1 1v6a1 1 0 0 1-2 0v-6a1 1 0 0 1 1-1z" />
           </svg>

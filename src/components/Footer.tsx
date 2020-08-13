@@ -1,7 +1,15 @@
+import { Link, graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
-import { useStaticQuery, graphql, Link } from 'gatsby'
 
-export default function Footer({ siteTitle }) {
+interface FooterProperties {
+  siteTitle: string
+  node: {
+    handle: string
+    title: string
+  }
+}
+
+export default function Footer({ siteTitle }: FooterProperties): JSX.Element {
   const { allShopifyCollection } = useStaticQuery(
     graphql`
       query {
@@ -38,9 +46,14 @@ export default function Footer({ siteTitle }) {
             <ul className="mt-4 text-gray-700">
               {allShopifyCollection.edges
                 ? allShopifyCollection.edges.map(
-                    ({ node: { title, handle } }) => (
-                      <li key={title.toString()} className="hover:text-black">
-                        <Link to={`/collection/${handle}`}>{title}</Link>
+                    ({ node }: FooterProperties) => (
+                      <li
+                        key={node.title.toString()}
+                        className="hover:text-black"
+                      >
+                        <Link to={`/collection/${node.handle}`}>
+                          {node.title}
+                        </Link>
                       </li>
                     )
                   )

@@ -1,8 +1,20 @@
 import React from 'react'
 
-export const OptionPicker = ({ name, options, onChange, selected }) => {
+interface OptionProperties {
+  name: string
+  options: string[]
+  onChange: React.ChangeEventHandler
+  selected: string
+}
+
+const OptionPicker = ({
+  name,
+  options,
+  onChange,
+  selected,
+}: OptionProperties): JSX.Element => {
   return (
-    <div className="">
+    <div>
       <label className="block tracking-wide text-gray-700">{name}</label>
       <select
         className="block w-64 px-4 py-4 uppercase border-2 border-black rounded-lg"
@@ -18,3 +30,5 @@ export const OptionPicker = ({ name, options, onChange, selected }) => {
     </div>
   )
 }
+
+export default OptionPicker
