@@ -1,6 +1,7 @@
 import { graphql, StaticQuery } from "gatsby"
 import React from "react"
 import { Helmet } from "react-helmet"
+import favicon from "../images/favicon.ico"
 
 interface SEOProperties {
   description?: string
@@ -65,6 +66,7 @@ function SEO({ description, meta = [], title }: SEOProperties): JSX.Element {
               },
             ].concat(meta)}>
             <html lang="en" />
+            <link rel="icon" href={favicon} />
           </Helmet>
         )
       }}
