@@ -13,7 +13,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-52251554-5",
+        trackingId: process.env.GA_TRACKING_ID,
         anonymize: true,
         respectDNT: true,
       },
@@ -32,8 +32,6 @@ module.exports = {
       resolve: `gatsby-source-datocms`,
       options: {
         apiToken: process.env.DATOCMS_TOKEN,
-        preview: false,
-        disableLiveReload: false,
       },
     },
     {
@@ -42,13 +40,9 @@ module.exports = {
         fonts: {
           google: [
             {
-              family: "Roboto",
-              variants: ["400", "700"],
-              fontDisplay: "swap",
-            },
-            {
               family: "Norican",
               variants: ["400"],
+              text: "Tangled in Stitches",
               fontDisplay: "swap",
             },
           ],
