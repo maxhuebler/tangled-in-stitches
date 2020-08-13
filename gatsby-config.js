@@ -9,6 +9,7 @@ module.exports = {
     author: `max@huebler.us`,
   },
   plugins: [
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -17,29 +18,9 @@ module.exports = {
         respectDNT: true,
       },
     },
-    `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
-      },
-    },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     `gatsby-plugin-layout`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `tangled-in-stitches`,
-        short_name: `tangled-in-stitches`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/favicon.png`,
-      },
-    },
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-theme-shopify-manager`,
       options: {

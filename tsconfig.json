@@ -4,7 +4,7 @@
     "target": "ESNext",
     "module": "ESNext",
     "lib": ["DOM", "ESNext"],
-    "jsx": "react",
+    "jsx": "preserve",
     "isolatedModules": true,
 
     /* Strict Type-Checking Options */

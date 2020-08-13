@@ -6703,16 +6703,6 @@ gatsby-plugin-layout@^1.3.10:
   dependencies:
     "@babel/runtime" "^7.10.3"
 
-gatsby-plugin-manifest@^2.4.22:
-  version "2.4.22"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.4.22.tgz#fb2f52e361f45d83df646b33f43a3640c8df4592"
-  integrity sha512-pdIcT3ei9RMDoUupmNvpEtg/2jCsuN1tT+6HeIv8WudMEXFWrbOuETD3mZL4D2u/NJ4D1/rXhHlzxMZkbu7CIQ==
-  dependencies:
-    "@babel/runtime" "^7.10.3"
-    gatsby-core-utils "^1.3.15"
-    semver "^5.7.1"
-    sharp "^0.25.1"
-
 gatsby-plugin-page-creator@^2.3.20:
   version "2.3.22"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-page-creator/-/gatsby-plugin-page-creator-2.3.22.tgz#8e4427b09beee321be0a1f9bf7d9f4e1b9008d06"
@@ -6926,7 +6916,7 @@ gatsby-source-filesystem@^2.3.24:
     valid-url "^1.0.9"
     xstate "^4.11.0"
 
-gatsby-source-shopify@^3.0.43, gatsby-source-shopify@^3.2.26:
+gatsby-source-shopify@^3.0.43:
   version "3.2.26"
   resolved "https://registry.yarnpkg.com/gatsby-source-shopify/-/gatsby-source-shopify-3.2.26.tgz#acc3753673c0588dd829ecf0c57715e2380bd36d"
   integrity sha512-FIr9byUxXJTTioV76AlV3RrB5jWhX8wGgZwxZhJ8NsOr9u52pC9LL9N63ACQHFr0ck+Ler5O35DyHnrfbN3LWw==
@@ -12890,7 +12880,7 @@ shell-quote@1.6.1:
     array-reduce "~0.0.0"
     jsonify "~0.0.0"
 
-shopify-buy@^2.11.0, shopify-buy@^2.9.0:
+shopify-buy@^2.9.0:
   version "2.11.0"
   resolved "https://registry.yarnpkg.com/shopify-buy/-/shopify-buy-2.11.0.tgz#0f7cb52741395e4ae778c336f32ddf3fe67c2f35"
   integrity sha512-bGjS1b/VCPvCjazSstlKwgLtK1WBotWom06/12loja8yfo/cWkLuJsakBbQe1uEIDiOLhKaR0M0CAXZFheYDug==
