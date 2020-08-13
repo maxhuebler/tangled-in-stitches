@@ -64,7 +64,7 @@ const ProductForm = ({ product }: ProductProperties): JSX.Element => {
     <>
       {/* TODO: Add sale price comparision */}
       <h3 className="text-xl sm:text-2xl mb-4">${variant.price}</h3>
-      <div className="grid grid-cols-2 mb-4">
+      <div className="grid grid-flow-row sm:grid-cols-2 gap-3 sm:gap-0 mb-4">
         <OptionPicker
           key="Color"
           name="Color"

@@ -60,10 +60,10 @@ export default function Trending(): JSX.Element {
 
   return (
     <>
-      <h1 className="text-2xl text-gray-700 font-bold tracking-widest py-4 uppercase mx-8">
+      <h1 className="text-2xl text-gray-700 font-bold tracking-widest py-4 uppercase mx-4 sm:mx-8">
         Trending now
       </h1>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 mx-8">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 mx-4 sm:mx-8">
         {allShopifyProduct.edges.map(({ node }: ProductProperties) => (
           <div className="flex flex-col min-h-full" key={node.id}>
             <Link to={`/product/${node.handle}/`}>

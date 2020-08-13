@@ -78,7 +78,7 @@ const ProductPage = ({ data }: Props): JSX.Element => {
             </div>
           )}
         </div>
-        <div className="mx-8 sm:mx-0">
+        <div className="mx-4 sm:mx-0">
           <h1 className="text-4xl font-bold leading-none">{product.title}</h1>
           <ProductForm product={product} />
           <div className="sm:px-8 sm:py-6 mt-12 sm:border rounded-lg">
