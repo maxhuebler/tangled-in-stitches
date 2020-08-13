@@ -24,13 +24,6 @@
   ],
   "rules": {
     "react/require-default-props": 0,
-    "sort-imports": [
-      2,
-      {
-        "ignoreCase": false,
-        "ignoreMemberSort": false,
-        "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
-      }
-    ]
+    "react/no-unused-prop-types": 0
   }
 }

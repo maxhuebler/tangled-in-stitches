@@ -2,10 +2,27 @@ import { Link } from 'gatsby'
 import { useAddItemToCart } from 'gatsby-theme-shopify-manager'
 import React, { useEffect, useMemo, useState } from 'react'
 
-import { prepareVariantsWithOptions } from '../utilities'
+import prepareVariantsWithOptions from '../utilities'
 import OptionPicker from './OptionPicker'
 
-const ProductForm = ({ product }): JSX.Element => {
+interface ProductProperties {
+  product: {
+    options: [
+      {
+        name?: string
+        values?: string[]
+      }
+    ]
+    variants: [
+      {
+        price: string
+        compareAtPrice: string | null
+      }
+    ]
+  }
+}
+
+const ProductForm = ({ product }: ProductProperties): JSX.Element => {
   const colors = product.options.find(
     (option) => option.name.toLowerCase() === 'color'
   ).values

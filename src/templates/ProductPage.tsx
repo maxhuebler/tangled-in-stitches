@@ -1,5 +1,5 @@
 import { graphql } from 'gatsby'
-import Image from 'gatsby-image'
+import Image, { FluidObject } from 'gatsby-image'
 import { useKeenSlider } from 'keen-slider/react'
 import React from 'react'
 
@@ -7,8 +7,34 @@ import ProductForm from '../components/ProductForm'
 import SEO from '../components/SEO'
 import Trending from '../components/Trending'
 
-const ProductPage = ({ data }): JSX.Element => {
-  const product = data.shopifyProduct
+interface Props {
+  data: {
+    product: {
+      title: string
+      description: string
+      images: [
+        {
+          id: string
+          localFile: {
+            childImageSharp: {
+              fluid: FluidObject
+            }
+          }
+        }
+      ]
+      variants: [
+        {
+          price: string
+          compareAtPrice: string | null
+        }
+      ]
+    }
+  }
+}
+
+const ProductPage = ({ data }: Props): JSX.Element => {
+  const { product } = data
+
   const [currentSlide, setCurrentSlide] = React.useState(0)
   const [sliderRef, slider] = useKeenSlider({
     initial: 0,
@@ -25,7 +51,7 @@ const ProductPage = ({ data }): JSX.Element => {
           <div ref={sliderRef} className="keen-slider">
             {product.images.map((image) => (
               <div
-                key={image}
+                key={image.id}
                 className="keen-slider__slide h-auto sm:rounded-lg"
               >
                 <Image fluid={image.localFile.childImageSharp.fluid} />
@@ -58,15 +84,12 @@ const ProductPage = ({ data }): JSX.Element => {
             <h2 className="font-bold tracking-wider text-gray-700 uppercase">
               Product information
             </h2>
-            <p
-              className="text-justify"
-              dangerouslySetInnerHTML={{ __html: product.descriptionHtml }}
-            />
+            <p className="text-justify">{product.description}</p>
           </div>
         </div>
       </div>
       <div className="mt-12 sm:mt-32">
-        <Trending message="You May Also Like" />
+        <Trending />
       </div>
     </>
   )
@@ -74,7 +97,7 @@ const ProductPage = ({ data }): JSX.Element => {
 
 export const query = graphql`
   query($handle: String!) {
-    shopifyProduct(handle: { eq: $handle }) {
+    product: shopifyProduct(handle: { eq: $handle }) {
       id
       title
       handle
@@ -92,25 +115,12 @@ export const query = graphql`
         title
         price
         compareAtPrice
-        availableForSale
-        shopifyId
         selectedOptions {
           name
           value
         }
       }
-      priceRange {
-        minVariantPrice {
-          amount
-          currencyCode
-        }
-        maxVariantPrice {
-          amount
-          currencyCode
-        }
-      }
       images {
-        originalSrc
         id
         localFile {
           childImageSharp {

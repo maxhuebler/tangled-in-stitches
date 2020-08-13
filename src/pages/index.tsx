@@ -11,7 +11,7 @@ const IndexPage = (): JSX.Element => (
     <SEO title="Home" />
     <Hero />
     <div className="mt-1">
-      <Trending {..."What's Trending"} />
+      <Trending />
     </div>
     <div className="grid grid-cols-1 sm:grid-cols-5 mt-0 sm:mt-12 sm:mx-8">
       <div className="col-span-1">

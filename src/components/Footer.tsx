@@ -3,6 +3,10 @@ import React from 'react'
 
 interface FooterProperties {
   siteTitle: string
+  node: {
+    handle: string
+    title: string
+  }
 }
 
 export default function Footer({ siteTitle }: FooterProperties): JSX.Element {
@@ -42,9 +46,14 @@ export default function Footer({ siteTitle }: FooterProperties): JSX.Element {
             <ul className="mt-4 text-gray-700">
               {allShopifyCollection.edges
                 ? allShopifyCollection.edges.map(
-                    ({ node: { title, handle } }: string) => (
-                      <li key={title.toString()} className="hover:text-black">
-                        <Link to={`/collection/${handle}`}>{title}</Link>
+                    ({ node }: FooterProperties) => (
+                      <li
+                        key={node.title.toString()}
+                        className="hover:text-black"
+                      >
+                        <Link to={`/collection/${node.handle}`}>
+                          {node.title}
+                        </Link>
                       </li>
                     )
                   )
