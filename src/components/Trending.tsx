@@ -1,6 +1,6 @@
-import { graphql, Link, useStaticQuery } from 'gatsby'
-import Image, { FluidObject } from 'gatsby-image'
-import React from 'react'
+import { graphql, Link, useStaticQuery } from "gatsby"
+import Image, { FluidObject } from "gatsby-image"
+import React from "react"
 
 interface ProductProperties {
   node: {

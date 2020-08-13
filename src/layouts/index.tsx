@@ -1,8 +1,8 @@
-import { graphql, useStaticQuery } from 'gatsby'
-import React, { ReactNode } from 'react'
+import { graphql, useStaticQuery } from "gatsby"
+import React, { ReactNode } from "react"
 
-import Footer from '../components/Footer'
-import Navigation from '../components/Navigation'
+import Footer from "../components/Footer"
+import Navigation from "../components/Navigation"
 
 interface LayoutProperties {
   children: ReactNode

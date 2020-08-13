@@ -1,5 +1,5 @@
-import { graphql, Link, useStaticQuery } from 'gatsby'
-import React from 'react'
+import { graphql, Link, useStaticQuery } from "gatsby"
+import React from "react"
 
 interface FooterProperties {
   siteTitle: string
@@ -52,8 +52,7 @@ export default function Footer({ siteTitle }: FooterProperties): JSX.Element {
                     ({ node }: CollectionProperties) => (
                       <li
                         key={node.title.toString()}
-                        className="hover:text-black"
-                      >
+                        className="hover:text-black">
                         <Link to={`/collection/${node.handle}`}>
                           {node.title}
                         </Link>
@@ -66,8 +65,7 @@ export default function Footer({ siteTitle }: FooterProperties): JSX.Element {
           <div className="row-span-1 sm:col-span-1">
             <a
               className="text-xl font-bold"
-              href="mailto:orders@tangledinstitches.com"
-            >
+              href="mailto:orders@tangledinstitches.com">
               orders@tangledinstitches.com
             </a>
             <ul className="mt-4 text-gray-700">
@@ -75,8 +73,7 @@ export default function Footer({ siteTitle }: FooterProperties): JSX.Element {
                 <a
                   href="https://www.instagram.com/tangledinstitches"
                   target="_blank"
-                  rel="noreferrer noopener"
-                >
+                  rel="noreferrer noopener">
                   Instagram
                 </a>
               </li>
@@ -84,8 +81,7 @@ export default function Footer({ siteTitle }: FooterProperties): JSX.Element {
                 <a
                   href="https://www.facebook.com/tangledinstitches"
                   target="_blank"
-                  rel="noreferrer noopener"
-                >
+                  rel="noreferrer noopener">
                   Facebook
                 </a>
               </li>

@@ -1,11 +1,11 @@
-import { Link } from 'gatsby'
+import { Link } from "gatsby"
 import {
   useCart,
   useCartItems,
   useCheckoutUrl,
-} from 'gatsby-theme-shopify-manager'
-import React from 'react'
-import LineItem from './LineItem'
+} from "gatsby-theme-shopify-manager"
+import React from "react"
+import LineItem from "./LineItem"
 
 const Bag = (): JSX.Element => {
   const lineItems = useCartItems()
@@ -15,7 +15,7 @@ const Bag = (): JSX.Element => {
   function getCartTotals() {
     const total = cart.totalPriceV2
       ? `$${Number(cart.totalPriceV2.amount).toFixed(2)}`
-      : '-'
+      : "-"
     return { total }
   }
 
@@ -41,8 +41,7 @@ const Bag = (): JSX.Element => {
               <Link to="/">
                 <button
                   type="submit"
-                  className="bg-blue-300 text-white rounded-lg py-4 px-16 hover:bg-purple-300 uppercase font-bold tracking-wider mt-4"
-                >
+                  className="bg-blue-300 text-white rounded-lg py-4 px-16 hover:bg-purple-300 uppercase font-bold tracking-wider mt-4">
                   Continue Shopping
                 </button>
               </Link>
@@ -58,8 +57,7 @@ const Bag = (): JSX.Element => {
             className="bg-blue-300 text-white rounded-lg py-4 px-16 hover:bg-purple-300 uppercase font-bold tracking-wider transition duration-300 ease-out transform hover:scale-105"
             target="_blank"
             rel="noopener noreferrer"
-            href={checkoutUrl}
-          >
+            href={checkoutUrl}>
             Check out
           </a>
         </div>

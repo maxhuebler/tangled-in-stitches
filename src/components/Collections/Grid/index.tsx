@@ -1,5 +1,5 @@
-import { graphql, Link, useStaticQuery } from 'gatsby'
-import React from 'react'
+import { graphql, Link, useStaticQuery } from "gatsby"
+import React from "react"
 
 interface GridProperties {
   node: {
@@ -34,8 +34,7 @@ export default function Grid(): JSX.Element {
                   backgroundImage: `linear-gradient(${
                     Math.random() * 270
                   }deg, rgba(222,188,255,1) 0%, rgba(169,211,255,1) 100%)`,
-                }}
-              >
+                }}>
                 <h1>{node.title}</h1>
               </div>
             </Link>

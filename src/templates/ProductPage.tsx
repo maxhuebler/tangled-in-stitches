@@ -1,11 +1,11 @@
-import { graphql } from 'gatsby'
-import Image, { FluidObject } from 'gatsby-image'
-import { useKeenSlider } from 'keen-slider/react'
-import React, { useState } from 'react'
+import { graphql } from "gatsby"
+import Image, { FluidObject } from "gatsby-image"
+import { useKeenSlider } from "keen-slider/react"
+import React, { useState } from "react"
 
-import ProductForm from '../components/ProductForm'
-import SEO from '../components/SEO'
-import Trending from '../components/Trending'
+import ProductForm from "../components/ProductForm"
+import SEO from "../components/SEO"
+import Trending from "../components/Trending"
 
 interface ProductProperties {
   data: {
@@ -52,8 +52,7 @@ const ProductPage = ({ data }: ProductProperties): JSX.Element => {
             {product.images.map((image) => (
               <div
                 key={image.id}
-                className="keen-slider__slide h-auto sm:rounded-lg"
-              >
+                className="keen-slider__slide h-auto sm:rounded-lg">
                 <Image fluid={image.localFile.childImageSharp.fluid} />
               </div>
             ))}
@@ -70,7 +69,7 @@ const ProductPage = ({ data }: ProductProperties): JSX.Element => {
                       slider.moveToSlideRelative(idx)
                     }}
                     className={`mt-4 w-3 h-3 mx-2 rounded-full cursor-pointer bg-gray-600 hover:bg-blue-700${
-                      currentSlide === idx ? ' bg-blue-700' : ''
+                      currentSlide === idx ? " bg-blue-700" : ""
                     }`}
                   />
                 )

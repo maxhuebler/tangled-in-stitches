@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react"
 
-import Bag from '../components/Bag'
-import SEO from '../components/SEO'
+import Bag from "../components/Bag"
+import SEO from "../components/SEO"
 
 const BagPage = (): JSX.Element => (
   <>

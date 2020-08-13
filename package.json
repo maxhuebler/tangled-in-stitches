@@ -28,14 +28,12 @@
     "build": "gatsby build",
     "clean": "gatsby clean",
     "start": "gatsby develop",
-    "format": "prettier --write 'src/**/*.tsx'",
+    "format": "prettier --write 'src/**/*.{js,ts,tsx}'",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --fix"
   },
   "prettier": {
-    "semi": false,
-    "singleQuote": true,
-    "tabWidth": 2,
-    "trailingComma": "es5"
+    "jsxBracketSameLine": true,
+    "semi": false
   },
   "devDependencies": {
     "@types/react": "^16.9.46",

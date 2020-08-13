@@ -1,10 +1,10 @@
-import { graphql, Link } from 'gatsby'
-import Image, { FluidObject } from 'gatsby-image'
-import React from 'react'
+import { graphql, Link } from "gatsby"
+import Image, { FluidObject } from "gatsby-image"
+import React from "react"
 
-import CollectionsList from '../components/Collections/List'
-import Hero from '../components/Hero'
-import SEO from '../components/SEO'
+import CollectionsList from "../components/Collections/List"
+import Hero from "../components/Hero"
+import SEO from "../components/SEO"
 
 interface ProductProperties {
   id: string
@@ -76,7 +76,7 @@ const CollectionPage = ({ data }: CollectionProperties): JSX.Element => {
                 </h1>
                 <h2 className="text-center sm:text-left text-gray-700">
                   {product.variants[0].price}
-                  <span className="font-bold text-xs"> USD</span>{' '}
+                  <span className="font-bold text-xs"> USD</span>{" "}
                   {product.variants[0].compareAtPrice !== null ? (
                     <span className="line-through font-bold">
                       {product.variants[0].compareAtPrice}

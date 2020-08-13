@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react"
 
 interface OptionProperties {
   name: string
@@ -22,8 +22,7 @@ const OptionPicker = ({
         className="block w-64 px-4 py-4 uppercase border-2 border-black rounded-lg"
         id={name}
         onChange={onChange}
-        value={selected}
-      >
+        value={selected}>
         {options.map((option) => (
           <option value={option} key={option}>
             {option}

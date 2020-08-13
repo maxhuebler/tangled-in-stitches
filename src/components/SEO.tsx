@@ -1,6 +1,6 @@
-import { graphql, StaticQuery } from 'gatsby'
-import React from 'react'
-import { Helmet } from 'react-helmet'
+import { graphql, StaticQuery } from "gatsby"
+import React from "react"
+import { Helmet } from "react-helmet"
 
 interface SEOProperties {
   description?: string
@@ -63,8 +63,7 @@ function SEO({ description, meta = [], title }: SEOProperties): JSX.Element {
                 name: `twitter:description`,
                 content: metaDescription,
               },
-            ].concat(meta)}
-          >
+            ].concat(meta)}>
             <html lang="en" />
           </Helmet>
         )

@@ -1,9 +1,9 @@
-import { Link } from 'gatsby'
-import { useAddItemToCart } from 'gatsby-theme-shopify-manager'
-import React, { useEffect, useMemo, useState } from 'react'
+import { Link } from "gatsby"
+import { useAddItemToCart } from "gatsby-theme-shopify-manager"
+import React, { useEffect, useMemo, useState } from "react"
 
-import prepareVariantsWithOptions from '../utilities'
-import OptionPicker from './OptionPicker'
+import prepareVariantsWithOptions from "../utilities"
+import OptionPicker from "./OptionPicker"
 
 interface ProductProperties {
   product: {
@@ -20,11 +20,11 @@ interface ProductProperties {
 
 const ProductForm = ({ product }: ProductProperties): JSX.Element => {
   const colors = product.options.find(
-    (option: { name: string }) => option.name.toLowerCase() === 'color'
+    (option: { name: string }) => option.name.toLowerCase() === "color"
   ).values
 
   const sizes = product.options.find(
-    (option: { name: string }) => option.name.toLowerCase() === 'size'
+    (option: { name: string }) => option.name.toLowerCase() === "size"
   ).values
 
   const variants = useMemo(() => prepareVariantsWithOptions(product.variants), [
@@ -82,15 +82,14 @@ const ProductForm = ({ product }: ProductProperties): JSX.Element => {
         className="bg-blue-300 w-64 py-4 rounded-lg hover:bg-purple-300 text-white uppercase font-bold tracking-wider"
         type="submit"
         aria-label="add to cart"
-        onClick={handleAddToCart}
-      >
+        onClick={handleAddToCart}>
         Add to bag
       </button>
       {added ? (
         <div className="mt-4 text-md">
           <h3 className="text-green-500">
             <Link to="/bag">
-              {product.title} added to your{' '}
+              {product.title} added to your{" "}
               <span className="font-bold underline">bag.</span>
             </Link>
           </h3>

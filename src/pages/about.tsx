@@ -1,7 +1,7 @@
-import React from 'react'
+import React from "react"
 
-import About from '../components/About'
-import SEO from '../components/SEO'
+import About from "../components/About"
+import SEO from "../components/SEO"
 
 const AboutPage = (): JSX.Element => (
   <>
