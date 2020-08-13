@@ -4,6 +4,7 @@ import React from "react"
 
 import CollectionsList from "../components/Collections/List"
 import Hero from "../components/Hero"
+import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 
 interface ProductProperties {
@@ -41,7 +42,7 @@ const CollectionPage = ({ data }: CollectionProperties): JSX.Element => {
   const { collection } = data
 
   return (
-    <>
+    <Layout>
       <SEO title={collection.title} description={collection.description} />
       <Hero />
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-0 sm:gap-8 mx-4 sm:mx-8 mt-8">
@@ -89,7 +90,7 @@ const CollectionPage = ({ data }: CollectionProperties): JSX.Element => {
           </div>
         </div>
       </div>
-    </>
+    </Layout>
   )
 }
 

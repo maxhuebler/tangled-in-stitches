@@ -3,6 +3,7 @@ import Image, { FluidObject } from "gatsby-image"
 import { useKeenSlider } from "keen-slider/react"
 import React, { useState } from "react"
 
+import Layout from "../components/Layout"
 import ProductForm from "../components/ProductForm"
 import SEO from "../components/SEO"
 import Trending from "../components/Trending"
@@ -44,7 +45,7 @@ const ProductPage = ({ data }: ProductProperties): JSX.Element => {
   })
 
   return (
-    <>
+    <Layout>
       <SEO title={product.title} description={product.description} />
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:mx-8 items-center">
         <div>
@@ -91,7 +92,7 @@ const ProductPage = ({ data }: ProductProperties): JSX.Element => {
       <div className="mt-12 sm:mt-32">
         <Trending />
       </div>
-    </>
+    </Layout>
   )
 }
 

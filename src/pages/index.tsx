@@ -3,11 +3,12 @@ import React from "react"
 import CollectionsGrid from "../components/Collections/Grid"
 import CollectionsList from "../components/Collections/List"
 import Hero from "../components/Hero"
+import Layout from "../components/Layout"
 import SEO from "../components/SEO"
 import Trending from "../components/Trending"
 
 const IndexPage = (): JSX.Element => (
-  <>
+  <Layout>
     <SEO title="Home" />
     <Hero />
     <div className="mt-1">
@@ -21,7 +22,7 @@ const IndexPage = (): JSX.Element => (
         <CollectionsGrid />
       </div>
     </div>
-  </>
+  </Layout>
 )
 
 export default IndexPage

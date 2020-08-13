@@ -18,7 +18,6 @@ module.exports = {
         respectDNT: true,
       },
     },
-    `gatsby-plugin-layout`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {

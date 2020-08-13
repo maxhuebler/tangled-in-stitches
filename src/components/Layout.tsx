@@ -1,8 +1,8 @@
 import { graphql, useStaticQuery } from "gatsby"
 import React, { ReactNode } from "react"
 
-import Footer from "../components/Footer"
-import Navigation from "../components/Navigation"
+import Footer from "./Footer"
+import Navigation from "./Navigation"
 
 interface LayoutProperties {
   children: ReactNode
@@ -19,13 +19,11 @@ const Layout = ({ children }: LayoutProperties): JSX.Element => {
     }
   `)
   return (
-    <>
-      <div className="max-w-7xl mx-auto">
-        <Navigation siteTitle={data.site.siteMetadata.title} />
-        {children}
-        <Footer siteTitle={data.site.siteMetadata.title} />
-      </div>
-    </>
+    <div className="max-w-7xl mx-auto">
+      <Navigation siteTitle={data.site.siteMetadata.title} />
+      <main>{children}</main>
+      <Footer siteTitle={data.site.siteMetadata.title} />
+    </div>
   )
 }
 
