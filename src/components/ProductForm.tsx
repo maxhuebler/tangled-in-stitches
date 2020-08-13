@@ -2,7 +2,6 @@ import { Link } from "gatsby"
 import { useAddItemToCart } from "gatsby-theme-shopify-manager"
 import React, { useEffect, useMemo, useState } from "react"
 
-import prepareVariantsWithOptions from "../utilities"
 import OptionPicker from "./OptionPicker"
 
 interface ProductProperties {
@@ -26,6 +25,24 @@ const ProductForm = ({ product }: ProductProperties): JSX.Element => {
   const sizes = product.options.find(
     (option: { name: string }) => option.name.toLowerCase() === "size"
   ).values
+
+  function prepareVariantsWithOptions(variants) {
+    return variants.map((variant) => {
+      // convert the options to a dictionary instead of an array
+      const optionsDictionary = variant.selectedOptions.reduce(
+        (options, option) => {
+          options[`${option.name.toLowerCase()}`] = option.value
+          return options
+        },
+        {}
+      )
+      // return an object with all of the variant properties + the options at the top level
+      return {
+        ...optionsDictionary,
+        ...variant,
+      }
+    })
+  }
 
   const variants = useMemo(() => prepareVariantsWithOptions(product.variants), [
     product.variants,

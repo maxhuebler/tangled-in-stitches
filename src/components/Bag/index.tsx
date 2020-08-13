@@ -13,6 +13,9 @@ const Bag = (): JSX.Element => {
   const cart = useCart()
 
   function getCartTotals() {
+    if (cart == null) {
+      return { tax: "-", total: "-" }
+    }
     const total = cart.totalPriceV2
       ? `$${Number(cart.totalPriceV2.amount).toFixed(2)}`
       : "-"
