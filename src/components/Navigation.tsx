@@ -2,11 +2,11 @@ import { Link } from 'gatsby'
 import { useCartCount } from 'gatsby-theme-shopify-manager'
 import React from 'react'
 
-interface Props {
+interface NavigationProperties {
   siteTitle: string
 }
 
-const Navigation = ({ siteTitle }: Props): JSX.Element => {
+const Navigation = ({ siteTitle }: NavigationProperties): JSX.Element => {
   const cartCount = useCartCount()
 
   return (

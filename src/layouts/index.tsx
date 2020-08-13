@@ -4,11 +4,11 @@ import React, { ReactNode } from 'react'
 import Footer from '../components/Footer'
 import Navigation from '../components/Navigation'
 
-interface Props {
+interface LayoutProperties {
   children: ReactNode
 }
 
-const Layout = ({ children }: Props): JSX.Element => {
+const Layout = ({ children }: LayoutProperties): JSX.Element => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {

@@ -5,7 +5,6 @@ import {
   useCheckoutUrl,
 } from 'gatsby-theme-shopify-manager'
 import React from 'react'
-
 import LineItem from './LineItem'
 
 const Bag = (): JSX.Element => {
@@ -14,9 +13,6 @@ const Bag = (): JSX.Element => {
   const cart = useCart()
 
   function getCartTotals() {
-    if (cart == null) {
-      return { tax: '-', total: '-' }
-    }
     const total = cart.totalPriceV2
       ? `$${Number(cart.totalPriceV2.amount).toFixed(2)}`
       : '-'

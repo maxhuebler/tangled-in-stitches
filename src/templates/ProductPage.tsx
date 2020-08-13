@@ -1,13 +1,13 @@
 import { graphql } from 'gatsby'
 import Image, { FluidObject } from 'gatsby-image'
 import { useKeenSlider } from 'keen-slider/react'
-import React from 'react'
+import React, { useState } from 'react'
 
 import ProductForm from '../components/ProductForm'
 import SEO from '../components/SEO'
 import Trending from '../components/Trending'
 
-interface Props {
+interface ProductProperties {
   data: {
     product: {
       title: string
@@ -32,11 +32,11 @@ interface Props {
   }
 }
 
-const ProductPage = ({ data }: Props): JSX.Element => {
+const ProductPage = ({ data }: ProductProperties): JSX.Element => {
   const { product } = data
 
-  const [currentSlide, setCurrentSlide] = React.useState(0)
-  const [sliderRef, slider] = useKeenSlider({
+  const [currentSlide, setCurrentSlide] = useState(0)
+  const [sliderRef, slider] = useKeenSlider<HTMLDivElement>({
     initial: 0,
     slideChanged(s) {
       setCurrentSlide(s.details().relativeSlide)

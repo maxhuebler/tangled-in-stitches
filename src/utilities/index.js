@@ -24,7 +24,7 @@
   },
 */
 
-export default function prepareVariantsWithOptions(variants): string {
+export default function prepareVariantsWithOptions(variants) {
   return variants.map((variant) => {
     // convert the options to a dictionary instead of an array
     const optionsDictionary = variant.selectedOptions.reduce(

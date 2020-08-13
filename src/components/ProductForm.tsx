@@ -7,12 +7,8 @@ import OptionPicker from './OptionPicker'
 
 interface ProductProperties {
   product: {
-    options: [
-      {
-        name?: string
-        values?: string[]
-      }
-    ]
+    title: string
+    description: string
     variants: [
       {
         price: string
@@ -24,11 +20,11 @@ interface ProductProperties {
 
 const ProductForm = ({ product }: ProductProperties): JSX.Element => {
   const colors = product.options.find(
-    (option) => option.name.toLowerCase() === 'color'
+    (option: { name: string }) => option.name.toLowerCase() === 'color'
   ).values
 
   const sizes = product.options.find(
-    (option) => option.name.toLowerCase() === 'size'
+    (option: { name: string }) => option.name.toLowerCase() === 'size'
   ).values
 
   const variants = useMemo(() => prepareVariantsWithOptions(product.variants), [
@@ -42,14 +38,16 @@ const ProductForm = ({ product }: ProductProperties): JSX.Element => {
   const [added, setAdded] = useState(false)
 
   useEffect(() => {
-    const newVariant = variants.find((variant) => {
-      return variant.size === size && variant.color === color
-    })
+    const newVariant = variants.find(
+      (variant: { size: string; color: string }) => {
+        return variant.size === size && variant.color === color
+      }
+    )
 
     if (variant.shopifyId !== newVariant.shopifyId) {
       setVariant(newVariant)
     }
-  }, [size, color, variants, variant.shopifyId, variant.color, variant.size])
+  }, [size, color, variants, variant.shopifyId])
 
   async function handleAddToCart() {
     try {

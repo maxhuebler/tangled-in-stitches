@@ -24,7 +24,6 @@
         "memberSyntaxSortOrder": ["single", "multiple", "all", "none"]
       }
     ],
-    "react/no-unused-prop-types": 0,
     "prettier/prettier": "error"
   }
 }

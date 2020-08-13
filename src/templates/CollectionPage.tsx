@@ -27,7 +27,7 @@ interface ProductProperties {
   ]
 }
 
-interface Props {
+interface CollectionProperties {
   data: {
     collection: {
       title: string
@@ -37,7 +37,7 @@ interface Props {
   }
 }
 
-const CollectionPage = ({ data }: Props): JSX.Element => {
+const CollectionPage = ({ data }: CollectionProperties): JSX.Element => {
   const { collection } = data
 
   return (

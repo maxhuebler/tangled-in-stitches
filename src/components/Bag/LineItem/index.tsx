@@ -6,6 +6,7 @@ interface ItemProperties {
   item: {
     title: string
     handle: string
+    quantity: string
     variant: {
       title: string
       id: string
@@ -13,6 +14,9 @@ interface ItemProperties {
       image: {
         title: string
         src: string
+      }
+      product: {
+        handle: string
       }
       selectedOptions: [
         {
@@ -59,27 +63,9 @@ const LineItem = ({ item }: ItemProperties): JSX.Element => {
         </div>
         <div className="flex items-center">
           <p className="hidden sm:flex mr-4">${item.variant.price}</p>
-          {/* <input
-            className="sm:hidden bg-white focus:outline-none focus:shadow-outline block border rounded-lg py-2 px-4 w-16 mr-2 sm:mr-6"
-            type="tel"
-            pattern="[0-9]*"
-            name="quantity"
-            min="1"
-            step="1"
-            onChange={updateQuantity()}
-            value={quantity}
-            aria-label="input"
-          />
-          <input
-            className="hidden sm:flex bg-white focus:outline-none focus:shadow-outline block border rounded-lg py-2 px-4 w-20 mr-2 sm:mr-6"
-            type="number"
-            name="quantity"
-            min="1"
-            step="1"
-            onChange={updateQuantity()}
-            value={quantity}
-            aria-label="input"
-          /> */}
+          <div className="hidden sm:flex bg-white focus:outline-none focus:shadow-outline block border rounded-lg py-2 px-4 mr-2 sm:mr-6">
+            {item.quantity}
+          </div>
           <svg
             className="cursor-pointer"
             xmlns="http://www.w3.org/2000/svg"
