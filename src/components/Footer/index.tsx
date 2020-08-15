@@ -16,7 +16,7 @@ export default function Footer({ siteTitle }: FooterProperties): JSX.Element {
   const { allShopifyCollection } = useStaticQuery(
     graphql`
       query {
-        allShopifyCollection(limit: 5, skip: 5) {
+        allShopifyCollection(limit: 5, skip: 4) {
           edges {
             node {
               title

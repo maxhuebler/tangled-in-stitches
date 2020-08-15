@@ -1,7 +1,7 @@
 import { graphql, StaticQuery } from "gatsby"
 import React from "react"
 import { Helmet } from "react-helmet"
-import favicon from "../images/favicon.ico"
+import favicon from "../../images/favicon.ico"
 
 interface SEOProperties {
   description?: string
