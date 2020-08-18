@@ -6,7 +6,7 @@ module.exports = {
     },
     extend: {
       borderRadius: {
-        xl: "3.0rem",
+        xl: "2.0rem",
       },
       fontSize: {
         "7xl": "4.7rem",
