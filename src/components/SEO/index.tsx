@@ -7,7 +7,7 @@ interface SEOProperties {
   description?: string
   lang?: string
   meta?: HTMLMetaElement[]
-  title: string
+  title?: string
 }
 
 function SEO({ description, meta = [], title }: SEOProperties): JSX.Element {
@@ -29,8 +29,12 @@ function SEO({ description, meta = [], title }: SEOProperties): JSX.Element {
           description || data.site.siteMetadata.description
         return (
           <Helmet
-            title={title}
-            titleTemplate={`%s | ${data.site.siteMetadata.title}`}
+            title={title ? title : data.site.siteMetadata.title}
+            titleTemplate={
+              title
+                ? `%s | ${data.site.siteMetadata.title}`
+                : `${data.site.siteMetadata.title}`
+            }
             meta={[
               {
                 name: `description`,

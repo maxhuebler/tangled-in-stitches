@@ -9,7 +9,7 @@ import Trending from "../components/Trending"
 
 const IndexPage = (): JSX.Element => (
   <Layout>
-    <SEO title="Home" />
+    <SEO />
     <Hero />
     <div className="mt-1">
       <Trending />
