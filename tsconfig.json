@@ -3,29 +3,31 @@
     /* Basic Options */
     "target": "ESNext",
     "module": "ESNext",
-    "lib": ["DOM", "ESNext"],
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "jsx": "preserve",
     "isolatedModules": true,
 
     /* Strict Type-Checking Options */
     "strict": true,
+    "alwaysStrict": true,
     "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictBindCallApply": true,
     "strictNullChecks": true,
     "strictFunctionTypes": true,
-    "strictBindCallApply": true,
     "strictPropertyInitialization": true,
-    "noImplicitThis": true,
-    "alwaysStrict": true,
 
     /* Additional Checks */
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
+    "forceConsistentCasingInFileNames": true,
 
     /* Module Resolution Options */
     "moduleResolution": "node",
     "esModuleInterop": true
   },
-  "exclude": ["node_modules", "public", ".cache"]
+  "exclude": ["node_modules", "public", ".cache"],
+  "include": ["**/*.ts", "**/*.js", "**/*.tsx"]
 }
