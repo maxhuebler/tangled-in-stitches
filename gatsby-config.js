@@ -19,6 +19,7 @@ module.exports = {
         respectDNT: true,
       },
     },
+    `gatsby-plugin-netlify`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     {
