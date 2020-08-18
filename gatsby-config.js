@@ -5,6 +5,7 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Tangled in Stitches`,
+    siteUrl: `https://tangledinstitches.com`,
     description: `Tangled in Stitches Clothing Company`,
     author: `max@huebler.us`,
   },
@@ -54,8 +55,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-postcss`,
       options: {
-        postCssPlugins: [require("tailwindcss")],
+        postCssPlugins: [require("tailwindcss"), require("autoprefixer")],
       },
     },
+    `gatsby-plugin-advanced-sitemap`,
   ],
 }
