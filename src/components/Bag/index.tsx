@@ -7,6 +7,31 @@ import {
 import React from "react"
 import LineItem from "./LineItem"
 
+interface LineItemProperties {
+  id: string
+  title: string
+  handle: string
+  quantity: string
+  variant: {
+    title: string
+    id: string
+    price: string
+    image: {
+      title: string
+      src: string
+    }
+    product: {
+      handle: string
+    }
+    selectedOptions: [
+      {
+        name: string
+        value: string
+      }
+    ]
+  }
+}
+
 const Bag = (): JSX.Element => {
   const lineItems = useCartItems()
   const checkoutUrl = useCheckoutUrl()
@@ -31,7 +56,7 @@ const Bag = (): JSX.Element => {
           Your shopping bag:
         </h1>
       ) : null}
-      {lineItems.map((item) => (
+      {lineItems.map((item: LineItemProperties) => (
         <LineItem key={item.id} item={item} />
       ))}
       {lineItems.length < 1 ? (

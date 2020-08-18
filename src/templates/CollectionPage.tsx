@@ -23,7 +23,7 @@ interface ProductProperties {
   variants: [
     {
       price: string
-      compareAtPrice: string | null
+      compareAtPrice?: string
     }
   ]
 }

@@ -27,7 +27,13 @@ interface ProductProperties {
       variants: [
         {
           price: string
-          compareAtPrice: string | null
+          compareAtPrice?: string
+        }
+      ]
+      options: [
+        {
+          name: string
+          values?: string[]
         }
       ]
     }
@@ -45,13 +51,13 @@ const ProductPage = ({ data }: ProductProperties): JSX.Element => {
     },
   })
 
-  const colors = product.options.find(
-    (option: { name: string }) => option.name.toLowerCase() === "color"
-  ).values
+  const colors = product?.options?.find(
+    (option) => option.name.toLowerCase() === "color"
+  )?.values
 
-  const sizes = product.options.find(
-    (option: { name: string }) => option.name.toLowerCase() === "size"
-  ).values
+  const sizes = product?.options?.find(
+    (option) => option.name.toLowerCase() === "size"
+  )?.values
 
   function prepareVariantsWithOptions(variants) {
     return variants.map((variant) => {
@@ -93,13 +99,9 @@ const ProductPage = ({ data }: ProductProperties): JSX.Element => {
     }
   }, [size, color, variants, variant.shopifyId])
 
-  async function handleAddToCart() {
-    try {
-      await addItemToCart(variant.shopifyId, 1)
-      setAdded(true)
-    } catch (e) {
-      setAdded(false)
-    }
+  function handleAddToCart() {
+    addItemToCart(variant.shopifyId, 1)
+    setAdded(true)
   }
 
   return (

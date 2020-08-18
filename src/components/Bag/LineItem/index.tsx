@@ -63,7 +63,7 @@ const LineItem = ({ item }: ItemProperties): JSX.Element => {
         </div>
         <div className="flex items-center">
           <p className="hidden sm:flex mr-4">${item.variant.price}</p>
-          <div className="hidden sm:flex bg-white focus:outline-none focus:shadow-outline block border rounded-lg py-2 px-4 mr-2 sm:mr-6">
+          <div className="hidden sm:flex bg-white focus:outline-none focus:shadow-outline border rounded-lg py-2 px-4 mr-2 sm:mr-6">
             {item.quantity}
           </div>
           <svg

@@ -2,8 +2,8 @@ import React from "react"
 
 interface OptionProperties {
   name: string
-  options: string[]
-  onChange: React.ChangeEventHandler
+  options?: string[]
+  onChange: React.ChangeEventHandler<HTMLSelectElement>
   selected: string
 }
 
@@ -23,7 +23,7 @@ const OptionPicker = ({
         id={name}
         onChange={onChange}
         value={selected}>
-        {options.map((option) => (
+        {options?.map((option) => (
           <option value={option} key={option}>
             {option}
           </option>
