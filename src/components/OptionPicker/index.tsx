@@ -19,7 +19,7 @@ const OptionPicker = ({
         {name}
       </label>
       <select
-        className="block w-64 px-4 py-4 uppercase border-2 border-black rounded-lg"
+        className="block w-full px-4 py-4 uppercase border-2 border-black rounded-lg"
         id={name}
         onChange={onChange}
         value={selected}>

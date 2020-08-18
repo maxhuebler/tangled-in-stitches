@@ -1,4 +1,4 @@
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import Image, { FluidObject } from "gatsby-image"
 import { useAddItemToCart } from "gatsby-theme-shopify-manager"
 import { useKeenSlider } from "keen-slider/react"
@@ -107,7 +107,17 @@ const ProductPage = ({ data }: ProductProperties): JSX.Element => {
   return (
     <Layout>
       <SEO title={product.title} description={product.description} />
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:mx-8 items-center">
+      {added ? (
+        <div className="py-4 border border-black rounded-lg sm:mx-8 mb-4">
+          <h2 className="px-10 text-lg">
+            <span className="font-bold">
+              {color} {product.title}
+            </span>{" "}
+            succesfully added to your bag.
+          </h2>
+        </div>
+      ) : null}
+      <div className="grid grid-cols-1 sm:grid-cols-2 sm:mx-8 items-center">
         <div>
           <div ref={sliderRef} className="keen-slider">
             {product.images.map((image) => (
@@ -138,11 +148,13 @@ const ProductPage = ({ data }: ProductProperties): JSX.Element => {
             </div>
           )}
         </div>
-        <div className="mx-4 sm:mx-0">
-          <h1 className="text-4xl font-bold leading-none">{product.title}</h1>
+        <div className="mx-4 mt-6 sm:mt-0 sm:mx-0 sm:ml-12">
+          <h1 className="text-4xl sm:text-5xl font-bold leading-none">
+            {product.title}
+          </h1>
           {/* TODO: Add sale price comparision */}
           <h3 className="text-xl sm:text-2xl mb-4">${variant.price}</h3>
-          <div className="grid grid-flow-row sm:grid-cols-2 gap-3 sm:gap-0 mb-4">
+          <div className="grid grid-flow-row sm:grid-cols-2 gap-3 mb-6">
             <OptionPicker
               key="Color"
               name="Color"
@@ -159,31 +171,18 @@ const ProductPage = ({ data }: ProductProperties): JSX.Element => {
             />
           </div>
           <button
-            className="bg-blue-300 w-64 py-4 rounded-lg hover:bg-purple-300 text-white uppercase font-bold tracking-wider"
+            className="bg-black w-full py-4 rounded-lg hover:bg-teal-500 text-white uppercase font-bold tracking-wider"
             type="submit"
             aria-label="add to cart"
             onClick={handleAddToCart}>
             Add to bag
           </button>
-          {added ? (
-            <div className="mt-4 text-md">
-              <h3 className="text-green-500">
-                <Link to="/bag">
-                  {product.title} added to your{" "}
-                  <span className="font-bold underline">bag.</span>
-                </Link>
-              </h3>
-            </div>
-          ) : null}
-          <div className="sm:px-8 sm:py-6 mt-12 sm:border rounded-lg">
-            <h2 className="font-bold tracking-wider text-gray-700 uppercase">
-              Product information
-            </h2>
-            <p className="text-justify">{product.description}</p>
+          <div className="mt-8">
+            <p className="text-lg text-justify">{product.description}</p>
           </div>
         </div>
       </div>
-      <div className="mt-12 sm:mt-32">
+      <div className="mt-12">
         <Trending />
       </div>
     </Layout>
