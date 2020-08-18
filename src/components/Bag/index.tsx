@@ -52,7 +52,7 @@ const Bag = (): JSX.Element => {
           </div>
         </div>
       ) : (
-        <div className="flex flex-col items-end mx-4">
+        <div className="flex flex-col items-end mx-4 sm:mx-8">
           <h2 className="text-lg font-bold">Subtotal</h2>
           <p>{total}</p>
           <p className="mb-4">Taxes and shipping calculated at checkout</p>

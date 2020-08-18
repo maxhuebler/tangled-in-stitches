@@ -2,7 +2,7 @@ import { Link } from "gatsby"
 import { useAddItemToCart } from "gatsby-theme-shopify-manager"
 import React, { useEffect, useMemo, useState } from "react"
 
-import OptionPicker from "./OptionPicker"
+import OptionPicker from "../OptionPicker"
 
 interface ProductProperties {
   product: {

@@ -50,7 +50,7 @@ const CollectionPage = ({ data }: CollectionProperties): JSX.Element => {
           <CollectionsList />
         </div>
         <div className="col-span-4">
-          <h1 className="sm:flex text-lg sm:text-2xl font-bold tracking-widest sm:ml-4 sm:mt-3 py-4 uppercase border-b items-center text-center">
+          <h1 className="sm:flex text-lg sm:text-xl font-bold tracking-widest sm:ml-4 pb-2 uppercase border-b items-center text-center">
             {collection.title} ({collection.products.length} items)
           </h1>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 sm:gap-8 mt-8 sm:ml-4">
@@ -66,7 +66,7 @@ const CollectionPage = ({ data }: CollectionProperties): JSX.Element => {
                       </div>
                     ) : null}
                     <Image
-                      className="transition duration-300 ease-out transform hover:scale-105 max-w-full mb-6 rounded-lg"
+                      className="transition duration-300 ease-out transform hover:scale-105 max-w-full mb-2 rounded-lg hover:opacity-75"
                       fluid={product.images[0].localFile.childImageSharp.fluid}
                       alt={product.handle}
                     />

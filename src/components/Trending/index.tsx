@@ -37,8 +37,6 @@ export default function Trending(): JSX.Element {
               handle
               createdAt
               images {
-                id
-                originalSrc
                 localFile {
                   childImageSharp {
                     fluid(maxWidth: 302) {
@@ -60,12 +58,12 @@ export default function Trending(): JSX.Element {
 
   return (
     <>
-      <h1 className="text-2xl text-gray-700 font-bold tracking-widest py-4 uppercase mx-4 sm:mx-8">
-        Trending now
+      <h1 className="text-2xl text-gray-700 text-center sm:text-left font-bold tracking-widest py-4 uppercase mx-4 sm:mx-8">
+        Trending Products
       </h1>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8 mx-4 sm:mx-8">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-12 mx-4 sm:mx-8">
         {allShopifyProduct.edges.map(({ node }: ProductProperties) => (
-          <div className="flex flex-col min-h-full" key={node.id}>
+          <div className="flex flex-col min-h-full relative " key={node.id}>
             <Link to={`/product/${node.handle}/`}>
               <>
                 {node.variants[0].compareAtPrice !== null ? (
@@ -76,13 +74,13 @@ export default function Trending(): JSX.Element {
                   </div>
                 ) : null}
                 <Image
-                  className="transition duration-300 ease-out transform hover:scale-105 relative max-w-full mb-6 rounded-lg hover:opacity-50"
+                  className="transition-all duration-200 ease-out transform hover:scale-105 h-full w-full rounded-lg hover:opacity-75"
                   fluid={node.images[0].localFile.childImageSharp.fluid}
                   alt={node.handle}
                 />
               </>
             </Link>
-            <h1 className="text-lg text-center sm:text-left font-bold">
+            <h1 className="text-lg text-center sm:text-left font-bold mt-2">
               {node.title}
             </h1>
             <h2 className="text-center sm:text-left text-gray-700">
