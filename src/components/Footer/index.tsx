@@ -9,6 +9,7 @@ interface CollectionProperties {
   node: {
     handle: string
     title: string
+    products: string[]
   }
 }
 
@@ -21,6 +22,9 @@ export default function Footer({ siteTitle }: FooterProperties): JSX.Element {
             node {
               title
               handle
+              products {
+                title
+              }
             }
           }
         }
@@ -47,19 +51,18 @@ export default function Footer({ siteTitle }: FooterProperties): JSX.Element {
           <div className="row-span-1 sm:col-span-1">
             <h1 className="text-xl font-bold">Shop our Collections</h1>
             <ul className="mt-4 text-gray-700">
-              {allShopifyCollection.edges
-                ? allShopifyCollection.edges.map(
-                    ({ node }: CollectionProperties) => (
-                      <li
-                        key={node.title.toString()}
-                        className="hover:text-black">
-                        <Link to={`/collection/${node.handle}`}>
-                          {node.title}
-                        </Link>
-                      </li>
-                    )
-                  )
-                : null}
+              {allShopifyCollection.edges.map(
+                ({ node }: CollectionProperties) =>
+                  node.products.length > 0 ? (
+                    <li
+                      key={node.title.toString()}
+                      className="hover:text-black">
+                      <Link to={`/collection/${node.handle}`}>
+                        {node.title}
+                      </Link>
+                    </li>
+                  ) : null
+              )}
             </ul>
           </div>
           <div className="row-span-1 sm:col-span-1">
