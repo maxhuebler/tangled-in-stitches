@@ -32,7 +32,7 @@ const Navigation = ({ siteTitle }: NavigationProperties): JSX.Element => {
                 </svg>
                 <button
                   type="submit"
-                  className="ml-2 mr-2 sm:mr-0 bg-black justify-center h-8 w-8 rounded-full text-white transition duration-200 ease-out transform hover:scale-110">
+                  className="ml-2 mr-2 sm:mr-0 bg-black justify-center h-8 w-8 rounded-full text-white">
                   {cartCount}
                 </button>
               </div>

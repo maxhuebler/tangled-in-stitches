@@ -103,7 +103,7 @@ export default function Trending(): JSX.Element {
                   </div>
                 ) : null}
                 <Image
-                  className="transition-all duration-200 ease-out transform hover:scale-105 h-full w-full rounded-lg hover:opacity-75"
+                  className="h-full w-full rounded-lg hover:opacity-75"
                   fluid={node.images[0].localFile.childImageSharp.fluid}
                   alt={node.handle}
                 />
@@ -132,7 +132,7 @@ export default function Trending(): JSX.Element {
                   </div>
                 ) : null}
                 <Image
-                  className="transition-all duration-200 ease-out transform hover:scale-105 h-full w-full rounded-lg hover:opacity-75"
+                  className="h-full w-full rounded-lg hover:opacity-75"
                   fluid={node.images[0].localFile.childImageSharp.fluid}
                   alt={node.handle}
                 />

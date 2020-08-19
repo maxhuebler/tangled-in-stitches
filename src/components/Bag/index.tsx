@@ -82,7 +82,7 @@ const Bag = (): JSX.Element => {
           <p>{total}</p>
           <p className="mb-4">Taxes and shipping calculated at checkout</p>
           <a
-            className="bg-blue-300 text-white rounded-lg py-4 px-16 hover:bg-purple-300 uppercase font-bold tracking-wider transition duration-300 ease-out transform hover:scale-105"
+            className="bg-blue-300 text-white rounded-lg py-4 px-16 hover:bg-purple-300 uppercase font-bold tracking-wider"
             target="_blank"
             rel="noopener noreferrer"
             href={checkoutUrl}>

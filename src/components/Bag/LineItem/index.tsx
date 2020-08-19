@@ -33,7 +33,7 @@ const LineItem = ({ item }: ItemProperties): JSX.Element => {
 
   const variantImage = item.variant.image ? (
     <img
-      className="h-auto w-32 sm:h-48 sm:w-auto transition duration-300 ease-out transform hover:scale-105"
+      className="h-auto w-32 sm:h-48 sm:w-auto hover:opacity-75"
       src={item.variant.image.src}
       alt={`${item.title} product shot`}
     />

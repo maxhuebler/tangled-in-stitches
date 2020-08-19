@@ -66,7 +66,7 @@ const CollectionPage = ({ data }: CollectionProperties): JSX.Element => {
                       </div>
                     ) : null}
                     <Image
-                      className="transition duration-300 ease-out transform hover:scale-105 max-w-full mb-2 rounded-lg hover:opacity-75"
+                      className="max-w-full mb-2 rounded-lg hover:opacity-75"
                       fluid={product.images[0].localFile.childImageSharp.fluid}
                       alt={product.handle}
                     />
