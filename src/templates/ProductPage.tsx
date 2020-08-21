@@ -1,4 +1,4 @@
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Image, { FluidObject } from "gatsby-image"
 import { useAddItemToCart } from "gatsby-theme-shopify-manager"
 import { useKeenSlider } from "keen-slider/react"
@@ -104,17 +104,37 @@ const ProductPage = ({ data }: ProductProperties): JSX.Element => {
     setAdded(true)
   }
 
+  function hideAddedBanner() {
+    setAdded(false)
+  }
+
   return (
     <Layout>
       <SEO title={product.title} description={product.description} />
       {added ? (
-        <div className="py-4 border border-black rounded-lg sm:mx-8 mb-4">
+        <div className="hidden sm:flex py-4 border border-black rounded-lg sm:mx-8 mb-4 items-center justify-between">
           <h2 className="px-10 text-lg">
             <span className="font-bold">
-              {color} {product.title}
+              {size} {color} {product.title}
             </span>{" "}
             succesfully added to your bag.
           </h2>
+          <button className="sm:mx-8" type="submit" onClick={hideAddedBanner}>
+            <svg
+              className="h-8 w-8 text-black"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              strokeWidth="2"
+              stroke="currentColor"
+              fill="none"
+              strokeLinecap="round"
+              strokeLinejoin="round">
+              <path stroke="none" d="M0 0h24v24H0z" />
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
         </div>
       ) : null}
       <div className="grid grid-cols-1 sm:grid-cols-2 sm:mx-8 items-center">
@@ -139,8 +159,8 @@ const ProductPage = ({ data }: ProductProperties): JSX.Element => {
                     onClick={() => {
                       slider.moveToSlideRelative(idx)
                     }}
-                    className={`mt-4 w-3 h-3 mx-2 rounded-full cursor-pointer bg-gray-600 hover:bg-blue-700${
-                      currentSlide === idx ? " bg-blue-700" : ""
+                    className={`mt-4 w-3 h-3 mx-2 rounded-full cursor-pointer bg-gray-500${
+                      currentSlide === idx ? " bg-teal-600" : ""
                     }`}
                   />
                 )
@@ -152,8 +172,18 @@ const ProductPage = ({ data }: ProductProperties): JSX.Element => {
           <h1 className="text-4xl sm:text-5xl font-bold leading-none">
             {product.title}
           </h1>
-          {/* TODO: Add sale price comparision */}
-          <h3 className="text-xl sm:text-2xl mb-4">${variant.price}</h3>
+          {product.variants[0].compareAtPrice !== null ? (
+            <>
+              <h3 className="text-xl sm:text-2xl line-through">
+                ${product.variants[0].compareAtPrice}
+              </h3>
+              <h3 className="text-xl sm:text-2xl font-bold mb-4">
+                ${variant.price}
+              </h3>
+            </>
+          ) : (
+            <h3 className="text-xl sm:text-2xl mb-4">${variant.price}</h3>
+          )}
           <div className="grid grid-flow-row sm:grid-cols-2 gap-3 mb-6">
             <OptionPicker
               key="Color"
@@ -171,12 +201,21 @@ const ProductPage = ({ data }: ProductProperties): JSX.Element => {
             />
           </div>
           <button
-            className="bg-black w-full py-4 rounded-lg hover:bg-teal-500 text-white uppercase font-bold tracking-wider"
+            className="hidden sm:block bg-black w-full py-4 rounded-lg hover:bg-teal-600 text-white uppercase font-bold tracking-wider"
             type="submit"
             aria-label="add to cart"
             onClick={handleAddToCart}>
             Add to bag
           </button>
+          <Link to="/bag">
+            <button
+              className="sm:hidden bg-black w-full py-4 rounded-lg hover:bg-teal-600 text-white uppercase font-bold tracking-wider"
+              type="submit"
+              aria-label="add to cart"
+              onClick={handleAddToCart}>
+              Add to bag
+            </button>
+          </Link>
           <div className="mt-8">
             <p className="text-lg text-justify">{product.description}</p>
           </div>
