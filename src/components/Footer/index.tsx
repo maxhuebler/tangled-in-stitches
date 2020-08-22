@@ -17,7 +17,7 @@ export default function Footer({ siteTitle }: FooterProperties): JSX.Element {
   const { allShopifyCollection } = useStaticQuery(
     graphql`
       query {
-        allShopifyCollection(limit: 5, skip: 4) {
+        allShopifyCollection {
           edges {
             node {
               title
@@ -43,9 +43,9 @@ export default function Footer({ siteTitle }: FooterProperties): JSX.Element {
                   <p>About Us</p>
                 </Link>
               </li>
-              <li className="hover:text-black">Returns & Exchanges</li>
+              {/* <li className="hover:text-black">Returns & Exchanges</li>
               <li className="hover:text-black">Privacy Policy</li>
-              <li className="hover:text-black">Terms of Service</li>
+              <li className="hover:text-black">Terms of Service</li> */}
             </ul>
           </div>
           <div className="row-span-1 sm:col-span-1">
