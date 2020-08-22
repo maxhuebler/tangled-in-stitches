@@ -159,7 +159,7 @@ const ProductPage = ({ data }: ProductProperties): JSX.Element => {
                     onClick={() => {
                       slider.moveToSlideRelative(idx)
                     }}
-                    className={`mt-4 w-3 h-3 mx-2 rounded-full cursor-pointer bg-gray-500${
+                    className={`mt-4 w-3 h-3 mx-2 rounded-full cursor-pointer bg-gray-500 hover:bg-teal-600${
                       currentSlide === idx ? " bg-teal-600" : ""
                     }`}
                   />
@@ -258,7 +258,7 @@ export const query = graphql`
         id
         localFile {
           childImageSharp {
-            fluid(maxWidth: 526) {
+            fluid(quality: 100) {
               ...GatsbyImageSharpFluid_withWebp_tracedSVG
             }
           }

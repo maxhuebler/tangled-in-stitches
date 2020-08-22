@@ -15,7 +15,7 @@ export default function Hero(): JSX.Element {
   return (
     <>
       <div
-        className="flex flex-col py-24 sm:py-40 xl:rounded-lg xl:mx-8 opacity-75"
+        className="flex flex-col py-24 sm:py-32 xl:rounded-lg xl:mx-8 opacity-75"
         style={{
           backgroundImage: "linear-gradient(15deg, #13547a 0%, #80d0c7 100%)",
         }}>
