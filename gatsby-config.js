@@ -11,14 +11,6 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        trackingId: process.env.GA_TRACKING_ID,
-        anonymize: true,
-        respectDNT: true,
-      },
-    },
     `gatsby-plugin-netlify`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
@@ -59,6 +51,7 @@ module.exports = {
         postCssPlugins: [require("tailwindcss"), require("autoprefixer")],
       },
     },
+    `gatsby-plugin-simple-analytics`,
     `gatsby-plugin-advanced-sitemap`,
     `gatsby-plugin-robots-txt`,
   ],
