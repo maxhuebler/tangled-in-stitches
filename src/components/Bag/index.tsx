@@ -6,6 +6,7 @@ import {
 } from "gatsby-theme-shopify-manager"
 import React from "react"
 import LineItem from "./LineItem"
+import { FluidObject } from "gatsby-image"
 
 interface LineItemProperties {
   id: string
@@ -18,7 +19,12 @@ interface LineItemProperties {
     price: string
     image: {
       title: string
-      src: string
+      id: string
+      localFile: {
+        childImageSharp: {
+          fluid: FluidObject
+        }
+      }
     }
     product: {
       handle: string

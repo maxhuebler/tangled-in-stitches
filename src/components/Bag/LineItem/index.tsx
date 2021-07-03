@@ -1,6 +1,7 @@
 import { Link } from "gatsby"
 import { useUpdateItemQuantity } from "gatsby-theme-shopify-manager"
 import React from "react"
+import Image, { FluidObject } from "gatsby-image"
 
 interface ItemProperties {
   item: {
@@ -13,7 +14,12 @@ interface ItemProperties {
       price: string
       image: {
         title: string
-        src: string
+        id: string
+        localFile: {
+          childImageSharp: {
+            fluid: FluidObject
+          }
+        }
       }
       product: {
         handle: string
@@ -32,9 +38,9 @@ const LineItem = ({ item }: ItemProperties): JSX.Element => {
   const updateItemQuantity = useUpdateItemQuantity()
 
   const variantImage = item.variant.image ? (
-    <img
+    <Image
       className="h-auto w-32 sm:h-48 sm:w-auto hover:opacity-75"
-      src={item.variant.image.src}
+      fluid={item.variant.image.localFile.childImageSharp.fluid}
       alt={`${item.title} product shot`}
     />
   ) : null
@@ -56,8 +62,7 @@ const LineItem = ({ item }: ItemProperties): JSX.Element => {
             {variantImage}
           </Link>
           <div className="sm:text-lg ml-6 sm:px-8">
-            <p className="tracking-wider">{item.title}</p>
-            {item.variant.title}
+            <p className="tracking-wide font-bold sm:text-xl">{item.title}</p>
             {selectedOptions}
           </div>
         </div>

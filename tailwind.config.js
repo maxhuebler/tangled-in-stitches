@@ -1,5 +1,8 @@
 module.exports = {
   purge: ["./src/**/*.tsx"],
+  future: {
+    removeDeprecatedGapUtilities: true,
+  },
   theme: {
     fontFamily: {
       display: ["Norican", "sans-serif"],

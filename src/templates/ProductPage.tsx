@@ -138,12 +138,10 @@ const ProductPage = ({ data }: ProductProperties): JSX.Element => {
         </div>
       ) : null}
       <div className="grid grid-cols-1 sm:grid-cols-2 sm:mx-8 items-center">
-        <div>
-          <div ref={sliderRef} className="keen-slider">
+        <div className="h-auto">
+          <div ref={sliderRef} className="keen-slider h-auto">
             {product.images.map((image) => (
-              <div
-                key={image.id}
-                className="keen-slider__slide h-auto sm:rounded-lg">
+              <div key={image.id} className="keen-slider__slide sm:rounded-lg">
                 <Image fluid={image.localFile.childImageSharp.fluid} />
               </div>
             ))}
